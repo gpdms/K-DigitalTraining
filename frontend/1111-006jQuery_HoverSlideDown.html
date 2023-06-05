@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover</title>
+    
+    <style>
+        body {
+            margin: 20px;
+            padding: 20px;
+            line-height: 1;
+            font-family: "Open Sans", sans-serif;
+            font-size: 1em;
+            background-color: #f1f1f1;
+            color: #555;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .title {
+            margin: 0;
+            margin-bottom: 35px;
+            padding: 0;
+            font-size: 1.5em;
+            font-weight: 300;
+            color: #555;
+        }
+        .container {
+            margin-top: 35px;
+        }
+        nav > ul > li {
+            position: relative;
+            float: left;
+            width: 140px;
+            height: 40px;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 13px;
+            border-left: 1px solid #ccc;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        nav > ul > li:first-child {
+            border-left: none;
+        }
+        nav > ul > li > a {
+            display: block;
+            width: 100%;
+            line-height: 40px;
+            text-decoration: none;
+            background: #eaeaea;
+            color: #666;
+            transition: background 0.4s, color 0.4s;
+        }
+        nav > ul > li:hover > a,
+        nav > ul > li > a.over {
+            font-weight: 600;
+            background: #8ac007;
+            color: #fff;
+        }
+        nav .sub {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 40px;
+            width: 100%;
+        }
+        nav .sub li {
+            border-bottom: 1px solid #eaeaea;
+        }
+        nav .sub li a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #666;
+            background: #fff;
+        }
+        nav .sub li a:hover,
+        nav .sub li a:focus {
+            background: #f8f8f8;
+        }
+        </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">main1</a>
+                    <ul class="sub">
+                        <li><a href="#">sub11</a></li>
+                        <li><a href="#">sub12</a></li>
+                        <li><a href="#">sub13</a></li>
+                        <li><a href="#">sub14</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">main2</a>
+                    <ul class="sub">
+                        <li><a href="#">sub21</a></li>
+                        <li><a href="#">sub22</a></li>
+                        <li><a href="#">sub23</a></li>
+                        <li><a href="#">sub24</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">main3</a>
+                    <ul class="sub">
+                        <li><a href="#">sub31</a></li>
+                        <li><a href="#">sub32</a></li>
+                        <li><a href="#">sub33</a></li>
+                        <li><a href="#">sub34</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">main4</a>
+                    <ul class="sub">
+                        <li><a href="#">sub41</a></li>
+                        <li><a href="#">sub42</a></li>
+                        <li><a href="#">sub43</a></li>
+                        <li><a href="#">sub44</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script> 
+    <script>
+        $(function(){
+            $("nav>ul>li").hover(
+                function(){
+                $(this).find(".sub").stop().slideDown(300);
+                // find: this 자식요소에 대해서만 잡음
+                // stop(): 왔다갔다계속하면 에러. 멈춰줌.
+            },
+            function(){
+                $(this).find(".sub").stop().slideUp(300);
+            }
+        );
+        });
+    </script>
+</body>
+</html>

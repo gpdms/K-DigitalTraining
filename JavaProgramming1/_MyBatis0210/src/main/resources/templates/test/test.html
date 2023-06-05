@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thtmeleaf/layout"
+layout:decorate="~{layout/basic.html}">
+
+<div layout:fragment="content">
+나온다 <br/>
+<h1>[[${ttt}]]</h1>
+<h1>[[${yyy}]]</h1>
+<a th:href="@{/aaa(ee=${ttt},ff=${yyy})}">aaa요청 </a>
+			<!-- 값넘김. href="/aaa?ee=1234"와 같음. ee는 controller에써줌. -->
+</div>
+
+<script layout:fragment="script" th:inline="javascript">
+console.log("script.....................");
+</script>

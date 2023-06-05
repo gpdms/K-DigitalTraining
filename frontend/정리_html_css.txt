@@ -1,0 +1,24 @@
+div: block
+span: inline, marginTop안먹음.
+
+마진값을 주지 않으면 브라우저에 8px의 마진이 생김.
+
+이미지url, no-repeat
+background-size에서 cover와 contain의 차이점.
+contain: 세로가 다 차면 가로를 더이상 늘리지 않음.
+cover: 세로를 더 밀고 들어가 가로를 다 채움. 세로가 잘릴 수 있음.
+그래서 대부분 background-size에서 cover을 쓰게됨
+
+부트스트랩에서 링크 copy
+내css보다 위에 있어야.
+안그러면 덮어씌어버림.
+자바스크립트도 마찬가지로 위에.
+
+1em = 16px
+pxtoem.com에서 단위변환 가능
+
+prettier code formatter 다운.
+정렬 예쁘게맞춰줌
+
+display: flex;
+Flex 아이템들은 가로 방향으로 배치되고, 자신이 가진 내용물의 width 만큼만 차지. 마치 inline 요소들 처럼. height는 컨테이너의 높이만큼 늘어납니다.

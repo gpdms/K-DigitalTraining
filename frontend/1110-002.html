@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- 제이쿼리 붙여넣기 -->
+    <title>Toggle</title>
+    <style>
+        p.active {
+            background: red;
+            color: white;
+        }
+    </style>
+    <script>
+        $(function(){
+            $("button").click(function(){
+                $("p").toggleClass("active");
+                // $("p").slideToggle("active");
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>토글버튼</button>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed nulla velit ab blanditiis et aperiam dolorem at quia iste necessitatibus assumenda similique, distinctio facere ullam cum nisi, repellat animi! Nulla!
+    </p>
+
+    
+</body>
+</html>

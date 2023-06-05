@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FadeInOut Slide</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+        }
+      .slideshow {
+        overflow: hidden;
+        position: relative;
+        min-width: 960px;
+        height: 465px;
+      }
+      .slideshow img {
+        display: none;
+        position: absolute;
+        left: 50%;
+        margin-left: -800px;
+      }
+
+      img {
+        width: 1600px;
+        height: 465px;
+      }
+
+      /* JavsScript 비활성화 시 */
+      .no-js .slideshow img:first-child {
+        display: inline;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero-header">
+        <div class="inner">
+            <div class="slideshow">
+                <img src="images/slide-1.jpg" alt="1">
+                <img src="images/slide-2.jpg" alt="2">
+                <img src="images/slide-3.jpg" alt="3">
+                <img src="images/slide-4.jpg" alt="4">
+            </div>
+        </div>
+    </header>
+
+    <script>
+        $(function(){
+            $(".slideshow").each(function(){
+                //slideshow 클래스를 가진 요소마다 작업을 수행하겠다
+                let $slides = $(this).find("img"), //모든 슬라이드
+                    slideCount = $slides.length, //슬라이드 갯수
+                    currentIndex = 0; //현재 슬라이드를 나타내는 인덱스
+
+                $slides.eq(currentIndex).fadeIn();
+                //첫번째 슬라이드를 페이드인으로 표시한다
+                setInterval(showNextSlide, 7500);
+                //7.5초마다 showNextSlide 함수를 실행
+                function showNextSlide(){
+                    let nextIndex = (currentIndex +1) % slideCount;
+                    //다음에 표시할 슬라이드의 인덱스가 만약 마지막 슬라이드라면 처음으로 돌아가게 하는 부분
+                    $slides.eq(currentIndex).fadeOut();
+
+                    $slides.eq(nextIndex).fadeIn();
+
+                    currentIndex = nextIndex;
+                    //현재 슬라이드의 인덱스를 업데이트 하는 것
+                }
+            });
+        })
+    </script>
+  </body>
+</html>

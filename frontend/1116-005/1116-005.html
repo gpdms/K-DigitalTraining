@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Chapter 04-04 - jQuery 최고의 교과서</title>
+<link rel="stylesheet" href="./css/normalize.css">
+<link rel="stylesheet" href="./css/main.css">
+
+<script src="./js/vendor/jquery-1.10.2.min.js"></script>
+<script src="./js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
+<script>
+    // $(function(){
+    //     $("button").click(function(){
+    //         $(".page-main > aside").toggleClass("show")
+    //     })
+    // })
+
+    $(function(){
+        let duration = 300;
+
+        let $aside = $(".page-main > aside");
+        let $asideButton = $aside.find("button")
+        .on("click", function(){
+            if($aside.hasClass("open")){ //open클래스 없어도 hasClass로 인해 생김. 왜???모르겠 다. . .
+                $aside.stop().animate({left:"-70px"}, duration);
+                $asideButton.find("img").attr("src", "img/btn_close.png");
+            } else {
+                $aside.stop().animate({left:"-350px"}, duration);
+                $asideButton.find("img").attr("src", "img/btn_open.png");
+            }
+            $aside.toggleClass("open");
+        })
+    })
+
+
+
+</script>
+</head>
+<body>
+
+<header class="page-header" role="banner">
+    <h1>Creative jQuery Sample</h1>
+</header>
+
+<div class="page-main" role="main">
+    <aside>
+        <ul>
+            <li><a href="#"><img src="img/01_aside.png"></a></li>
+            <li><a href="#"><img src="img/02_aside.png"></a></li>
+            <li><a href="#"><img src="img/03_aside.png"></a></li>
+        </ul>
+        <button><img src="img/btn_open.png"></button>
+    </aside>
+</div>
+
+<footer class="page-footer" role="contentinfo">
+    <small class="copyright">COPYRIGHT &copy; <a href="http://www.shiftbrain.co.jp" target="_blank">SHIFTBRAIN Inc.</a></small>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.springboot.EmpDao">
+	<select id="list" resultType="com.study.springboot.Emp">
+		select * from emp_temp
+	</select>
+	<insert id="write">
+		insert into emp_temp(empno, ename, job, sal)
+		values (#{empno}, #{ename}, #{job}, #{sal})
+	</insert>
+	<select id="viewOne" resultType="com.study.springboot.Emp">
+		select * from emp_temp where empno = #{empno}
+	</select>
+</mapper>

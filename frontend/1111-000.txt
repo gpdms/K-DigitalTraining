@@ -1,0 +1,23 @@
+animation
+add class
+remove class
+
+
+jquery
+this인자 사용.
+
+
+같은공간. 클릭했을때 해당클래스
+
+jQuery공부
+http://www.tcpschool.com/jquery/jq_intro_apply 
+
+hover function 문법
+
+$('#test').hover(function(){
+    $(this).css("color","red")  
+    },//마우스 엔터를 의미
+
+    function(){
+        $(this).css("color","blue");
+});

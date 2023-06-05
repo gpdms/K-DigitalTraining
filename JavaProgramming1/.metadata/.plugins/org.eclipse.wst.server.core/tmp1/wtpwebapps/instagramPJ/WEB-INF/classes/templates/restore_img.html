@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>instagram</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/new_post.css">
+    <link rel="shortcut icon" href="/imgs/instagram.png">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/update.css">
+	
+	<!-- 폰트어썸 -->
+	<script src="https://kit.fontawesome.com/b5ffac9792.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://kit.fontawesome.com/b5ffac9792.css" crossorigin="anonymous">
+	<style>
+	.submit_btn {
+		width: 400px;
+	}
+	</style>
+</head>
+<body>
+
+
+<section id="container">
+  	<!-- 헤더 -->
+   	<div th:replace="~{/fragments/header.html :: fragment-header}"></div>
+    
+    <!-- 사이드메뉴바 nav-->
+    <div th:replace="~{/fragments/nav.html :: fragment-nav}"></div>
+
+	<!-- 메인 -->
+    <div id="main_container">
+	
+        <div class="post_form_container">
+         <div class="post_form" >
+                <div class="title">
+                    포스트 이미지 복원
+                </div>
+
+				<!-- 이미지 --> 
+				<div id="img_preview" class="slide">
+			      <ul class="imgSlide" th:style="|width:${(#lists.size(imgs)) * 600}px;|">
+			        <li id="img_container" th:each="img : ${imgs}">
+			        	<button id="del_btn" th:onclick="|restoreImg(${img.imgId}, ${imgCount})|"> 
+			        		<i id="del_i"class="fa-solid fa-trash-arrow-up"></i> 
+			        	</button>
+			        	<img id="up_img" th:src="|/imgs/post/${img.imgId}|" alt="포스트이미지">
+			        </li> 
+			      </ul>
+			      <div class="moveBtn" th:if="${#lists.size(imgs)>1}">
+			       <a class="pre" th:onclick="preImg()">
+          			< </a>
+           			 <a class="next" th:onclick="|nextImg(${imgCount})|"> > </a>
+			      </div>
+			    </div>
+			    
+			    <form id="restore_form">
+                <p>
+            		<input type="hidden" name="post_id" th:value="${post.post_id}">
+                </p>
+                	<input class="submit_btn" type="button" th:onclick="restoreAll()" value="전체 복원">
+                </form>
+                	<button class="submit_btn" type="button" th:onclick="|toView(${post.post_id})|" 
+                	style="height:35px"> 해당 게시글로 이동
+               		</button>
+			</div>	
+        </div>
+
+    </div>
+
+
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script th:inline="javascript">
+// 해당 게시글로 이동
+function toView(post_id) {
+	location.href="/view/"+post_id;
+}
+
+//사진 복원
+var i = 0; // 사진 인덱스를 저장할 변수
+function restoreImg(imageId, imageCount){
+	let ok = confirm("사진을 복원하시겠습니까?");
+	var postId = /*[[${post.post_id}]]*/;
+	if (ok) {
+		var json = {img_id : imageId,
+					post_id : postId }; 
+	    $.ajax({
+		    type: 'post',
+		    url: '/restoreImg', 
+		    data: JSON.stringify(json),
+			contentType: "application/json",
+		    success: function (data) {
+		        alert("이미지가 복원되었습니다.");
+		        console.log(imageCount);
+		        if (imageCount > 1) {
+			   		 $("#img_preview").replaceWith(data);
+			   		 i = 0;
+		        } else {
+		        	location.href="/restoreImgList/" + /*[[${post.mem_id}]]*/;
+		        }
+		    },
+		    error: function (err) {
+		        console.log(err);
+		        alert("이미지를 복원할 수 없습니다.");
+		    } 
+	    }) 
+    }
+}
+
+
+function restoreAll(){
+	let ok = confirm("이미지를 모두 복원하시겠습니까?"); 
+	if (ok) {
+		var restoreFormData = $("#restore_form").serialize();
+	    $.ajax({
+		    type: 'post',
+		    url: '/restoreAllImg', 
+		    data: restoreFormData,
+		    success: function (data) {
+		       alert("이미지가 모두 복원되었습니다.");
+		       location.href="/restoreImgList/" + /*[[${post.mem_id}]]*/;
+		    },
+		    error: function (err) {
+		        console.log(err);
+		        alert("이미지를 삭제할 수 없습니다.");
+		    } 
+	    }) 
+    }
+}
+
+//사진 슬라이드 
+function preImg() {
+	 if (i > 0) {
+	 i = i - 1;
+	 $(".imgSlide").stop().animate({
+	   "left": -600 * i + "px"
+	 }, "slow");
+	}
+}
+
+function nextImg(imgCount) {
+	console.log(imgCount);
+	if (i < (imgCount-1)) {
+	    i = i + 1;
+	    $(".imgSlide").stop().animate({
+	      "left": -600 * i + "px"
+	    }, "slow");
+	  }
+}
+
+
+</script>
+</body>
+</html>

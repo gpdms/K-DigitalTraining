@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STICKY</title>
+    <style>
+        body {
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .top-container {
+          background-color: #f1f1f1;
+          padding: 30px;
+          text-align: center;
+        }
+        
+        .header {
+          padding: 10px 16px;
+          background: #555;
+          color: #f1f1f1;
+        }
+        
+        .content {
+          padding: 16px;
+        }
+        
+        .sticky {
+          position: fixed;
+          top: 0;
+          width: 100%;
+        }
+        
+        .sticky + .content {
+          padding-top: 102px;
+        }
+        </style>
+        ​
+</head>
+<body>
+    <div class="top-container">
+        <h1>스크롤 다운해주세요</h1>
+        <p>스크롤 다운하면 스티키 효과를 볼 수 있습니다</p>
+    </div>
+
+    <div class="header" id="myHeader">
+        <h2>My Header</h2>
+    </div>
+
+    <div class="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id modi ipsa earum amet reprehenderit culpa, voluptate voluptas ab eum tenetur commodi voluptatibus, corporis tempore odit. Odio sapiente dolor dolore voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam at cupiditate dolor! Rem a ipsa, dolor nesciunt hic illo labore maxime officiis architecto quibusdam omnis. Iure voluptatum placeat atque optio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, rerum eveniet minima praesentium aliquam architecto molestiae tenetur id iste veritatis consequatur ipsa ex deserunt accusantium. Consequatur labore enim maiores excepturi! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum dolorum distinctio praesentium velit aspernatur at. Non itaque nobis nisi. Quibusdam sunt mollitia beatae? Reiciendis at quisquam nam eos numquam quam? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae deserunt odio dolor iure nobis obcaecati, at consequuntur. Officia eos aliquid hic? Harum vitae fugiat, atque dolores corrupti pariatur aperiam vel. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor officia consequuntur corporis, similique dolorum ipsum maiores sunt quae dolore quis, animi tenetur at est, reprehenderit molestias. Debitis quo explicabo tempore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem qui error a minus fugit corporis porro. Necessitatibus maiores vel at, ea, debitis quod, aliquid maxime eaque aut dolore saepe nisi! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium accusamus eum nostrum veniam adipisci dolorem sapiente reiciendis consectetur cum explicabo dolorum beatae culpa soluta quae, obcaecati qui expedita laborum vel! Lorem ipsum dolor sit amet consectetur adipisicing elit. Id modi ipsa earum amet reprehenderit culpa, voluptate voluptas ab eum tenetur commodi voluptatibus, corporis tempore odit. Odio sapiente dolor dolore voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam at cupiditate dolor! Rem a ipsa, dolor nesciunt hic illo labore maxime officiis architecto quibusdam omnis. Iure voluptatum placeat atque optio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, rerum eveniet minima praesentium aliquam architecto molestiae tenetur id iste veritatis consequatur ipsa ex deserunt accusantium. Consequatur labore enim maiores excepturi! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum dolorum distinctio praesentium velit aspernatur at. Non itaque nobis nisi. Quibusdam sunt mollitia beatae? Reiciendis at quisquam nam eos numquam quam? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae deserunt odio dolor iure nobis obcaecati, at consequuntur. Officia eos aliquid hic? Harum vitae fugiat, atque dolores corrupti pariatur aperiam vel. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor officia consequuntur corporis, similique dolorum ipsum maiores sunt quae dolore quis, animi tenetur at est, reprehenderit molestias. Debitis quo explicabo tempore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem qui error a minus fugit corporis porro. Necessitatibus maiores vel at, ea, debitis quod, aliquid maxime eaque aut dolore saepe nisi! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium accusamus eum nostrum veniam adipisci dolorem sapiente reiciendis consectetur cum explicabo dolorum beatae culpa soluta quae, obcaecati qui expedita laborum vel! Lorem ipsum dolor sit amet consectetur adipisicing elit. Id modi ipsa earum amet reprehenderit culpa, voluptate voluptas ab eum tenetur commodi voluptatibus, corporis tempore odit. Odio sapiente dolor dolore voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam at cupiditate dolor! Rem a ipsa, dolor nesciunt hic illo labore maxime officiis architecto quibusdam omnis. Iure voluptatum placeat atque optio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, rerum eveniet minima praesentium aliquam architecto molestiae tenetur id iste veritatis consequatur ipsa ex deserunt accusantium. Consequatur labore enim maiores excepturi! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum dolorum distinctio praesentium velit aspernatur at. Non itaque nobis nisi. Quibusdam sunt mollitia beatae? Reiciendis at quisquam nam eos numquam quam? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae deserunt odio dolor iure nobis obcaecati, at consequuntur. Officia eos aliquid hic? Harum vitae fugiat, atque dolores corrupti pariatur aperiam vel. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor officia consequuntur corporis, similique dolorum ipsum maiores sunt quae dolore quis, animi tenetur at est, reprehenderit molestias. Debitis quo explicabo tempore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem qui error a minus fugit corporis porro. Necessitatibus maiores vel at, ea, debitis quod, aliquid maxime eaque aut dolore saepe nisi! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium accusamus eum nostrum veniam adipisci dolorem sapiente reiciendis consectetur cum explicabo dolorum beatae culpa soluta quae, obcaecati qui expedita laborum vel! 
+    </div>
+
+    <script>
+        window.onscroll = function() {myFunction()};
+
+        let header = document.getElementById("myHeader");
+        let sticky = header.offsetTop;
+
+        function myFunction(){
+            if(window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
+
+
+    </script>
+</body>
+</html>

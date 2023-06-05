@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션</title>
+    <style>
+    body {
+	margin: 0;
+	padding: 0;
+	font-family: "Open Sans", sans-serif;
+	background-color: #f1f1f1;
+	color: #555;
+    }
+    h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
+	padding: 0;
+    }
+    section {
+	/* height: 200px; *//* jQuery test height */
+	height: 900px;
+    }
+    section h1 {
+	margin: 60px 0 10px 60px;
+	font-size: 2.4em;
+	font-weight: 300;
+	opacity: 0;
+	transform: translateX(-100px);
+	transition: opacity 0.4s, transform 0.6s;
+    }
+    section p {
+	margin-left: 60px;
+	color: #aaa;
+	opacity: 0;
+	transform: translateX(-100px);
+	transition: opacity 0.4s, transform 0.6s;
+	transition-delay: 0.4s;
+    }
+    section.active h1,
+    section.active p {
+	opacity: 1;
+	transform: translateX(0);
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section id="page1">
+            <h1>오늘은 월요일</h1>
+            <p>금요일은 언제오나?</p>
+        </section>
+
+        <section id="page2">
+            <h1>오늘은 월요일</h1>
+            <p>금요일은 언제오나?</p>
+        </section>
+
+        <section id="page3">
+            <h1>오늘은 월요일</h1>
+            <p>금요일은 언제오나?</p>
+        </section>
+
+        <section id="page4">
+            <h1>오늘은 월요일</h1>
+            <p>금요일은 언제오나?</p>
+        </section>
+
+        <section id="page5">
+            <h1>오늘은 월요일</h1>
+            <p>금요일은 언제오나?</p>
+        </section>
+
+        <section id="page6">
+            <h1>오늘은 월요일</h1>
+            <p>금요일은 언제오나?</p>
+        </section>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script>
+        setTimeout(function(){
+            $("body, html").animate({scrollTop:0}, 600, function(){
+                $("#page1").addClass("active");
+
+                $(window).scroll(function(){
+                    let t = $(this).scrollTop();
+
+                    if(t <= $("#page1").offset().top+300){
+                        $("#page1").addClass("active");
+                    } else if(t <= $("#page2").offset().top+300){
+                        $("#page2").addClass("active");
+                    } else if(t <= $("#page3").offset().top+300){
+                        $("#page3").addClass("active");
+                    } else if(t <= $("#page4").offset().top+300){
+                        $("#page4").addClass("active");
+                    } else if(t <= $("#page5").offset().top+300){
+                        $("#page5").addClass("active");
+                    } else if(t < $("body, html").height()){
+                        $("#page6").addClass("active");
+                    }
+                })
+            })
+        }, 150);
+    </script>
+</body>
+</html>

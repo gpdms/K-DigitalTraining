@@ -1,0 +1,1099 @@
+JSP
+디렉티브 p.53 page, taglib, include
+스크립트요소:스크립틀릿, 표현식, 선언부
+기본객체 request, response, session 등
+표현언어
+표준 액션태그와 태그 라이브러리
+
+웬만하면 절대경로로 하기! /로시작. /없으면 상대경로
+루트 파일명(/viewParameter.jsp)
+
+프로젝트 오른쪽마우스- properties-
+web project settings - /로 바꾸기
+
+
+
+<0113>
+jsp p.99 jsp 처리과정
+p.134,177,520
+p.357 war파일만들기
+프로젝트-export-warfile-
+다운로드에 저장-복사-javaProgramming-apache-tomcat-webapps에붙여넣기
+
+<0120>
+usebean
+_jsp0118
+chap08
+쿠키
+
+mvc모델 p.522~528
+chap18
+_mvc0118 
+
+form태그 action=서블릿요청명 scott
+
+vue0118
+vue.js기본. vue인스턴스 만들기 New Vue
+데이터를 있는 그대로 표시할 때
+{{데이터}}
+v-text
+v-html
+배열
+객체
+
+
+톰캣10에서 서블릿문제 해결
+javax를 jakarta로 바꿔야함. 
+import를 지우고 다시하면 자동으로 바뀜.
+
+http://javacan.somehost.com:8080/chap09/makeCookieWithDomain.jsp
+http://javacan.somehost.com:8080/chap09/viewCookies.jsp
+
+
+
+<0125>
+p.250 표현언어
+
+<0126>
+_jsp0126: 
+
+표현언어
+test05.jsp~ : JSTL
+request,pageContext, application, session 
+forwarding
+mvc
+
+HashMap
+Ther.java
+해시테이블:데이터->해시함수->키,값 형태로 테이블
+
+chap11-util-FormatUtil.java
+p.270 TLD
+el-function.tld, web.xml
+test01.jsp ~p.274
+
+
+<0127>
+p.277
+_jsp0127 표현언어 스트림
+list.stream().filter() 필터는 걸러냄
+
+
+<0130>
+JSTL
+p.292
+
+<0131>
+서블릿 기초
+p.498~
+프로젝트-create Servlet
+URL mappings:호출될때
+init, destroy, service체크
+
+get은 헤더부분에 정보가 넘어감
+post는 바디부분ㅇ
+
+MemberLocalServlet.java 뭔소리
+
+p.323 JSTL
+
+
+<0201>
+chap17.dynamicproject 답변형게시판
+chap18. mvc패턴
+_jsp0201 
+
+이름이 [com.move.exam.MoveTest]과 [com.servlet.exam.HelloWorld]인 두 서블릿들 모두 url-pattern [/]에 매핑되어 있는데, 이는 허용되지 않습니다.
+
+_mvc0201
+
+
+<0202>
+이클립스에 STS설치
+이클립스전에설치한거Version: 2022-12 (4.26.0)
+상단메뉴help-eclipse marketplace - sts검색 - spring tools 4.17.2설치
+-다 체크후 confirm-동의후finish-설치중 뭐 뜨면 select all- trust(?)-상단아이콘Boot Dashboard
+
+(utf8 설정)
+상단메뉴window-preference-general-workspace-utf8
+web-css,html,jsp-utf8
+xml-xmlfiles-utf8
+web browser-chrome
+
+(프로젝트 생성)
+상단메뉴file-new-other-spring boot-spring starter project-next-
+name: HelloWorld
+Type:Gradle-Groovy
+packaging: War
+java version:8
+Group: com.study
+Package: com.study.springboot
+-next-
+검색 web-Thymeleaf, Spring Web 체크-finish
+
+(실행)
+boot dashboard에서 프로젝트명 오른쪽마우스-(re)start
+
+(포트번호바꾸기)
+HelloWorld프로젝트-Java resources-src/main/resources-application.properties클릭
+server.port=8081쓰기 (7072...등 큰숫자)
+(웹페이지 만들기)
+src/main/resources - templates에다가 만듦 - new html파일 만들기.
+
+
+mvc
+프로젝트명 chap18 
+
+hello프로젝트
+포트번호바꾸기
+컨트롤러만들기 src/main/java - HelloController.java
+html만들기 template- index.html
+
+
+<0203>
+_MyBatis 프로젝트 생성
+file-new-others-spring starter
+spring web, thymeleaf, oracle driver, mybatis framework 체크
+나중에 추가하고 싶으면
+프로젝트 오른쪽마우스- spring-add starter
+
+Emp.java
+index.html웹페이지의 처음페이지/ static에 꾸미기 같은거 넣기.
+application.properties
+MyController.java
+root.html root페이지/template에
+EmpMapper인터페이스
+list.html
+insert.html
+
+list는 MyController.java에 있는 요청명임.
+templates: list.html 불러올수x
+static폴더: insert.html 불러올수o
+
+
+<0206>
+p.336~425
+19장 필터 소개 p.545
+spring boot에서 서블릿, 필터 만들기
+spring boot 에 MyBatis 사용 연습
+Spring boot MyBatis update기능 구현
+
+
+스프링부트 import:
+Gradle-Existing Gradle Project
+
+새로운 spring boot project생성
+Spring Boot DevTools, Thymeleaf, Spring Web 체크.
+
+build.gradle에서 기본설정 수정가능. dependencies-jar파일같은것.
+
+Java Resources-src/main/resources-static: index.html문서-화면켜지면 이 페이지 실행.
+Java Resources-src/main/hava-com.study.springboot: 서블릿만들기 이름TestServlet
+@WebServlet("/test1")적기&import
+MyFilter0206Application.java에 @ServletComponentScan적기
+application.properties에 server.port=8090포트번호변경
+Java Resources-src/main/hava-com.study.springboot: Filter만들기
+	class name-TestFilter
+	superclass-jakarta.servlet.http.HttpFilter
+
+스프링책 p.36 Lombok
+새프로젝트생성 Spring Boot DevTools, Lombok, Thymeleaf, oracle Driver, MyBatis ramework,Spring web
+application.properties 포트번호, DB관련
+index.html
+Emp클래스 생성
+lombok.jar 다운받기
+명령프롬프트에 cd Downloads 엔터
+		java -jar lombok.jar 엔터0000000000
+install하면 끝
+EmpMapper 인터페이스 생성
+TestEmp 클래스 생성. 테스트실행용
+EmpController 클래스 생성
+list.html 생성
+
+
+update만들기
+EmpMapper.java
+
+타임리프, 뷰 쓸거면 templates에.
+바로보이게 할거면(?) static
+
+
+<0207>
+-JSP 웹프로그래밍 14장 p.415 커넥션 풀 -> 스프링 책 p83 HikariCP
+-Log4j2 사용 -> log.info()
+-스프링 부트에서 테스트 소개
+-Thymeleaf 연습
+-20장 ServletContextListener 구현 -> 스프링 부트에서 사용
+
+jsp p.415, 스프링 p.83 -커넥션풀
+
+새프로젝트 _MyBatis0207 생성(lombok빼고, oracle driver로 체크)
+index.html
+application.properties 포트, 오라클
+(re)start해보기
+.controller패키지 생성
+	사실은 MyBatis0207Application.java 얘가 실행되고 있던것.
+
+template는 오직 뷰. 요청이 안됨. thymeleaf파일들 두는 곳.
+static은 웹에서 호출할 수 있음. content들을 두는 곳. css나 js파일. css, js, image를 포함한 html을 넣어두니 컨트롤러로 매핑할 필요없이 올릴 수 있다는 이야기.
+
+.dao패키지 생성
+emp, EmpMapper 파일 복붙
+프로젝트오른쪽마우스-Spring-addstarter-롬복 포함 6개 다 체크. buildpath(?)체크
+
+properties파일에 
+logging.level.org.springframework=info
+logging.level.com.study=debug
+	       //여기에 내 패키지명
+
+MyController에 @Log4j2넣기, log.info넣기
+p.61 log.info가 System.out.println같은것.
+
+
+테스트 
+src/test/java
+작성하고 run-run as - Junit test
+Junit 두개비교해서 참거짓보여줌. Junit은 spring에 있는거 아니고 자바에있는것임.
+
+hello.html
+controller에서 맵핑해주기.
+
+hello.html 타임리프
+
+
+-20장 ServletContextListener 구현 -> 스프링 부트에서 사용
+TestListener 리스너 생성.
+lifeCycle체크
+오른쪽마우스-source-override
+@WebListener@Log4j2추가
+
+WebMvcConfiguration파일 보내주신거 붙여넣기
+p.50의존성참고
+
+스프링책 처음부터
+스프링부트 우리는 3. 책은 5
+STS 우리는 4. spring legacy project안됨.
+
+객체생성new안하고 @Autowired
+//@Autowired //옛날방식. 요즘쓰지말라고.
+
+테스트파일
+
+0208
+
+오른쪽마우스-spring-add starter?- 롬복포함해서 다 체크.
+
+dao.xml
+  @해서 select했던것들을 xml로 대신.
+선생님이 보내주신 파일 붙여넣기
+reesultType=패키지명.클래스
+쿼리문 조인있고 그러면 이거 쓰는게 낫겠죠.
+
+테스트 돌리기.
+의존성주입 DI
+EmpDao empDao 객체 생성을 우리가 안하고 프레임워크가 하는게 autowired.
+
+생성자, setter, 
+
+DisplayName-Junit에 내가 설정한 이름으로 뜸.
+
+dao만들면 테스트해보기
+
+Postman
+
+
+<0209>
+스프링웹 4~5장
+11장 부트스탧 사용 p.223
+Session 사용
+시험2개
+
+부트스트랩
+
+프로젝트 복사후
+파일탐색기 경로 찾아가서
+settings.gradle에서 이름 변경
+.project에서 이름변경
+
+EmpDao.java
+어노테이션이랑 xml같이써도 됨!
+어떨땐 public int, public Emp?
+return값에 따라.
+
+MyController.java
+의존성 주입 세가지: 필드, 세터, 생성자 autowired
+생성자가 제일 괜찮으니까 lombok에서 단축. requiredArgsConstructor
+
+Requestmapping이 최초에 나온것.
+요즘엔 get mapping, post면 post mapping
+
+
+
+postman이 뭐지
+
+
+타임리프 ${}클래스 *{}안에목록
+
+
+
+<0210>
+마리아 db
+
+root로 로그인
+
+데이터베이스 생성
+CREATE DATABASE springbootdb;(데이터베이스명)
+
+사용자 생성
+CREATE USER springboot@localhost
+IDENTIFIED BY ‘1234’; (springboot는 사용자명, 1234는 암호임)
+
+사용자에게 권한부여
+grant all privileges on springbootdb.*
+to ‘springboot’@localhost
+identified by ’1234’;
+
+grant all privileges on springbootdb.*
+to ‘springboot’@‘%’
+identified by ’1234’;
+
+이후 사용자 로그인하여 테이블 만들기
+사용자 로그인하기
+왼쪽 상단 접속 클릭-신규-세션이름:springboot, 사용자: springboot, 암호:1234, 포트:3307-열기, 저장
+
+테이블 생성
+create table board(
+	num int auto_increment primary key,
+	writer varchar(20),
+	title varchar(60),
+	content text
+);
+
+insert into board (writer, title, content) VALUES 
+    ('홍길동', '글 1', '글의 내용 1' ),
+    ('이순신', '글 2', '글의 내용 2'),
+    ('강감찬', '글 3', '글의 내용 3'),
+    ('김수로', '글 4', '글의 내용 4'),
+    ('장길산', '글 5', '글의 내용 5'),
+    ('김수로', '글 6', '글의 내용 6'),
+    ('홍길동', '글 7', '글의 내용 7'),
+    ('이순신', '글 8', '글의 내용 8');
+
+
+BoardController
+test.html
+result.html
+basic.html&부트스트랩 파일 복붙
+build.gradle에 타임리프관련 의존성 붙여넣기
+application.properties 데이터베이스연동
+dao.xml 위치: mybatis.mapper위치 적어주기
+
+dao.xml
+jdbc패키지 BoardDto, Dao
+
+테스트
+
+
+<0213>
+_MyBatis0213 프로젝트 생성
+Lombok, MyBatis Framework, Spring Boot DevTools, Spring Web, Thymeleaf
+JDBC API, H2 Database 체크
+
+부트스트랩 static에 복붙
+dependencies에 추가(부트스트랩관련 레이아웃만드는애)
+implementation group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect', version: '3.1.0'
+
+properties파일
+--------------------------------------
+server.port=9797
+
+spring.thymeleaf.cache=false 타임리프 적용하는데 느릴까봐(?) 안해도괜찮
+
+# application.properties 파일
+
+# h2 database web으로 확인
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console
+
+# spring - h2 연결
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.url=jdbc:h2:~/spring-test-db
+# embedded Mode : db 데이터 저장 위치 :  ~/spring-test-db
+spring.datasource.username=sa
+spring.datasource.password= 사용자명, 비밀번호 넣지 말기. 임시.
+
+spring.sql.init.mode=always 초기화 항상하겠다. 
+spring.sql.init.schema-locations=classpath:schema.sql 물리적위치 만들거임.
+spring.sql.init.data-locations=classpath:data.sql
+---------------------------------------------------------
+
+templates-new-sql development-sql file-name:schema.sql-create table쿼리문
+data.sql-insert쿼리문
+
+실행-url에 /h2-console입력
+jdbc url에 jdbc:h2:~/spring-test-db 입력
+
+MyController 만들기
+
+templates에 있는 것은 .html로 요청 안됨.
+static에 있는 index는 index.html로 요청됨.
+
+test1.html만들기
+
+Model 은 서블릿에서 request기본객체를 담고있음.
+
+template밑에 layout폴더 만들기. basic.html 넣기.
+test1.html에 부트스트랩
+
+properties파일에 mybatis
+mybatis폴더, mapper폴더 만들기
+xml파일 만들기, 붙여넣기
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+jdbc패키지만들기
+Board 클래스 만들기
+
+매핑하기위한 인터페이스 만들기.
+테스트.
+mycontroller에 추가. Autowired대신에 RequiredArgsConstructor어노테이션. final추가.
+
+
+깃허브에 repository생성
+명령프롬프트
+git --version
+cd C:\_work\_MyBatis0213
+git init (깃 지역 저장소 생성)
+git config user.name "gpdms" (사용자 이름)
+git config user.email "gpdms9737@gmail.com" 
+git remote add origin https://github.com/gpdms/MyBatisH2DB.git(레퍼지토리url)
+git status
+git add . (.은현재디렉토리 ..은 상위디렉토리)
+git status
+git commit
+i누르고 Add initial files 입력
+esc
+:wq입력
+git push origin master 오류나면
+ssh-keygen -t rsa -C "gpdms9737@gmail.com"
+엔터
+비밀번호, 비밀번호 한번더 입력
+
+C: 사용자 admin .ssh에서 id_rsa.pub 메모장으로 열어서 복사
+깃허브에서 settings- ssh keys-add-붙여넣기
+
+git remote set-url origin git@github.com:/gpdms/MyBatisH2DB.git (레퍼지토리명)
+
+
+
+<0214>
+MyBatis 동적 SQL 소개,
+모달 처리,
+Session 사용 소개,
+CRUD 완성
+
+_MyBatis0213
+
+동적 SQL----------------------
+SELECT * FROM BOARD where writer = '홍길동'
+where부분을 있게 없게
+board.xml <where>태그, <if>태그
+<where>
+	<if test="writer != null">
+		writer = #{writer}
+	</if>
+</where>
+BoardMapper에 매개변수String writer추가
+controller, 테스트에 매개변수 null
+
+검색하고싶을때
+<where>
+	<if test="writer != null">
+		writer like '%${writer}%'
+	</if>
+</where>
+
+controller에 매개변수 writer
+실행해서 /test1?writer=홍
+
+
+모달---------------------------
+test1.html
+
+세션---------------------------
+MyController
+
+프로젝트발표--------------------
+
+
+<0215>
+
+Spring Data JPA--------------------
+(Java Persistence API)
+_JPA0215
+new spring starter-spring boot devtools, lombok, spring data jpa, maria db driver, thymeleaf, spring web
+
+application.properties
+MyData.java
+MyDataRepository 인터페이스: extends JpaRepository
+테스트파일.
+10번 반복
+IntStream.rangeClosed(1, 10).forEach(t->{});
+myDataRepository.save(myData); //save만든적 없는데. JpaRepository가만들어줌.
+insert는 .save()
+select all는 .findAll()
+update도 .save()
+delete는 deleteById()
+select one은 findById()
+
+
+Thymeleaf 플러그인 설치-------------------
+help-install new software-
+https://www.thymeleaf.org/eclipse-plugin-update-site/ 붙여넣기
+-add-name: thymeleaf- Thymeleaf Eclipse Plugin체크-next-next-accept-finish
+기다리면 trust창- Always trust all content체크-accept-restart now
+
+
+부트스트랩 안쓴 modal--------------
+_JPA0215-static-mtest.html
+
+<0216>
+
+Spring Data JPA--------------------
+_JPA0216만들기
+layout관련 build.gradle에 추가.(Thymeleaf관련조각 첫번째줄 복붙)
+application.properties에 추가. save as utf-8
+패키지.entity, .repository, .controller 만들기
+ddl-auto옵션 종류
+
+entity-MyData클래스생성
+repository-MyDataRepository인터페이스 생성. JpaRepository 상속.
+source-override보면 쓸수있는 메소드 볼 수 있음.
+controller-MyController클래스 생성.
+
+static에 부트스트랩 붙여넣기. template밑에 layout, view패키지 생성. layout밑에 basic.html붙여넣기
+controller에 getmapping추가하고 list.html생성
+
+
+
+<0217>
+_Template0217
+7개 체크
+
+mariaDB 쿼리문 복붙. 경고나오긴하는데 됨.
+
+mySQLworkbench에서 mariaDB접속 가능.
+connectionName:마음대로
+port:3307
+username: springboot
+비밀번호:1234
+
+상단탭 Database-reverse engineer-stored connection:정한거-next-next-체크
+-ERD볼수있음.
+dept하나에 emp여러사람. 1:다 관계.
+
+오늘은 이미 테이블 만들어놓은 상태에서 jpa만들기. ddl을 none으로 해서.
+
+패키지만들기, properties 복붙.
+build.gradle에 부트스트랩관련 implement복붙
+static에 부트스트랩 넣기
+entity 패키지 밑에 클래스파일 만들기.
+엔티티 하나마다 repository를 만들어야함.
+
+JpaRepository는 데이터베이스에 있는걸 entity로 가져오는 일을 해줌.
+
+jdbc패키지에 인터페이스 생성
+xml파일에 동적sql작성
+
+테스트
+
+
+<0220>
+import하기 전에 파일명바꾸기. settings.gradle에서 파일명바꾸기. .project바꾸기
+파일 잘라내기 - workspace에 붙여넣기 - import하기
+
+_JPA0220
+entity에 Movie클래스 생성, Poster클래스생성
+poster에 먼저 @ManyToOne
+Movie에 @OneToMany
+테스트
+
+아나콘다 설치
+주피터 실행.
+C: -사용자-admin-최혜은.ipynb
+
+
+<0221>
+_JPA0221
+ManyToOne, OneToMany
+
+mybatis는 매핑시켜주는것.쿼리문 날려줌.
+JPA는 자바에서 데이터베이스 관리.
+
+Master클래스
+Slave 클래스
+MasterRepository인터페이스
+
+
+<0222>
+_JPA0222
+OneToOne
+페이징
+
+OneToOne----------------------
+entity-productDetail, Product
+repository-ProductDetailRepository, ProductRepository
+테스트
+
+페이징----------------------
+MyController.java
+page.html
+basic.html
+page2.html
+test.html
+
+@PageableDefault기능: 페이지 번호와 페이지 크기를 지정하는데 사용하는 어노테이션.
+속성 size, page, sort, direction,..
+타임리프
+th:with
+
+
+<0223>
+_spring0223
+
+
+repository, controller, service어노테이션은 bean(객체생성)을 포함해서 +기능.
+
+Main.java의 main메소드. 
+
+<0227>
+인텔리제이 설치
+java -version
+
+file-new-spring initializr
+Name: _sb0227
+Group: com.study
+Artifact: springboot\
+Java: 11
+packaging: war
+
+체크
+spring boot devtools,
+lombok,
+spring data JPA,
+MariaDB driver,
+Thymeleaf
+Spring web
+
+create
+
+아무것도 안했는데 에러남.
+인텔리제이는 야박,, 미리 넣어놓으면 오류.
+꼭 필요한 것만 장착해야.
+
+build.gradle에서 
+springframework.boot version ‘2.7.8’
+sourceCompatibility =’11’로 변경
+코끼리 누르기(refresh기능임)
+
+main폴더 밑에가 주로 우리가 쓰던것.
+테스트에서 초록세모 버튼으로 메소드만 돌릴 수 있음. junit 안 써도.
+
+sts에있는것 인텔리제이로.
+(혹시모르니 기존프로젝트 금요일에 한 미니프로젝트 압축해서 저장해놓기.)
+sts에서 프로젝트 안 static안에있는것들(부트스트랩) 복사-인텔리제이 static에 붙여넣기.
+오른쪽 위. 메인메소드 있는 곳(—application)해놓고 재생.
+에러.
+application.properties에 sts에서 했던 것 복붙해넣기(mybatis안하겠습니다. 지우기)
+다시 실행.
+url에 localhost:포트번호 입력하고 부트스트랩 뜨는지 확인.
+
+sts에 있는 com.study.springboot밑에 있는 패키지들(jdbc는 지우고, entity, controller, repository) 복사. 인텔리제이에 붙여넣기.
+오류남. import부분을 지우고 새로하기. alt+enter(sts에서 17버전, 인텔리에서 11버전이라서 그럼)
+
+sts에 template밑 layout,view폴더 복사, 인텔리제이에 붙여넣기.
+실행. 오류.
+controller에서 mapper지우기. 관련된 empDeptMapper부분들 다 주석처리.
+
+build.gradle에 implementation group: thymeleaf-layout-dialect부분 복붙.코끼리 누르기.
+
+실행시켜서 부트스트랩 잘 나오는지 확인. 이런 방식으로 금요일날 프로젝트 이어서 하기.
+
+
+file-settings-build,exception,deployment-compiler-
+build project automatically 체크하기.
+advanced setting-allow auto-make to start even if developed applicati—체크
+ddl-auto=none으로.
+
+
+
+<0228>
+
+인터페이스명에 마우스오른쪽-Go To-Test-create new test
+
+transaction 단위프로그램.전송이 외부압력으로 잘못됐을때, 처음으로 돌아가게. 전송안한걸로. 
+실패시 rollback, 성공시 commit.
+
+
+다른프로젝트 열기
+file-new-module from Existing sources
+
+
+
+<0302>
+jQuery Ajax
+Service 만들기
+
+
+크롬에서 livereload 검색 확장프로그램에추가, 고정
+
+인텔리제이
+하단 services-add service -run configuration type - spring boot
+
+ctrl+shift+f9 rebuild
+
+
+
+<0306>
+영화목록crud 프로그램 마무리
+쇼핑몰(알라딘 참조) ERD 그리기(문서파일로 남기기)
+쇼핑몰 화면 설계 작성(문서 파일로 남기기)
+
+
+
+<0307>
+새프로젝트 emjpa0307
+build.gradle에
+id 'io.spring.dependency-management' version '1.1.0'
+sourceCompatibility = '11' 로 변경.
+implementation 'org.hibernate:hibernate-entitymanager:5.4.28.Final'추가.
+META-INF폴더 resource에 붙여넣기
+
+EntityManager
+jpa repository보다 더 저수준
+엔티티매니저랑 jpa를 같이 사용.이유?
+
+패키지 entity, controller, repository생성
+entity 생성.(Person, MyEntityManager)
+
+
+
+<0309>
+emjpa0308 이어서 함.
+
+java: @Builder will ignore the initializing expression entirely. If you want the initializing expression to serve as default, add @Builder.Default. If it is not supposed to be settable during building, make the field final.
+
+
+
+<0310>
+jsp로 만들기(Thymeleaf랑 동시사용불가)
+_jsp0310
+
+의존성주입
+implementation 'org.apache.tomcat.embed:tomcat-embed-jasper' //jsp
+    implementation 'javax.servlet:jstl' //jsp
+
+application.properties에추가
+spring.mvc.view.prefix=/WEB-INF/views/
+spring.mvc.view.suffix=.jsp
+
+
+
+<0314>
+커스텀태그 만들기(jsp책 16장)-JSTL의 끝판왕
+<jsp:include>대신에부트스트랩 넣으려고.
+
+
+몽고DB
+mongodb다운로드
+version: 4.2.24로
+platform: windows
+package: msi
+
+complete-디폴트그대로 쭉next
+
+설치후 compass에서 connect
+
+MongoDB
+(RDBMS아님. 분산NoSQL 데이터베이스 시스템. Json과 유사한 BSON(Binary Json)사용. 스키마 없음. )
+collection - table
+document - column
+
+설정-고급시스템설정-환경변수-사용자변수 편집-새로만들기-몽고db설치된 bin폴더까지 경로 붙여넣기
+
+명령프롬프트 mongo -version
+mongo //mongo에 접속
+show dbs //데이터베이스 목록
+use 데이터베이스명 //이 db를 사용하겠다.없으면 새로 만들어짐.
+db//현재세팅된 데이터베이스
+db.myColl.insertOne({name : "홍"}) //db.컬렉션(테이블명).인서트
+show collections //세팅된 데이터베이스 안에 있는 컬렉션 목록
+db.dropDatabase() //데이터베이스 삭제
+db.myColl.find() //조회 db.테이블명.find()
+db.myDataMongo.find({name:"홍길동"}) //이름검색
+db.myDataMongo.find({name:/길/}) // 슬래시가 와일드카드같은것.
+
+<0315>
+
+3.21.화요일 기업프로젝트 설명회
+기업: 선도소프트
+4월 한달만 프로젝트 진행.
+10명만 선발(5명씩)
+
+
+몽고DB
+jpa (MongoRepository, jpql)
+ModelAndView
+
+EntityManager로 몽고DB다룰 순 없음.
+extends MongoRepository뭘까..JpaRepository가 아니라..?
+
+<0316>
+_upload0316
+파일 업로드
+마리아db(사용하진않음)
+
+
+
+<0317>
+_upload0316이어서
+파일업로드
+
+
+<0320>
+기업프로젝트 4월 3일부터.
+5월초에 발표.
+설명회 듣고 기업프로젝트 참여할지말지 정함.
+다음 주에 팀 구성
+
+기업프로젝트하시는 분들도 프로젝트 따로 하나 하셔야할거예요.
+포트폴리오로 만들기엔 좀 부족..?해서
+-------------------------------------------------------
+_upload0316사진업로드이어서
+remove누르면 삭제
+----------------
+node.js 다운로드 LTS
+체크 아무것도 안하고 다 next
+
+Express.js 설치
+
+cmd에서
+node -v
+npm
+npm install express-generator -g
+express --version
+-----------------------------------
+express mastering-git-github --no-view //mastering-git-github라는 이름의 디렉토리 만듦. --no-view는 옵션
+cd mastering-git-github
+npm install
+npm start //방화벽 뜨면 개인 네트워크 체크해주기
+웹브라우저에서 localhost:3000접속했을 때 Express Welcome to Express나오면 성공.
+
+Visual Studio Code에서 open file해서 mastering-git-github폴더 열기(디렉토리 구조 볼 수 있음.)
+
+명령프롬프트 다시 돌아와서
+ctrl+c //웹서비스(express) 종료
+y //yes
+
+깃허브에 올리기
+깃헙에 repository만들기. mastering-git-github로.
+저장소 copy
+
+git init
+git config user.name "붙여넣기"
+git config user.email "내 이메일적기"
+(mastering-git-github 폴더-.git-config 파일 들어가보면 확인가능)
+git remote add origin 붙여넣기(오른쪽마우스)
+
+mastering-git-github폴더 아래에 .gitignore 파일 새로만들기.
+메모장으로 열어서 아래 내용 적기.
+#깃으로 관리하지 않을 파일 지정
+logs
+*.log
+npm-debug.log*
+node_modules/
+
+
+git add . //현재디렉토리 아래로 다
+git commit
+
+i 누르면 insert
+Add initial files and .gitignore 쓰고 esc
+:wq 엔터
+
+git push origin master
+다른사람 계정때문에 안되면 제어판-모든제어판항목-자격증명관리자-Windows자격증명 https:github어쩌구 다른 사람 계정 제거
+
+index.html 수정후
+cmd에서 
+git status
+git add .
+git status //초록색으로 바뀜
+git commit후 i 메세지 작성, :wq엔터
+git push origin master
+
+----여기부터 놓침
+vue_test디렉토리 생성
+
+npm install -g @vue/cli //Vue Cli를 전역으로 설치
+vue create my-project
+cd my-project
+run
+
+
+
+
+
+
+<0321>
+vue.js
+
+프로젝트 경로 복사
+C:\Users\admin\IdeaProjects\_vuejs0321
+
+명령프롬프트
+cd 경로붙여넣기
+mkdir vue
+cd vue
+vue init webpack vue-front (처음에 에러남) //vue-front라는 폴더를 만들어줌
+npm i -g @vue/cli-init
+
+? Project name vue-front
+? Project description A Vue.js project
+? Author gpdms <gpdms9737@gmail.com>
+? Vue build standalone
+? Install vue-router? Yes
+? Use ESLint to lint your code? No
+? Set up unit tests No
+? Setup e2e tests with Nightwatch? No
+? Should we run `npm install` for you after the project has been created? (recommended) npm
+다 디폴트로 엔터
+
+C:\Users\admin\IdeaProjects\_vuejs0321\vue\vue-front\config에 들어가서 index.js파일열기
+
+build 부분 수정 (vue프로젝트가 빌드 시, 결과물을 저장해두는 파일을 지정하기 위한 설정)
+build: {
+    // Template for index.html
+    index: path.resolve(__dirname, '../../../src/main/resources/templates/vue/index.html'),
+
+    // Paths
+    assetsRoot: path.resolve(__dirname, '../../../src/main/resources/static/vue'),
+    assetsSubDirectory: 'static',
+    assetsPublicPath: 'vue/',
+
+다시 명령프롬프트
+cd vue-front
+npm run build
+
+build.gradle에 추가
+implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+
+VS에서 vue-front 폴더 open
+MyApp.vue만들어서 수정하고
+main.js에서 수정
+명령프롬프트에서 매번 npm run build 하면 스프링부트에 가서 붙음
+
+
+
+
+
+<0322>
+
+_template0322
+
+인텔리제이로 템플릿 프로젝트. 모든 예제 담아보기
+jpa는 entityManager쓰는걸 추천.
+
+build.gradle파일보기
+properties보기
+empDeptDao.xml
+:mybatis 동적쿼리
+EmpDeptMapper.java
+MyController
+
+
+<0323>
+퀵정렬
+
+_template0323
+
+
+메소드 static붙으면 객체 생성상관없이.
+
+
+<0324>
+_template0324
+
+vue.js
+
+프로젝트 경로 복사
+C:\Users\admin\IdeaProjects\_template0324
+
+명령프롬프트
+cd 경로붙여넣기
+mkdir vue
+cd vue
+vue init webpack vue-front (처음에 에러남) //vue-front라는 폴더를 만들어줌
+npm i -g @vue/cli-init
+
+다 디폴트로 엔터. 하나만yes,다no
+? Project name vue-front
+? Project description A Vue.js project
+? Author gpdms <gpdms9737@gmail.com>
+? Vue build standalone
+? Install vue-router? Yes
+? Use ESLint to lint your code? No
+? Set up unit tests No
+? Setup e2e tests with Nightwatch? No
+? Should we run `npm install` for you after the project has been created? (recommended) npm
+
+
+인텔리제이로 프로젝트열어서 vue-vue-front-config-index.js
+build 수정하기
+
+다시 명령프롬프트
+cd vue-front
+npm run build
+
+스프링부트 재실행
+
+컨트롤러에 매핑
+@GetMapping("/vue")
+    public String vue() {
+        return "vue/index";
+    }
+
+url에 /vue 실행해보기
+
+MyApp.vue를 src에다가 붙여넣기 
+main.js 수정
+
+
+<0328>
+세션
+security
+아이디 user 콘솔에 비밀번호
+security 잠시 주석
+
+last0328
+security0327 선생님파일
+
+
+<0329>
+last0329
+암호화
+
+
+
+<0330>
+querydsl
+
+build.gradle
+.properties
+emp 복붙
+오른쪽사이드바 build-build-오른쪽마우스run
+프로젝트 build폴더-querydsl폴더-QEmp생김
+
+JPAQueryFactory

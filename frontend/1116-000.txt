@@ -1,0 +1,7 @@
+jquery.com에서 jquery UI 소스볼수ㅇ.
+UI CDN반드시 달아줘야 작동.
+
+ToDoList
+array타입으로 되면 안되고 객체로.
+
+객체는 아이디를 가지고 있어야. 주민등록증같은것.

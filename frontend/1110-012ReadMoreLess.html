@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       #more {
+        display: none;
+       }
+
+    </style>
+</head>
+<body>
+    <h1>Read More Read Less Button</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores odio autem suscipit totam ipsam, adipisci distinctio dignissimos atque neque corporis vel dolorum. 
+        <span id="dot">...</span> <span id="more">Necessitatibus, corrupti blanditiis? Veritatis porro quisquam unde amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quos voluptas cupiditate est beatae molestiae facere. Veniam dignissimos officiis reprehenderit iste quisquam omnis beatae deserunt alias doloremque consequatur. Quae, sequi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quod officiis molestiae iure? Soluta repellat sequi explicabo doloribus quasi, culpa deserunt fugit porro quod, mollitia, saepe libero sed non velit!</p></span>
+   
+    <button id="morebtn" onclick="myFunction()">Read More</button>
+
+
+    <script>
+        function myFunction(){
+            let elementDot = document.getElementById("dot");
+            let elementMore = document.getElementById("more");
+            let elementBtn = document.getElementById("morebtn");
+
+            if(elementBtn.innerText == "Read Less") {
+            elementDot.style.display = "inline";
+            elementMore.style.display = "none";
+            elementBtn.innerText = "Read More"
+            } else {
+
+            elementDot.style.display = "none";
+            elementMore.style.display = "inline";
+            elementBtn.innerText = "Read Less"
+            }
+        }    
+       
+           
+
+        
+    </script>
+
+</body>
+</html>

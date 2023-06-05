@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: "맑은 고딕", 돋움, 굴림;
+            /* 대표서체에 쌍따옴표 */
+
+        }
+
+        #wrapper {
+            width: 800px;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        header {
+            width: 100%;
+            height: 150px;
+            background-color: red;
+            background-image: url(iu.jpg);
+            background-repeat: no-repeat;
+            /* background color와 image를 동시에 쓰고싶으면 나눠서쓰기. repeat도 나눠서 쓰기 */
+            background-position: right center;
+            /* background-position: 수평위치 수직위치 */
+            background-size: 100px 100px;
+        }
+
+        header nav {
+            float: left;
+            width: 70%;
+            margin-top: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            float: left;
+            font-weight: 600;
+            margin: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+
+        }
+        section {
+            float: left;
+            width: 580px;
+            padding: 5px;
+
+        }
+
+        section article {
+            float: left;
+            width: 250px;
+            height: 220px;
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid #ccc;
+
+        }
+
+        aside {
+            float: right;
+            width: 200px;
+            height: auto;
+            border: 1px solid darkgreen;
+            text-align: center;
+            margin-top: 105px;
+        }
+
+        img {
+            width: 90%;
+            height: auto;
+        }
+
+        footer {
+            clear: both;
+            width: 800px;
+            height: 60px;
+            line-height: 60px;
+            margin-bottom: 0;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+       
+
+        h1 {
+            font-size: 32px;
+        }
+        h2 {
+            font-size: 24px;
+        }
+        p {
+            font-size: 12px;
+            line-height: 20px;
+        }
+
+        .at1, .at2, .at3, .at4 {
+            transition: 0.3s;
+
+        }
+
+        .at1:hover {
+            background: #8ac007;
+            border: 1px solid dodgerblue;
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#">애완견종류</a></li>
+                    <li><a href="#">입양하기</a></li>
+                    <li><a href="#">건강돌보기</a></li>
+                    <li><a href="#">더불어살기</a></li>
+                </ul>
+            </nav>
+              </header>
+              <section>
+                <h1>강아지 용품 준비하기</h1>
+                <article class="at1">
+                    <h2>강아지 집</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam qui laborum saepe, adipisci eos, error quisquam quas accusantium, sed illum atque! Ullam reiciendis deleniti sit accusantium repudiandae laboriosam aliquid voluptatum.</p>
+                </article>
+                <article class="at2">
+                    <h2>강아지 먹이</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam qui laborum saepe, adipisci eos, error quisquam quas accusantium, sed illum atque! Ullam reiciendis deleniti sit accusantium repudiandae laboriosam aliquid voluptatum.</p>
+                </article>
+                <article class="at3">
+                    <h2>밥긄, 물병</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam qui laborum saepe, adipisci eos, error quisquam quas accusantium, sed illum atque! Ullam reiciendis deleniti sit accusantium repudiandae laboriosam aliquid voluptatum.</p>
+                </article>
+                <article class="at4">
+                    <h2>이름표, 목줄</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam qui laborum saepe, adipisci eos, error quisquam quas accusantium, sed illum atque! Ullam reiciendis deleniti sit accusantium repudiandae laboriosam aliquid voluptatum.</p>
+                </article>
+                
+            </section>
+            <aside>
+                    <img src="iu.jpg" alt="아이유">
+                    <img src="iu.jpg" alt="아이유">
+                    <img src="iu.jpg" alt="아이유">
+            </aside>
+            <footer>
+                <address>copyright</address>
+            </footer>
+      
+    </div>
+</body>
+</html>

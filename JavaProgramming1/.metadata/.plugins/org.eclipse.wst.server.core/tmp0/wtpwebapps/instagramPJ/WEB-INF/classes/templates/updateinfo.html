@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>ingstagram</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/updateinfo.css">
+    <link rel="shortcut icon" href="imgs/instagram.png">
+
+</head>
+<body>
+
+
+<section id="container">
+ 	<!-- 헤더 -->
+   	<div th:replace="~{/fragments/header.html :: fragment-header}"></div>
+    
+    
+    <!-- nav 사이드메뉴바  -->
+    <div th:replace="~{/fragments/nav.html :: fragment-nav}"></div>
+	
+	<!-- 메인 -->
+    <div id="main_container">
+
+        <div class="form_container">
+            <div class="form">
+
+                <h1>개인정보 수정</h1>
+                <h2>비밀번호 변경</h2>
+
+                <form action="/updatePw" method="post">
+                    <p class="login_user_name">
+                        <label for="user_name">현재 비밀번호:</label>
+                        <input type="text"  name="mem_pw">
+                    </p>
+                    
+                    
+                    <p class="login_user_password">
+                        <label for="user_password">새 비밀번호:</label>
+                        <input type="text" name="newPw">
+                    </p>
+                    
+                    <p class="login_user_nick">
+                        <label for="user_nick">새 비밀번호 확인:</label>
+                        <input type="text" name="newPwCheck">
+                    </p>
+                    <input type="submit" id="pw_submit" value="수정" class="submit_btn">
+                 </form>
+                 
+                 <form action="/updateEmail" method="post">  
+                   <h2>이메일 변경</h2>
+                     <p class="login_user_email">
+                        <label for="user_email">이메일:</label>
+                        <input type="text" name="email" th:value="${sessionEmail}">
+                    </p>
+
+                    <input type="submit" id="email_submit" value="수정" class="submit_btn">
+                </form>
+
+
+
+            </div>
+
+          
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+
+<!-- <script src="js/insta.js"></script> -->
+<script type="text/javascript">
+function signUp() {
+	alert("로그인이 필요한 기능입니다");
+}
+</script>
+
+</body>
+</html>

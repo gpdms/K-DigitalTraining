@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>instagram</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/modal.css">
+    <link rel="shortcut icon" href="/imgs/instagram.png">
+</head>
+<body>
+
+
+<section id="container">
+
+ 	<!-- 헤더 -->
+   	<div th:replace="~{/fragments/header.html :: fragment-header}"></div>
+    
+    <!-- 사이드메뉴바 nav-->
+    <div th:replace="~{/fragments/nav.html :: fragment-nav}"></div>
+
+	<!-- 메인 -->
+    <div id="main_container">
+
+        <section class="b_inner">
+
+            <div class="hori_cont">
+                <div class="profile_wrap">
+                    <div class="profile_img" >
+                    	<img id="pf_img" th:src="|/profile/${homeUser.mem_id}|" alt="프로필이미지">
+                   </div>
+                </div>
+
+                <div class="detail">
+                    <div class="top">
+                        <div class="user_name" id="user_nick" th:text="${homeUser.nickname}"></div>
+                   <!-- 본인 홈: 프로필편집,로그아웃 버튼-->     
+                        <div th:if="${session.user != null and homeUser.mem_id == session.user.mem_id}" class="top">
+	                        <a href="#" class="profile_edit" id="pfBtn">프로필편집</a>
+	                        <a href="/logout" class="logout">로그아웃</a>
+                        </div>
+                   <!-- 타인 홈: 팔로우 안되어있으면 팔로우 버튼, 되어있으면 언팔로우 버튼 -->
+							<div
+								th:if="${session.user != null and checkFlw == 0 and session.user.mem_id != homeUser.mem_id}">
+							<!-- <a th:href="@{/follow/{homeUser}(homeUser=${homeUser.mem_id})}" class="profile_edit" id="pfBtn">팔로우</a>  -->	
+								<a href="javascript:void(0);" onclick="follow();" class="" id="">팔로우</a> 
+							</div>
+							<div
+								th:if="${session.user != null and checkFlw == 1 and session.user.mem_id != homeUser.mem_id}">
+								<a href="javascript:void(0);" onclick="unfollow();" class="" id="">언팔로우</a> 
+							</div>
+                        
+                        
+                    </div>
+
+                    <ul class="middle">
+							<li><span>게시물</span> [[${postCount}]]</li>
+							<li><a href="#" id="flwerBtn" ><span>팔로워</span>[[${countFlwer}]]</a>
+							</li>
+							<li><a href="#" id="flwingBtn"><span>팔로잉</span>[[${countFlwing}]]</a>
+							</li>
+						</ul>
+						
+                    <p class="about">
+                        <span class="nick_name">갤러리</span>
+                        <span th:if="${session.user != null and homeUser.mem_id == session.user.mem_id}"class="book_mark">북마크</span>
+                    </p>
+
+                </div>
+            </div>
+
+			<!-- 갤러리 -->
+            <div class="mylist_contents contents_container active" th:if="${postCount != 0}">
+	            <div th:each="img : ${firstImgs}" class="pic">
+	          		<a th:if="${session.user != null}" th:href="@{/view/{post_id}(post_id=${img.post_id})}"> 
+						<img th:src="|/imgs/post/${img.img_id}|" width="150" height="150" alt="첫번째_미리보기_이미지">
+					</a>
+				</div>
+            </div>
+            <div th:if="${postCount == 0}" style="height:600px; margin-top:200px;">
+				<p style="font-size: 20px; color: #555;  text-align:center;">등록된 게시글이 없습니다</p>
+			</div>
+			
+			<!-- 북마크 -->
+<!--             <div class="bookmark_contents contents_container" > -->
+<!--                 <div class="pic"> -->
+<!--                     <a href="#"><img src="/imgs/img_section/img03.jpg" alt=""></a> -->
+<!--                 </div> -->
+<!--                 <div class="pic"> -->
+<!--                     <a href="#"><img src="/imgs/img_section/img01.jpg" alt=""></a> -->
+<!--                 </div> -->
+<!--                 <div class="pic"> -->
+<!--                     <a href="#"> <img src="/imgs/img_section/img02.jpg" alt=""></a> -->
+<!--                 </div> -->
+<!--                 <div class="pic"> -->
+<!--                     <a href="#"> <img src="/imgs/img_section/img01.jpg" alt=""></a> -->
+<!--                 </div> -->
+<!--                 <div class="pic"> -->
+<!--                     <a href="#"> <img src="/imgs/img_section/img02.jpg" alt=""></a> -->
+<!--                 </div> -->
+<!--                 <div class="pic"> -->
+<!--                     <a href="#"> <img src="/imgs/img_section/img03.jpg" alt=""></a> -->
+<!--                 </div> -->
+<!--                 <div class="pic"> -->
+<!--                     <a href="#"> <img src="/imgs/img_section/img01.jpg" alt=""></a> -->
+<!--                 </div> -->
+<!--                 <div class="pic"> -->
+<!--                     <a href="#"> <img src="/imgs/img_section/img02.jpg" alt=""></a> -->
+<!--                 </div> -->
+<!--                 <div class="pic"> -->
+<!--                     <a href="#"> <img src="/imgs/img_section/img02.jpg" alt=""></a> -->
+<!--                 </div> -->
+<!--             </div> -->
+        </section>
+    </div>
+
+
+</section>
+
+  <!-- 프로필 편집 모달 -->
+	<div class="profileMd pfmodal">
+      <div class="pfmodal-body">
+		<div class="thumb_user_pf"> 
+           <div class="profile_thumb_pf" >
+              <img id="pf_img_modal" th:src="|/profile/${homeUser.mem_id}|" alt="프로필이미지">
+           </div>
+           <div class="detail">
+               <div id="modal_nick" th:text="|${homeUser.nickname}님의 프로필|"></div>
+           </div>
+		</div>
+		<hr> <label className="input-file-button" for="profimg" style="color:#0095F6;">
+  				이미지 변경
+			 </label>
+ 			 <form id="pf_form"> 
+				 <input id="profimg" type="file" name="profimg" required="required" onChange="fileChange();" style="display:none">
+	 			 <input type="hidden" name="mem_id" th:value="${homeUser.mem_id}" >
+ 			 </form> 
+        <hr> <a style="color:red;" th:onclick="delPf()">현재 사진 삭제</a>
+        <hr> <a style="color:#999;" id="pfCloseBtn">취소</a>
+        <hr>  
+        <div class="form_container">
+			<div class="form">
+				<form id="nickForm" method="post">
+					<p class="login_user_name">
+						<label for="user_name">닉네임:</label> 
+						<input type="text" name="nickname" id="modal_input_nick" th:value="${homeUser.nickname}">
+						<input type="hidden" name="mem_id" th:value="${homeUser.mem_id}">
+					</p>
+					<button type="button" th:onclick="editNickname()" class="submit_btn">닉네임 변경</button>
+				</form>
+			</div>
+        </div>
+    </div>
+    </div>
+    
+   <!---------- 팔로워 모달 -------------------->
+		<div class="followerMd flwmodal">
+			<div class="flwmodal-body">
+				<div th:if="${#lists.isEmpty(flwerList)}" class="follow_empty">팔로워 없음</div>
+				<div th:each="follower:${flwerList}" class="thumb_user">
+					<div class="profile_thumb">
+						<a th:href="@{/myHome/{mem_id}(mem_id=${follower.from_user})}">
+							<img th:src="|/profile/${follower.from_user}|" alt="프로필사진">
+						</a>
+					</div>
+					<div class="detail">
+						<div class="id">
+							<a th:href="@{/myHome/{mem_id}(mem_id=${follower.from_user})}">[[${follower.from_user}]]</a>
+						</div>
+						<div class="time">[[${follower.nickname}]]</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!------------ 팔로잉 모달 ------------->
+		<div class="followingMd flwmodal">
+			<div class="flwmodal-body">
+				<div th:if="${#lists.isEmpty(flwingList)}" class="follow_empty">팔로잉 없음</div>
+				<div th:each="following:${flwingList}" class="thumb_user">
+					<div class="profile_thumb">
+						<img th:src="|/profile/${following.to_user}|" alt="프로필사진">
+					</div>
+					<div class="detail">
+						<div class="id">
+							<a th:href="@{/myHome/{mem_id}(mem_id=${following.to_user})}">[[${following.to_user}]]</a>
+						</div>
+						<div class="time">[[${following.nickname}]]</div>
+					</div>
+				</div>
+
+			</div>
+		</div> 
+
+<script src="/js/follow_modal.js"></script>
+<script src="/js/profile.js"></script>
+<script src="/js/modal.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script th:inline="javascript">
+function signin() {
+	  alert("로그인이 필요한 기능입니다.");
+	  location.href = "/";
+}
+//------------------ 프로필 관련 
+function editNickname(){
+	var nickFormData = $("#nickForm").serialize();
+	$.ajax({
+	    type: 'post',
+	    url: '/updateNickname',
+	    data: nickFormData,
+		success: function (data) {
+		        alert("닉네임이 변경되었습니다."); 
+		        var nickname = data;
+		        $("#user_nick").replaceWith(`<div class="user_name" id="user_nick"> ${nickname} </div>`);
+		        $("#modal_nick").replaceWith(`<div id="modal_nick"> ${nickname}님의 프로필 </div>`);
+		        modalClose();
+		    },
+		    error: function (err) {
+		    	alert("닉네임을 변경할 수 없습니다.");
+		    	console.log(err);
+		    }
+		}) 
+}
+// 사진 삭제
+function delPf() {
+	$.ajax({
+	    type: 'get',
+	    url: '/deletePfImg',
+	    async: false,
+	    success: function (data) {
+	       alert("프로필 이미지가 삭제되었습니다.");
+	       refresh();
+	       modalClose();
+	    },
+	    error: function (err) {
+	    	alert("이미지를 삭제할 수 없습니다.");
+	    }
+	});
+}
+
+//사진 수정
+function fileChange() {
+    // 파일이 선택되면 업로드를 진행한다.
+    editPf();
+}
+function editPf(){
+	var formData =  new FormData($("#pf_form")[0]);
+    $.ajax({
+	    type: 'post',
+	    url: '/updatePfImg',
+	    enctype: 'multipart/form-data',
+	    data: formData,
+	    processData: false,
+	    contentType: false,
+	    cache: false,
+	    async: false,
+	    success: function (data) {
+	        alert("프로필 이미지가 변경되었습니다.");
+	        refresh();
+	        modalClose();
+	    },
+	    error: function (err) {
+	        console.log(err);
+	        alert("이미지를 변경을 할 수 없습니다.");
+	        modalClose();
+	    }
+	})
+} 
+function refresh() {
+	const mem_id = /*[[${homeUser.mem_id}]]*/;
+	location.href = "/myHome/"+ mem_id ;
+}
+
+
+//-------------팔로우하기---------------
+function follow(){
+	console.log("팔로우클릭");
+	var mem_id = /*[[${homeUser.mem_id}]]*/;
+	var json = {"mem_id" : mem_id };
+	$.ajax({
+		type: 'post',
+		url: '/follow',
+		data: JSON.stringify(json),
+		contentType: "application/json",
+		success: function(data){
+				location.href = "/myHome/"+ mem_id ;
+		}
+	})
+}
+//------------언팔로우하기---------------
+function unfollow(){
+	console.log("언팔로우클릭");
+	var mem_id = /*[[${homeUser.mem_id}]]*/;
+	var json = {"mem_id" : mem_id };
+	$.ajax({
+		type: 'post',
+		url: '/unfollow',
+		data: JSON.stringify(json),
+		contentType: "application/json",
+		success: function(data){
+				location.href = "/myHome/"+ mem_id ;
+		}
+	})
+}
+
+
+
+
+
+</script>
+</body>
+</html>

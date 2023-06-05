@@ -1,0 +1,112 @@
+
+    /* -----------사이드바css----------------------------------------- */
+    #sidebar {
+        width: 250px;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10000;
+        background: white;
+        overflow: hidden;
+		/*  display: none;   */
+        /* transition: all 0.5s linear; */
+        border: 1px solid  rgba(0,0,0,0.1);
+      }
+      
+      #close-button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 40px;
+        height: 40px;
+        background: url(/imgs/toggle_button.jpg);
+        background-position: -41px 0;
+        cursor: pointer;
+      }
+     
+ 
+      .dep1 {
+        margin: 0;
+        padding: 5px 0 0;
+        font-size: 20px;
+        list-style: none;
+      }
+  
+      .dep1 li {
+        list-style: none;
+       	
+      }
+  
+      .dep1 li a {
+        text-decoration: none;
+        padding: 20px;
+        display: block;
+        color: #333;
+        font-weight: bold;
+        
+        
+      }
+  
+      .dep1 li a p {
+        font-weight: 600;
+        display: inline;
+       
+        
+      }
+  
+      #menu {
+        color: #333;
+        font-weight: 600;
+        font-size: 20px;
+        padding-top: 20px;
+      }
+      
+      .home_icon {
+      	display: inline-block;
+    	background: url(/imgs/home_black.png);
+    	background-size: cover;
+    	width: 25px;
+    	height: 25px;
+      }
+      
+      .search_icon {
+      	display: inline-block;
+    	background: url(/imgs/search.png);
+    	background-size: cover;
+    	width: 25px;
+    	height: 25px;
+      }
+      
+      .message_icon {
+      	display: inline-block;
+    	background: url(/imgs/message_black.png);
+    	background-size: cover;
+    	width: 25px;
+    	height: 25px;
+      }
+      
+      .notif_icon {
+      	display: inline-block;
+    	background: url(/imgs/heart_black.png);
+    	background-size: cover;
+    	width: 25px;
+    	height: 25px;
+      }
+      
+      .plus_icon {
+      	display: inline-block;
+    	background: url(/imgs/plus.png);
+    	background-size: cover;
+    	width: 25px;
+    	height: 25px;
+      }
+      
+      .settings_icon {
+      	display: inline-block;
+    	background: url(/imgs/settings_black.png);
+    	background-size: cover;
+    	width: 25px;
+    	height: 25px;
+      }
+      

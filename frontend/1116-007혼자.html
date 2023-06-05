@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            min-width: 100%;
+        }
+        .picture {
+            display: none;
+            min-width: 100%;
+            
+            
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+        <img class="picture" src="images/pic_1.jpg" alt="아이유1">
+        <img class="picture" src="images/pic_2.jpg" alt="아이유2">
+        <img class="picture" src="images/pic_3.jpg" alt="아이유3">
+        <img class="picture" src="images/pic_4.jpg" alt="아이유4">
+        <img class="picture" src="images/pic_5.jpg" alt="아이유5">
+    
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script>
+       let slides = document.getElementsByClassName("picture");
+       
+
+    setInterval(function(){
+        for(i=0; i<slides.length; i++){
+        slides[i].style.display="block";
+       }
+    })
+    </script>
+</body>
+</html>

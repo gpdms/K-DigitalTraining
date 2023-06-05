@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>instagram</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/modal.css">
+    <link rel="shortcut icon" href="/imgs/instagram.png">
+	<style>
+		#user_nick {
+			font-weight:600;
+			padding-right: 0;
+		}
+	</style>
+</head>
+
+<body>
+
+<section id="container">
+
+ 	<!-- 헤더 -->
+   	<div th:replace="~{/fragments/header.html :: fragment-header}"></div>
+    
+    <!-- 사이드메뉴바 nav-->
+    <div th:replace="~{/fragments/nav.html :: fragment-nav}"></div>
+
+	<!-- 메인 -->
+    <div id="main_container">
+
+        <section class="b_inner"> 
+
+            <div class="hori_cont">
+                <div class="profile_wrap">
+                    <div class="profile_img" >
+                    	<img id="pf_img" th:src="|/profile/${session.user.mem_id}|" alt="프로필이미지">
+                   </div>
+                </div>
+                <div class="detail">
+                    <div class="top del_title" >
+                        <div class="user_name" id="user_nick" th:text="${session.user.nickname}"></div>
+                        <span class="user_name">님의 삭제한 컨텐츠</span>
+                    </div>
+                    <ul class="middle"></ul>
+                    <p class="about"></p>
+                </div>
+            </div>
+
+			<!-- 갤러리 -->
+            <div class="mylist_contents contents_container active" th:if="${#lists.size(firstImgs) > 0}">
+	            <div th:each="img : ${firstImgs}" class="pic">
+	          		<a th:if="${session.user != null}" th:href="@{/restoreImgForm/{post_id}(post_id=${img.postId})}"> 
+						<img th:src="|/imgs/post/${img.imgId}|" width="150" height="150" alt="첫번째_미리보기_이미지">
+					</a>
+				</div>
+            </div>
+            <div th:if="${#lists.size(firstImgs) == 0}" style="height:600px; margin-top:200px;">
+				<p clsss="noImg_sign" style="font-size:20px; color:#555; text-align:center;">삭제한 이미지가 없습니다</p>
+			</div>
+        </section>
+    </div>
+
+
+</section>
+<script src="/js/profile.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script th:inline="javascript">
+</script>
+</body>
+</html>

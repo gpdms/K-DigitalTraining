@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 2 elements to &apos;_MyBatis0213/src/main/resources&apos;&#x0D;&#x0A;- Original project: &apos;_MyBatis0213&apos;&#x0D;&#x0A;- Destination element: &apos;_MyBatis0213/src/main/resources&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     data.sql&#x0D;&#x0A;     schema.sql&#x0D;&#x0A;- Update references to refactored element" description="Move files" destination="/src\/main\/resources=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/" element1="src/main/resources/templates/data.sql" element2="src/main/resources/templates/schema.sql" files="2" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1676248762383" units="0" version="1.0"/>
+</session>

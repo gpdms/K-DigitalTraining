@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;instagramPJ-backup/src/main/resources/templates/signin.html&apos; to &apos;signup.html&apos;" description="Rename resource &apos;signin.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/templates/signin.html" name="signup.html" stamp="1676279681778" updateReferences="true"/>
+</session>

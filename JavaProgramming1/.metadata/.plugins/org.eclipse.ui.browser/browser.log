@@ -1,0 +1,29 @@
+
+2월 03, 2023 09:32:30.452 NEW SESSION
+2월 03, 2023 09:32:30.452 [17136:340:0203/093230.450:ERROR:device_event_log_impl.cc(215)] [09:32:30.450] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+2월 03, 2023 09:32:30.454 [17136:340:0203/093230.454:ERROR:device_event_log_impl.cc(215)] [09:32:30.453] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 03, 2023 09:32:30.460 [17136:340:0203/093230.459:ERROR:device_event_log_impl.cc(215)] [09:32:30.459] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 03, 2023 09:33:28.268 [17136:5812:0203/093328.267:ERROR:util.cc(134)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+2월 03, 2023 12:39:31.489 [17136:2724:0203/123931.489:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+2월 03, 2023 14:58:27.695 [17136:2724:0203/145827.695:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+2월 03, 2023 14:58:31.668 [17136:3060:0203/145827.698:ERROR:util.cc(134)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+2월 03, 2023 14:58:31.670 [17136:11064:0203/145827.706:ERROR:get_updates_processor.cc(264)] PostClientToServerMessage() failed during GetUpdates with error 2
+2월 03, 2023 14:58:31.672 [17136:2724:0203/145831.521:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
+2월 03, 2023 14:58:31.673 [17136:2724:0203/145831.589:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
+2월 03, 2023 16:22:40.892 [17136:340:0203/162240.892:ERROR:device_event_log_impl.cc(215)] [16:22:40.891] USB: usb_service_win.cc:307 SetupDiEnumDeviceInterfaces: 사용 가능한 데이터가 없습니다. (0x103)
+2월 03, 2023 16:22:40.893 [17136:340:0203/162240.893:ERROR:device_event_log_impl.cc(215)] [16:22:40.892] USB: usb_service_win.cc:307 SetupDiEnumDeviceInterfaces: 사용 가능한 데이터가 없습니다. (0x103)
+2월 03, 2023 17:14:09.19 [17136:340:0203/171409.019:ERROR:interface_endpoint_client.cc(695)] Message 1 rejected by interface blink.mojom.WidgetHost
+2월 03, 2023 17:14:09.19 [17136:340:0203/171409.019:ERROR:interface_endpoint_client.cc(695)] Message 1 rejected by interface blink.mojom.WidgetHost
+
+2월 15, 2023 09:10:46.122 NEW SESSION
+2월 15, 2023 09:10:46.122 [18180:15924:0215/091046.121:ERROR:device_event_log_impl.cc(215)] [09:10:46.121] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+2월 15, 2023 09:11:43.886 [18180:10612:0215/091143.885:ERROR:util.cc(134)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+
+2월 22, 2023 09:25:04.77 NEW SESSION
+2월 22, 2023 09:25:04.77 [6260:14752:0222/092504.076:ERROR:device_event_log_impl.cc(218)] [09:25:04.076] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 22, 2023 09:25:04.78 [6260:14752:0222/092504.078:ERROR:device_event_log_impl.cc(218)] [09:25:04.078] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 22, 2023 09:25:57.849 [6260:14752:0222/092557.849:ERROR:interface_endpoint_client.cc(695)] Message 0 rejected by interface blink.mojom.WidgetHost
+
+2월 22, 2023 20:13:50.312 NEW SESSION
+2월 22, 2023 20:13:50.312 [9108:16820:0222/201350.312:ERROR:device_event_log_impl.cc(218)] [20:13:50.310] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+2월 22, 2023 20:13:50.314 [9108:16820:0222/201350.314:ERROR:device_event_log_impl.cc(218)] [20:13:50.313] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)

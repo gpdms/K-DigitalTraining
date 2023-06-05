@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 20px;
+            padding: 20px;
+            line-height: 1;
+            font-family: "Open Sans", sans-serif;
+            font-size: 1em;
+            background: #555;
+            color: #000;
+        }
+        .container .title {
+            margin: 0 0 35px;
+            padding: 0;
+            font-size: 1.5em;
+            font-weight: 300;
+            color: #000;
+        }
+        .container .colorPicker div {
+            float: left;
+            margin-right: 6px;
+            width: 80px;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            font-size: 0.875em;
+            color: #000;
+            cursor: pointer;
+        }
+        </style>
+        
+</head>
+<body>
+    <div class="container">
+        <div class="colorPicker">setin
+            <div>#7d5947</div>
+            <div>#7e6c5b</div>
+            <div>#7f7260</div>
+            <div>#967070</div>
+            <div>#92705c</div>
+        </div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+    <script>
+        $(function(){
+            $(".colorPicker div").eq(0).css({"background-color":"#7d5947"});
+            $(".colorPicker div").eq(1).css({"background-color":"#7e6c5b"});
+            $(".colorPicker div").eq(2).css({"background-color":"#7f7260"});
+            $(".colorPicker div").eq(3).css({"background-color":"#967070"});
+            $(".colorPicker div").eq(4).css({"background-color":"#92705c"});
+        
+        
+            $(".colorPicker div").click(function(){
+                let color = $(this).text();
+
+                $("body").animate({"background-color":color}), 1000});
+            });
+
+
+    </script>
+
+
+</body>
+</html>

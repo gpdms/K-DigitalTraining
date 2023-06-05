@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Chapter 04-01 - jQuery 최고의 교과서</title>
+<link rel="stylesheet" href="./css/normalize.css">
+<link rel="stylesheet" href="./css/main.css">
+
+<script src="./js/vendor/jquery-1.10.2.min.js"></script>
+<script src="./js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="./js/main.js"></script>
+<script>
+    $(function(){
+        let duration = 300;
+
+        $("#buttons1 button:nth-child(-n+4")
+        .on("mouseover", function(){
+            $(this).stop().animate({
+                "background-color": "red",
+                color: "#fff"
+            }, duration);
+        })
+
+        .on("mouseout", function(){
+            $(this).stop().animate({
+                "background-color": "#fff",
+                color: "#000"
+            }, duration);
+        });
+    
+    //2행
+    $("#buttons1 button:nth-child(n+5):nth-child(-n+8)")
+        .on("mouseover", function(){
+            $(this).stop().animate({
+                "border-width": "12px",
+                color: "#333"
+            }, duration);
+        })
+        .on("mouseout", function(){
+            $(this).stop().animate({
+                "border-width": 0, //또는 "0px"
+                color: "#000"
+            }, duration);
+        });
+
+    //3행
+    $("#buttons1 button:nth-child(n+9)")
+        .on("mouseover", function(){
+            $(this).find("> span") //그냥span말고 span안에있는span
+            .stop().animate({width: "100%"}, duration);
+        })
+        .on("mouseout", function(){
+            $(this).find("> span")
+            .stop().animate({width: "0%"}, duration);
+        });
+
+    
+    });
+
+    
+
+    
+</script>
+</head>
+<body>
+
+<header class="page-header" role="banner">
+    <h1>Creative jQuery Sample</h1>
+</header>
+
+<div class="page-main" role="main">
+
+    <div id="buttons1">
+        <h2>BUTTONS1</h2>
+        <div class="inner clearfix">
+            <button>Albatross</button>
+            <button>Bishop</button>
+            <button>Canary</button>
+            <button>Duck</button>
+            <button>Eagle</button>
+            <button>Falcon</button>
+            <button>Goose</button>
+            <button>Hawk</button>
+            <button>Ibis<span class="bg"><span>Ibis</span></span></button>
+            <button>Jaeger<span class="bg"><span>Jaeger</span></span></button>
+            <button>Kingfisher<span class="bg"><span>Kingfisher</span></span></button>
+            <button>Lark<span class="bg"><span>Lark</span></span></button>
+        </div>
+    </div>
+
+</div>
+
+<footer class="page-footer" role="contentinfo">
+    <small class="copyright">COPYRIGHT &copy; <a href="http://www.shiftbrain.co.jp" target="_blank">SHIFTBRAIN Inc.</a></small>
+</footer>
+
+</body>
+</html>

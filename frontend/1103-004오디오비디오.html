@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오디오 비디오</title>
+</head>
+<body>
+    <iframe width="560" height="300" src="https://www.youtube.com/embed/8udGFhaJHqQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br><br> 
+    <!-- br태그는 닫지 않음. img태그도 안닫음 -->
+    <!-- 이 부분은 유튜브를 삽입한 부분입니다. -->
+    <!-- 주석은 컨트롤과 슬래시 -->
+    <audio src="iu.mp3" controls loop autoplay muted></audio>
+    <video src="iu.mp4" controls loop autoplay muted></vedio>
+    <!-- controls 사용자가 컨트롤할 수 있게 뜸.
+        loop 무한반복. 음악이끝나면 다시 처음으로 무한.
+        autoplay 자동재생.
+        muted 음소거. muted를 넣어야 autoplay가 먹음 -->
+    
+    <!-- 블락 개념의 태그: 한줄 다 먹고 들어가는 태그
+        인라인 개념의 태그: 한줄에 같은 태그가 여러개 사용될 수 있는 태그 -->
+
+    
+    <!-- ???왜 비디오 오디오랑 동시에 안뜨지 -->
+    <hr> 오늘은 개강일
+    <!-- hr은 닫지않아도되는태그. 수평선.
+        한줄 다 잡아먹는 태그이기 때문에 글자가 아래에. -->
+    <a href="#">링크1</a><a href="#">링크2</a>
+    <!-- 인라인: 한줄에 여러개 사용될 수 있음. -->
+
+    <!-- table>tr*3>td*3 -->
+    <table border="1" width="300" height="300">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>오늘은 개강일
+    <!-- 테이블도 블락개념. 한줄 다 잡아먹음. -->
+
+    <!-- li도 블락. 인라인은 절대 블락을 감쌀 수 없다.-->
+    <!-- 1. 블락과 인라인의 관계
+            1) 블락은 인라인을 감쌀 수 있다.
+            2) 블락은 블락을 감쌀 수 있다.
+            3) 인라인은 인라인을 감쌀 수 있다.
+            4) 인라인은 절대 블락을 감쌀 수 없다. -->
+    <ul>
+        <a href="http://www.apple.com"><li>월요일</li></a>
+        <!-- 먹었지만 웹표준 어긋난것. -->
+        <li><a href="http://www.apple.com">월요일</a></li>
+        <li>화요일</li>
+        <li>수요일</li>
+
+        <!-- li는 블락. a태그는 인라인. 인라인은 블락을 감쌀 수 없음. -->
+    </ul>
+</body>
+</html>

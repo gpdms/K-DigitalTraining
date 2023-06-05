@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>Feed</title>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<section id="container">
+		<!-- 헤더 -->
+		<div th:replace="/fragments/header.html :: fragment-header"></div>
+
+		<!-- nav 사이드메뉴바  -->
+		<div th:replace="/fragments/nav.html :: fragment-nav"></div>
+
+		<section id="main_container">
+			<div class="inner">						
+				<input type="hidden" id="page" value="1">
+				<div class="side_box">					
+					<article class="story">
+						<header class="story_header">
+							<div>검색된 아이디</div>
+						</header>
+						<div class="scroll_inner">
+						<div th:if="${#lists.isEmpty(searchList)}" class="follow_empty">없음</div>
+							<div th:each="search : ${searchList}" class="thumb_user">		
+								<div class="profile_thumb">
+								<a th:href="@{/myHome/{mem_id}(mem_id=${search.mem_id})}">
+									<img th:src="|/profile/${search.mem_id}|" alt="프로필사진">
+								</a>
+								</div>
+								<div class="detail">
+									<div class="id">
+										<a th:href="@{/myHome/{mem_id}(mem_id=${search.mem_id})}">[[${search.mem_id}]]</a>
+									</div>
+									<div class="time">[[${search.nickname}]]</div>
+								</div>
+							</div>
+						</div>
+					</article>					
+				</div>
+			</div>
+		</section>
+	</section>
+	
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

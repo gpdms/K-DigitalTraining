@@ -1,0 +1,24 @@
+
+
+001
+-icludes() 사용 
+let skills = ["HTML", "CSS", "Javascript", "React"]
+Javascript와 React 둘 다 할 줄 안다면 "합격!" Javascript와 React둘 중하나만 할줄 안다면
+"예비", 두 스킬이 없다면 "탈락"을 보여주는 프로그램을 짜시오
+
+
+----------------------------------
+002
+
+-연산 우선 순위
+()
+단항연산자
+산술연산자
+비교연산자
+논리연산자
+대입연산자
+
+
+문법 HTML
+<element data-*="somevalue">
+

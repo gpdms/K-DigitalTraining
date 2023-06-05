@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택문</title>
+    <style>
+        .red {
+            color: red;
+            font-size: 32px;
+        }
+    </style>
+    <script>
+        // var num = prompt ("좋아하는 숫자가 뭐예요?");
+
+        // if(num % 2 == 0) {
+        //     document.write("당신이 좋아하는 숫자는 짝수네요.");
+        // } else {
+        //     document.write("당신이 좋아하는 숫자는 홀수네요.");
+        // }
+
+        // var jumsu = prompt("수학점수 몇점이에요?");
+
+        // if(jumsu >= 90 && jumsu <= 100) {
+        //     document.write("A학점 입니다.");
+        //  }  else if (jumsu >= 80 && jumsu < 90) {
+        //     document.write("B학점 입니다.");
+        //  } else if (jumsu >= 70 && jumsu < 80) {
+        //         document.write("C학점 입니다.");
+        //  } else if (jumsu >= 60 && jumsu < 70) {
+        //         document.write("D학점 입니다.");
+        //  }   else {
+        //         document.write("F학점 입니다. 계절학기에서 만나요.");
+        //  }
+       
+        // var site = prompt("네이버, 네이트, 다음, 구글 중에서 즐겨 찾는 사이트는?");
+        // var url;
+
+        // switch(site){
+        //     case "구글" : url = "www.google.com";
+        //     break;
+
+        //     case "네이버" : url = "www.naver.com";
+        //     break;
+
+        //     case "다음" : url = "www.daum.net";
+        //     break;
+
+        //     case "네이트" : url = "www.nate.com";
+        //     break;
+
+        //     default: alert("여기에는 없는 사이트에요.")
+        //     location.reload();
+        // }
+
+        // if(url) {location.href = "http://" + url};
+        // // 특정 사이트로 이동시킴.
+
+
+        for (var i=1; i < 10 ; i++) {
+            document.write("반복문" + i, "<br>");
+        }
+        document.write("<br>");
+
+        for (var i=10; i > 0 ; i--) {
+            document.write("반복문" + i, "<br>");
+        }
+
+
+        for(var i=1; i <=100 ; i++) {
+            if (i % 5 == 0 && i % 7 != 0) {
+                document.write("<p class='red'>" + i +"</p>")
+            }
+        }
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

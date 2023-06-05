@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+    <style>
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 20px;
+          height: 3000px;
+        }
+        
+        #myBtn {
+          display: none;
+          position: fixed;
+          bottom: 20px;
+          right: 30px;
+          z-index: 99;
+          font-size: 18px;
+          border: none;
+          outline: none;
+          background-color: red;
+          color: white;
+          cursor: pointer;
+          padding: 15px;
+          border-radius: 4px;
+        }
+        
+        #myBtn:hover {
+          background-color: #555;
+        }
+        * {
+        margin: 0;
+        padding: 0;
+        }
+        </style>
+
+      
+
+</head>
+<body>
+    <button onclick="topFunction()" id="myBtn">TOP</button>
+    <div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure nihil laborum eius sapiente culpa est odit fuga, placeat porro sint voluptatem, autem blanditiis minima, animi rerum cupiditate? Beatae, veniam minus!</p>
+    </div>
+   
+   <script>
+        let mybutton = document.getElementById("myBtn"); //스크립트가 헤드에 있었다면, myBtn을 끌어오지 못함.
+
+        window.onscroll = function(){scrollFunction()};
+
+        function scrollFunction(){
+            //크로스부라우징을 위해. 어떤 브라우저에서는 앞에꺼가 먹고 어떤 브라우저에서는 뒤에꺼가 먹고. 그래서 둘다 or논리연산자로.
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                
+                mybutton.style.display = "block"; //버튼이 보이게
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@200;300;400;500;600;700&display=swap');
+    </style>
+
+  <style>
+     body {
+      font-family: 'IBM Plex Sans KR', sans-serif;
+      margin: 0 auto;
+      padding: 0;
+      width: 1250px;
+      height: 100vh;
+      overflow: auto;
+      /* 스크롤바 표시 지정 */
+    }
+
+    body::-webkit-scrollbar {
+      /* 스크롤바 너비 지정 */
+      width: 10px;
+      /* 스크롤바 배경 색상 지정 */
+      background-color: #f1f1f1;
+    }
+
+    /* body 스크롤바 thumb 스타일 지정 */
+    body::-webkit-scrollbar-thumb {
+      /* 스크롤바 thumb 색상 지정 */
+      background-color: #ccc;
+    }
+
+
+    /* -----------헤더css------------------------------ */
+    #top {
+      width: 1250px;
+      height: 260px;
+      /* border: 1px solid #ccc; */
+      background-color: gainsboro;
+      transition: 0.4s;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+    }
+
+    #menu-button {
+      position: absolute;
+      left: 25px;
+      top: 5px;
+      width: 40px;
+      height: 40px;
+      background: url(toggle_button.jpg);
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    #profile {
+      display: inline-flex;
+      margin-top: 45px;
+      margin-left: 400px;
+      width: 30%;
+      /* border: 1px solid black; */
+
+    }
+
+    #profile-img {
+      background: url(profile-img.jpg);
+      background-size: cover;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    #profile-name {
+      text-decoration: none;
+      color: #444;
+      line-height: 150px;
+      text-align: center;
+      font-size: 24px;
+      margin-left: 30px;
+      font-weight: 500;
+    }
+
+    #user-name {
+      margin-left: -150px;
+      margin-top: 100px;
+      font-size: 20px;
+      color: #444;
+    }
+
+    #settings {
+      background: url(gear-icon.png);
+      background-size: cover;
+      width: 30px;
+      height: 30px;
+      margin-top: 58px;
+      margin-left: 25px;
+      cursor: pointer;
+
+    }
+
+    #upload-button {
+      /* display: inline-flex; */
+      background: url(plus-icon.png);
+      background-size: cover;
+      width: 120px;
+      height: 120px;
+      float: right;
+      margin-top: 65px;
+      margin-right: 200px;
+      cursor: pointer;
+    }
+
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+
+
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 5;
+      overflow: hidden;
+    }
+
+    .modal-body {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+
+      width: 250px;
+      height: 300px;
+
+      padding: 40px;
+
+      text-align: center;
+      color: black;
+
+      background-color: rgb(255, 255, 255);
+      border-radius: 10px;
+      box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+
+      transform: translateX(-50%) translateY(-50%);
+      z-index: 6;
+      overflow: hidden;
+    }
+
+    .modal-body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .modal-body ul {
+      list-style: none;
+      margin-top: 0;
+      padding: 0;
+    }
+
+    .modal-body ul li {
+      display: block;
+      padding: 20px;
+    }
+
+    .modal-body ul li a {
+      text-decoration: none;
+      font-size: 1em;
+      color: #555;
+    }
+
+    .modal-body ul li:hover {
+      background: #f1f1f1;
+    }
+
+    .modal-body ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .arrow {
+      position: absolute;
+      width: 120px;
+      padding: 8px;
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      border-radius: 8px;
+      background: #333;
+      color: #fff;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .arrow:after {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      margin-left: -10px;
+      border: solid transparent;
+      border-color: rgba(51, 51, 51, 0);
+      border-bottom-color: #333;
+      border-width: 10px;
+      pointer-events: none;
+      content: ' ';
+    }
+
+    #arrow-img {
+      display: none;
+      top: 195px;
+      left: 410px;
+
+    }
+
+    #arrow-upload {
+      display: none;
+      right: 190px;
+      bottom: 15px;
+
+    }
+
+
+
+    /* ---------------메인css--------------------------- */
+
+    section {
+      margin-top: 300px;
+    }
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      width: 1250px;
+      /* (1)자식요소(content-btn_bottom) 세로 정렬 */
+    }
+
+    .main .center {
+      /* width: 1250px; */
+      height: 600px;
+      /* border: 3px solid #ccc; */
+      /* left: 300px; */
+      overflow: hidden;
+      /* 추가 */
+      padding-top: 20px;
+      padding-left: 40px;
+    }
+
+    article {
+      width: 250px;
+      height: 250px;
+      float: left;
+      margin: 20px;
+      display: flex;
+      /* 마진 값을 주어야 article들이 분리 */
+      border-radius: 10%;
+    }
+
+    img {
+      margin: 0;
+      padding: 0;
+      width: 250px;
+      height: 250px;
+      border-radius: 10%;
+    }
+
+    /* 더보기 */
+    #btn_open {
+      text-decoration: none;
+      color: #444;
+      font-size: 20px;
+      display: block;
+      width: 1200px;
+      height: 50px;
+      display: block;
+      text-align: center;
+      margin: 20px auto;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      background-color: #ccc;
+      text-align: center;
+      text-decoration: none;
+      box-sizing: border-box;
+      font-weight: 500;
+    }
+
+    #btn_open:hover {
+      background-color:#555;
+      text-decoration: none;
+      color:lightgray;
+    }
+
+    .noContent {
+      color: #555 !important;
+      background-color: transparent !important;
+      pointer-events: none;
+    }
+
+
+    /* -----------사이드바css----------------------------------------- */
+    #sidebar {
+      width: 350px;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      background: lightgray;
+      overflow: hidden;
+      display: none;
+      /* transition: all 0.5s linear; */
+    }
+    #close-button {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 40px;
+      height: 40px;
+      background: url(toggle_button.jpg);
+      background-position: -41px 0;
+      cursor: pointer;
+    }
+    .hide {
+      display: none;
+    }
+
+
+    .dep1 {
+      margin: 0;
+      padding: 5px 0 0;
+      font-size: 20px;
+      list-style: none;
+    }
+
+    .dep1 li {
+      list-style: none;
+    }
+
+    .dep1 li a {
+      text-decoration: none;
+      padding: 20px;
+      display: block;
+      color: #333;
+      font-weight: bold;
+      
+    }
+
+    .dep1 li a p {
+      font-weight: 600;
+      display: inline;
+    }
+
+    #menu {
+      color: #333;
+      font-weight: 600;
+      font-size: 20px;
+      padding-top: 20px;
+    }
+    
+    .panel {
+      /* margin: 0;
+      padding: 0; */
+      font-size: 15px;
+    }
+
+    .panel li {
+      list-style-type:  "-";
+      margin-left: 35px !important; 
+      font-weight: 600;
+      font-size: 18px;
+    }
+/* 
+    li a.menu {
+      background: #333;
+      color: #fff;
+    } */
+
+    .panel li a:hover {
+      background: #555;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- -----헤더html------------------------ -->
+
+    <header id="top">
+      <span id="menu-button"></span>
+      <div id="profile">
+        <span id="profile-img"></span>
+        <a href="#" id="profile-name">IUtheBEST</a>
+        <span id="settings"></span>
+        <!-- 아이콘링크명시하기<a target="_blank" href="https://icons8.com/icon/54151/%EA%B8%B0%EC%96%B4">기어</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
+        <p id="user-name">이지은 님</p>
+      </div>
+      <span id="upload-button"></span>
+
+      <p class="arrow" id="arrow-img">프로필 사진 변경</p>
+      <p class="arrow" id="arrow-upload">업로드</p>
+    </header>
+
+
+    <!-- ------메인html---------------------- -->
+    <section>
+      <main class="main">
+        <div class="center">
+          <div id="tab-all" class="content"></div>
+          <div id="tab-iu" class="content"></div>
+          <div id="tab-trip" class="content"></div>
+        </div>
+
+        <a href="#" id="btn_open" onclick="button_onclick()">더보기</a>
+      </main>
+    </section>
+
+
+    <!-- --------사이드바html------------------------ -->
+    <div id="sidebar">
+      <div id="close-button"></div>
+      <p id="menu"> &nbsp; 메뉴</p>
+      <ul class="dep1">
+        <li><a class="fa-solid fa-house" herf="#"><p>&nbsp; &nbsp;홈</p></a></li>
+        <li><a class="fa-solid fa-magnifying-glass" href="#"><p>&nbsp; &nbsp;검색</p></a></li>
+        <li><a class="fa-regular fa-paper-plane" href="#"><p>&nbsp; &nbsp;메시지</p></a></li>
+        <li><a class="fa-regular fa-heart" href="#"><p>&nbsp; &nbsp;알림</p></a></li>
+        <li><a class="fa-solid fa-list" href="#" id="my-post"><p>&nbsp; &nbsp;내 게시물</p></a>
+          <ul class="panel" id="panel">
+            <li><a href="#tab-all" class="btn">전체</a></li>
+            <li><a href="#tab-iu" class="btn">아이유</a></li>
+            <li><a href="#tab-trip" class="btn">여행</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!---------------- 모달은 되도록 body의 끝부분에 있어야!----------- -->
+    <div class="modal">
+      <div class="modal-body">
+        <ul>
+          <li><a href="#">프로필 변경</a></li>
+          <li><a href="#">비밀번호 변경</a></li>
+          <li><a href="#">화면 설정</a></li>
+          <li><a href="#">로그아웃</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ---------------html끝------------------------------------------ -->
+
+
+
+
+
+
+    <script src="https://kit.fontawesome.com/3590bdbf3c.js" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script>
+      //-------------헤더script---------------------------------------
+      //스크롤 시 헤더 줄어듦
+      window.onscroll = function () { scrollFunction() };
+      function scrollFunction() {
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+
+          document.getElementById("top").style.height = "50px";
+          document.getElementById("settings").style.display = "none";
+          document.getElementById("user-name").style.display = "none";
+
+          let elementProfile = document.getElementById("profile");
+          elementProfile.style.cssText = "width: 20%; height: 50px; margin-top: 0; float: left; margin-left: 500px;"
+
+          let elementImg = document.getElementById("profile-img");
+          elementImg.style.cssText = "width: 46px; height: 46px; margin-top: 2px;"
+
+          let elementName = document.getElementById("profile-name");
+          elementName.style.cssText = "line-height: 46px; font-size: 18px; margin-top: 0;"
+
+          let elementUpload = document.getElementById("upload-button");
+          elementUpload.style.cssText = "width:46px; height: 46px; margin-top: 1px; margin-right: 100px;"
+
+          // 마우스오버 이벤트 제거
+          elementImg.addEventListener("mouseover", function () {
+            document.getElementById("arrow-img").style.display = "none";
+          });
+
+          elementUpload.addEventListener("mouseover", function () {
+          document.getElementById("arrow-upload").style.display = "none";
+          });
+
+
+          //스크롤 위로 올리면 헤더 다시 원래대로
+        } else {
+          document.getElementById("top").style.height = "260px";
+          document.getElementById("settings").style.display = "inline";
+          document.getElementById("user-name").style.display = "inline";
+
+          let elementProfile = document.getElementById("profile");
+          elementProfile.style.cssText = "display: inline-flex;margin-top: 45px; margin-left: 400px; width: 30%;"
+
+          let elementImg = document.getElementById("profile-img");
+          elementImg.style.cssText = "width: 150px; height: 150px;"
+
+          let elementName = document.getElementById("profile-name");
+          elementName.style.cssText = "line-height: 150px; font-size: 24px; margin-left: 30px;"
+
+          let elementUpload = document.getElementById("upload-button");
+          elementUpload.style.cssText = "width:120px; height: 120px; margin-top: 65px; margin-right: 200px;"
+
+          //마우스오버 이벤트 생성
+          elementImg.addEventListener("mouseover", function () {
+            document.getElementById("arrow-img").style.display = "inline-block";
+          });
+          elementUpload.addEventListener("mouseover", function () {
+            document.getElementById("arrow-upload").style.display = "inline-block";
+          });
+
+        }
+      };
+
+      //모달부분
+      let body = document.querySelector("body");
+      let modal = document.querySelector('.modal');
+      let settings = document.getElementById("settings");
+      let profileName = document.getElementById('profile-name');
+
+      function modalOpen() {
+        modal.style.display = 'block';
+        body.style.overflow = "hidden";
+      }
+      function modalClose() {
+        modal.style.display = "none";
+        body.style.overflow = "auto";
+      }
+
+      // 클릭시 모달오픈
+      settings.addEventListener('click', modalOpen);
+      profileName.addEventListener('click', modalOpen);
+
+      // 외부 클릭시 모달창닫음
+      window.addEventListener('click', (e) => {
+        e.target === modal ? modalClose() : false
+      })
+
+
+      //마우스 오버시 말풍선
+      //프로필이미지 오버시 말풍선
+      let profileImg = document.getElementById("profile-img");
+
+      profileImg.addEventListener("mouseover", function () {
+        let arrowImg = document.getElementById("arrow-img");
+        arrowImg.style.display = "inline-block";
+      });
+      profileImg.addEventListener("mouseleave", function () {
+        let arrowImg = document.getElementById("arrow-img");
+        arrowImg.style.display = "none";
+      });
+
+      //업로드버튼 오버시 말풍선
+      let uploadButton = document.getElementById("upload-button");
+
+      uploadButton.addEventListener("mouseover", function () {
+        let arrowUpload = document.getElementById("arrow-upload");
+        arrowUpload.style.display = "block";
+      });
+      uploadButton.addEventListener("mouseleave", function () {
+        let arrowUpload = document.getElementById("arrow-upload");
+        arrowUpload.style.display = "none";
+      });
+
+
+      //-------------메인 script-------------------------------      
+      let iuTab = document.getElementById("tab-iu");
+      let tripTab = document.getElementById("tab-trip");
+      let allTab = document.getElementById("tab-all");
+
+      let center = document.getElementsByClassName("center")[0];
+      let content = document.getElementsByClassName("content");
+
+      //탭관련 변수
+      const tabList = document.querySelectorAll(".dep1 .panel li");
+      let activeCont = ""; // 현재 활성화 된 컨텐츠 (기본:#tab-all 활성화)
+
+      //이미지 
+      for (let i = 0; i < 24; i++) {
+        let imgTrip = `<article ><img src="img여행/${i}.jpg" alt="여행${i
+          }" onclick="window.open(this.src)"></article>`;
+        content[0].insertAdjacentHTML("beforeend", imgTrip);
+      }
+      for (let i = 0; i < 24; i++) {
+        let imgIu = `<article ><img src="img아이유/${i}.jpg" alt="아이유${i}" onclick="window.open(this.src)"></article>`;
+        content[0].insertAdjacentHTML("beforeend", imgIu);
+      }
+
+      for (let i = 0; i < 24; i++) {
+        let imgIu = `<article><img src="img아이유/${i}.jpg" alt="아이유${i}" onclick="window.open(this.src)"></article>`;
+        content[1].insertAdjacentHTML("beforeend", imgIu);
+      }
+
+      for (let i = 0; i < 24; i++) {
+        let imgTrip = `<article><img src="img여행/${i}.jpg" alt="여행${i}" onclick="window.open(this.src)"></article>`;
+        content[2].insertAdjacentHTML("beforeend", imgTrip);
+      }
+
+
+      // 더보기
+      let btn = document.getElementById("btn_open");
+      let count = 0;
+      function button_onclick() {
+        count++;
+        if (count == 1) {
+          center.style.height = "1150px";
+        } else if (count == 2) {
+          if (activeCont == "#tab-iu" || activeCont == "#tab-trip") {
+            btn.classList.add("noContent");
+            btn.innerText = "No Content";
+          }
+          center.style.height = "1750px";
+        } else if (count == 3) {
+          center.style.height = "2325px";
+        } else if (count == 4) {
+          center.style.height = "2900px";
+        } else if (count == 5) {
+          center.style.height = "3500px";
+          btn.classList.add("noContent");
+          btn.innerText = "No Content";
+        }
+      }
+
+      //탭 전환 (참고 : https://abcdqbbq.tistory.com/88)
+      for (var i = 0; i < tabList.length; i++) {
+        tabList[i]
+          .querySelector(".btn")
+          .addEventListener("click", function (e) {
+            //탭 이동시, 클릭 횟수 초기화
+            count = 0;
+            e.preventDefault();
+
+            for (var j = 0; j < tabList.length; j++) {
+              //모든 컨텐츠 display:none 처리
+              content[j].style.display = "none";
+              //탭 이동시, 더보기 접기
+              center.style.height = "600px";
+              btn.classList.remove("noContent");
+              btn.innerText = "더보기";
+            }
+
+            //this = 현재 누른 탭
+            console.log(this);
+            //탭 클릭시 컨텐츠 전환
+            activeCont = this.getAttribute("href"); //href의 속성 얻는다 => id를 얻음
+            console.log(activeCont);
+            document.querySelector(activeCont).style.display = "block";
+          });
+      };
+
+
+      //----------------사이드바 script---------------------------------------
+      //사이드바 열기 닫기
+      let menuBtn = document.getElementById("menu-button");
+      let closeBtn = document.getElementById("close-button");
+      let sideBar = document.getElementById("sidebar");
+      
+      menuBtn.addEventListener("click", function(){
+        if(sideBar.style.display == "inline-block"){
+          sideBar.style.display = "none";
+        } else {
+          sideBar.style.display = "inline-block";
+       }});
+
+      //닫기버튼
+      closeBtn.addEventListener("click",function(){
+        sideBar.style.display = "none";
+      });
+
+
+      //내게시물 열기 닫기
+      let myPost = document.getElementById("my-post");
+
+      myPost.addEventListener("click", function(){
+        document.getElementById("panel").classList.toggle("hide");
+      });
+
+
+
+
+    </script>
+
+</body>
+
+</html>

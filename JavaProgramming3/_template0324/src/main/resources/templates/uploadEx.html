@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input name="uploadFiles" type="file" multiple />
+<button class="uploadBtn">Upload</button>
+<div class="uploadResult">
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<script>
+  $('.uploadBtn').click(function () {
+    var formData = new FormData();
+    var inputFile = $("input[type='file']");
+    var files = inputFile[0].files;
+    for (var i = 0; i < files.length; i++) {
+      console.log(files[i]);
+      formData.append("uploadFiles", files[i]);
+    }
+    $.ajax({
+      url: '/uploadAjax',
+      processData: false,
+      contentType: false,
+      data: formData,
+      type: 'POST',
+      dataType: 'json',
+      success: function (result) {
+        console.log(result);
+        // 화면 처리
+        showUploadedImages(result);
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        console.log(textStatus);
+      }
+    });
+  });
+
+  function showUploadedImages(arr) {
+    console.log(arr);
+    var divArea = $(".uploadResult");
+    var str = "";
+    for(var i = 0; i < arr.length; i++){
+      str += `<div>
+                <img src=/display?fileName=${arr[i].thumbnailURL}>
+                <button class='removeBtn' data-name=${arr[i].imageURL}>REMOVE</button>
+                </div>
+               `
+      // str += "<div>";
+      // str += "<img src='/display?fileName="+arr[i].thumbnailURL+"'>";
+      // str += "<button class='removeBtn' data-name='"+arr[i].imageURL +"'>REMOVE</button>"
+      // str += "</div>";
+    }
+    divArea.append(str);
+  }
+
+  // .uploadResult 클래스를 가진 요소 안에서
+  // .removeBtn 클래스를 가진 요소가 클릭되었을 때 실행되는 함수
+  // 이벤트 리스너인 click 이벤트를 사용
+  $(".uploadResult").on("click", ".removeBtn", function(e){
+    var target = $(this);
+    // target 변수에서 data-name 속성 값을 가져와 fileName 변수에 저장
+    var fileName = target.data("name");
+    //현재 실행되는 이벤트의 대상 요소에서 가장 가까운 div 요소를 찾아
+    // targetDiv 변수에 jQuery 객체로 저장
+    var targetDiv = $(this).closest("div");
+    console.log(fileName);
+    //console.log("aaa===>", e);
+    //jQuery의 AJAX 기능 중 하나
+    //서버에 HTTP POST 요청을 보내는 함수
+    // 첫 번째 매개변수는 요청을 보낼 URL 주소를 지정
+    // 두 번째 매개변수는 서버로 전송할 데이터를 객체 형태로 전달
+    // 세 번째 매개변수는 서버에서 응답이 도착했을 때 실행될 콜백 함수
+    // 이 함수는 서버로부터 전송된 응답 데이터를 인자로 받아 처리
+    $.post('/removeFile', {fileName: fileName}, function(result){
+      console.log(result);
+      if(result === true){
+        //remove() 메소드는 jQuery 객체가 나타내는 요소를 DOM에서
+        // 완전히 제거
+        targetDiv.remove();
+      }
+    } )
+  });
+
+</script>
+</body>
+</html>

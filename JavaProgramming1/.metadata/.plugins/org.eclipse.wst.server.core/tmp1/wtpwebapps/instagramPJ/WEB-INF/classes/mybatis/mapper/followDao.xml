@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.springboot.follow.FollowDao">
+
+	<!-- 팔로워 리스트: 나를 팔로우하는 사람들 -->
+	<select id="selectFollower"
+		resultType="com.study.springboot.follow.FollowDto">
+		select f.from_user, f.to_user, f.flw_date, m.profimg, m.nickname
+		from follow f, member m
+		where f.to_user = #{mem_id} and f.from_user = m.mem_id
+	</select>
+	
+<!-- 	<select id="selectFollower" -->
+<!-- 	resultType="com.study.springboot.follow.FollowDto"> -->
+<!-- 	select from_user, to_user, flw_date  -->
+<!-- 	from follow -->
+<!-- 	where to_user = #{mem_id} -->
+<!-- 	</select> -->
+
+	<!-- 팔로잉 리스트: 내가 팔로우하는 사람들 -->
+	<select id="selectFollowing"
+		resultType="com.study.springboot.follow.FollowDto">
+		select f.from_user, f.to_user, f.flw_date, m.profimg, m.nickname
+		from follow f, member m
+		where f.from_user = #{mem_id} and f.to_user = m.mem_id
+	</select>
+	
+<!-- 	<select id="selectFollowing" -->
+<!-- 		resultType="com.study.springboot.follow.FollowDto"> -->
+<!-- 		select from_user, to_user, flw_date -->
+<!-- 		from follow f -->
+<!-- 		where from_user = #{mem_id} -->
+<!-- 	</select> -->
+
+
+	<!-- 팔로우 되어있는지 확인 -->
+	<select id="checkFollow" parameterType="String"
+		resultType="Integer">
+		select count(flw_id) from follow where from_user =
+		#{sessionId} and to_user = #{mem_id}
+	</select>
+
+	<!-- 팔로우 -->
+	<insert id="addFollow">
+		insert into follow (from_user, to_user, flw_date)
+		values(#{sessionId}, #{mem_id}, now())
+	</insert>
+
+	<!-- 언팔로우 -->
+	<delete id="unfollow">
+		delete from follow where from_user=#{sessionId} and
+		to_user = #{mem_id}
+	</delete>
+	
+	<!-- 아이디 검색 -->
+	<select id="searchId" resultType="com.study.springboot.member.MemberDto">
+		select * from member 
+		<where>
+			(mem_id like #{searchWord})
+		</where>
+	</select>
+
+</mapper>

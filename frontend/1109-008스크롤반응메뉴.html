@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤 반응에 의한 메뉴 보이기</title>
+    <style>
+        body {
+          margin: 0;
+          background-color: #f1f1f1;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        #navbar {
+          background-color: #333;
+          position: fixed; 
+          /* 대부분 99퍼센터 fixed 그래야 먹음 */
+          top: -50px;
+          /* 브라우저 위에 숨겨져있음 */
+          width: 100%;
+          display: block;
+          transition: top 0.3s;
+        }
+        
+        #navbar a {
+          float: left;
+          display: block;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 15px;
+          text-decoration: none;
+          font-size: 17px;
+        }
+        
+        #navbar a:hover {
+          background-color: #ddd;
+          color: black;
+        }
+        </style>
+</head>
+<body>
+    <div id="navbar">
+        <a href="#">Home</a>
+        <a href="#">News</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div style="padding:15px 15px 5000px">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae debitis in velit nesciunt pariatur illo, obcaecati, natus laborum atque quo praesentium repudiandae ea. Deleniti nostrum laboriosam magnam dolores voluptatem voluptates. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, expedita quae rerum facilis beatae tempore nemo animi eaque assumenda at dignissimos, voluptate porro sequi perspiciatis velit itaque sint, id maiores.
+        </p>
+    </div>
+    <script>
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction(){
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("navbar").style.top = "0";
+                // 브라우저 위에 딱붙어있어야하니까
+            } else {
+                document.getElementById("navbar").style.top = "-50px";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thtmeleaf/layout"
+	layout:decorate="~{layout/basic.html}">
+
+<div layout:fragment="content">
+
+	<h1>test1</h1>
+	<!-- <h1>[[${ddd}]]</h1> -->
+	<ul th:each="aa : ${ddd}">
+		<li>[[${aa.num}]][[${aa.writer}]]</li>
+	</ul>
+	<a href="#" class="settingBtn">버튼</a>
+
+	<!-- 모달 -->
+	<div class="modal" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Modal Title</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				</div>
+				<div class="modal-body">
+					<p>Modal Body text goes here.</p>
+					<ul th:each="aa : ${ddd}">
+						<li>[[${aa.num}]][[${aa.writer}]]</li>
+					</ul>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="button" class="btn-primary saveBtn">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<script layout:fragment="script" th:inline="javascript">
+	console.log("script.....................");
+	//모달
+	const modal = new bootstrap.Modal(document.querySelector(".modal"));
+	document.querySelector(".settingBtn").addEventListener("click", function(e) {
+		modal.show();
+	});
+	
+	
+	
+	document.querySelector(".saveBtn").addEventListener("click", function(e) {
+		console.log("saveBtn");
+		location.href="/test2"
+	});
+</script>

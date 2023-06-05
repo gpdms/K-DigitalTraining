@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어쿼리 반응형 웹</title>
+    <style>
+        #wrapper {
+            width: 1000px;
+            height: 600px;
+            background: yellow;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+
+         /* 실무에서 screen...등등 다 필요없음
+         max-width: -이하되었을 때
+         min-width: -이상되었을 때 */
+        @media (min-width:700px) {
+            #wrapper{
+                background: red;
+                width: 90%; 
+                /* 브라우저의 90% */
+            }
+        }
+
+        @media (min-width: 900px) {
+            #wrapper {
+                background: blue;
+                width: 100%;
+
+            }
+        }
+
+
+          
+        
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+
+    </div>
+</body>
+</html>

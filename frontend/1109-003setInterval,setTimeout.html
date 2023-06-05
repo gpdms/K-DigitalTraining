@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>윈도우 객체</title>
+    <script>
+        let addNum = 0;
+        let subNum = 1000;
+
+        // let auto_1 = setInterval(function() {
+        //     addNum++;
+        //     console.log("addNum:" + addNum);
+        // }, 3000); // 3000m/s = 3초
+
+        // let auto_2 = setInterval(function(){
+        //     subNum--;
+        //     console.log("subnum: " + subNum);
+        // }, 3000);
+
+
+        //setTimeout 한번만 실행하고 끝남
+        let auto_1 = setTimeout(function() {
+            addNum++;
+            console.log("addNum:" + addNum);
+        }, 3000); // 3000m/s = 3초
+
+        let auto_2 = setInterval(function(){
+            subNum--;
+            console.log("subnum: " + subNum);
+        }, 3000);
+        
+    </script>
+</head>
+<body>
+    <button onclick="clearInterval(auto_1)">증가 정지시킴</button>
+    <button onclick="clearInterval(auto_2)">감소 정지시킴</button>
+    
+</body>
+</html>

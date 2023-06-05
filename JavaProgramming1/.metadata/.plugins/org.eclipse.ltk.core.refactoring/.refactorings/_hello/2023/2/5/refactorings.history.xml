@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;index.html&apos; to &apos;index.html&apos;&#x0D;&#x0A;- Original project: &apos;_hello&apos;&#x0D;&#x0A;- Destination element: &apos;index.html&apos;&#x0D;&#x0A;- Original element: &apos;index.html&apos;" description="Copy file" element1="src/main/resources/templates/index.html" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1675307720997" target="/_hello/src/main/resources/templates/index.html" units="0" version="1.0"/>
+</session>

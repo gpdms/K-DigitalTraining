@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div th:each=" str : ${list}">
+[[${str}]]
+</div>
+<div th:each=" str : ${map}">
+[[${str.key}]]-----[[${str.value}]]<br/>
+</div>
+<script th:inline="javascript">
+const list = [[${list}]]
+console.log(list)
+const map = [[${map}]]
+console.log(map)
+</script>
+</body>
+</html>

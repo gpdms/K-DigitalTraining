@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thtmeleaf/layout"
+layout:decorate="~{layout/basic.html}">
+<div layout:fragment="content">
+<form action="/update" method="post" th:object="${emp}"> <!-- 컨트롤러 model.attribute의 쌍따옴표 -->
+사번<input type="text" name="empno" th:value="*{empno}" readonly /><br/>
+이름<input type="text" name="ename" th:value="*{ename}"/><br/>
+직무<input type="text" name="job" th:value="*{job}"/><br/>
+급여<input type="text" name="sal" th:value="*{sal}" /><br/>
+<input type="submit"/>
+</form>
+</div>
+<script layout:fragment="script" th:inline="javascript">
+console.log("script테스트.....")
+</script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼의 요소</title>
+</head>
+<body>
+    <form action="action.php">
+        <input type="tel"><br><br>
+        <!-- tel: 키패드 띄우는것. 모바일에서만 작동 
+        파일질라 https://filezilla-project.org
+        https://www.dothome.co.kr/
+        파일질라에서 도메인주소, 아이디비밀번호입력. 
+        html폴더 
+        파일2개
+        html폴더 안쪽으로 들어가서 setup_finish.html 파일지우기
+        파일질라 왼쪽아래가 로컬(내컴퓨터). 오른쪽아래가 서버.
+        왼쪽 .html 파일을 오른쪽으로 드래그. 파일명을 index.html로 변경(기본페이지 파일명. naver.com/...이지만 naver.com도메인만 쳐도 기본페이지로 이동.)
+        도메인 접속. 폰으로. 클릭하면 키패드 뜸.
+        키패드는 모바일에서만 뜸.
+          -->
+        <input type="number" step="10"><br>
+        <input type="range" autofocus><br>
+        <!-- autofocus에 선택되어 -->
+        <input type="hidden"><br><br>
+        <!-- 개발자들만 공유해야하는 부분만 데이터 담아서 보내기 위해 -->
+        <input type="submit">
+        <h3>당신의 학과는?</h3>
+        <select name="" id="" size="5">
+            <!-- option*5 -->
+            <option value="">건축공학과</option>
+            <option value="">도시공학과</option>
+            <option value="">자동차공학과</option>
+            <option value="">컴퓨터공학과</option>
+            <option value="">토목공학과</option>
+        </select>
+        <textarea name="" id="" cols="30" rows="10" readonly>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam voluptas temporibus ex iusto, ut possimus qui mollitia voluptatum sit commodi rerum dolore quia sunt recusandae illo aliquid architecto officia placeat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Non deleniti reiciendis suscipit necessitatibus illo id laborum quod expedita accusantium. Animi fuga earum debitis mollitia commodi, a odit enim vero impedit!</textarea>
+        <!-- 글자 수정 못함. 읽기만 할 수 있음. -->
+
+    </form>
+</body>
+</html>

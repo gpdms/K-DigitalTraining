@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션</title>
+    <style>
+        
+        #box {
+            position: absolute;
+            /* absolute단독: 브라우저기준 */
+            top: 50px;
+            left: 50px;
+
+            width: 50px;
+            height: 50px;
+            background: red;
+            animation-name: hyeeun;
+            animation-duration: 2s;
+            /* animation-iteration-count: infinite; */
+            animation-iteration-count: 3;
+            /* animation-direction: normal; */
+            animation-direction: alternate;
+            /* animation-timing-function: linear; */
+            /* 속도곡선: 빨리갔다가 느리게갔다가 빨리갔다가 */
+            animation-timing-function: cubic-bezier(.35,-0.44,.43,.89);
+            /* cubic vezier사이트에서 복사해옴 */
+        }
+
+        @keyframes hyeeun {
+            /* from은 0%뜻함 */
+            from {
+                position: absolute;
+                top: 50px;
+                left: 50px;
+
+            }
+
+            25% {
+                position: absolute;
+                top: 50px;
+                left: 500px;
+
+            }
+
+            50% {
+                position: absolute;
+                top: 500px;
+                left: 500px;
+            }
+
+            75% {
+                position: absolute;
+                top: 500px;
+                left: 50px;
+
+            }
+
+            
+            /* to는 100%를 뜻함 */
+            to {
+                position: absolute;
+                top: 50px;
+                left: 50px;
+
+            }
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <!-- div#box -->
+    <div id="box">
+
+    </div>
+    
+</body>
+</html>

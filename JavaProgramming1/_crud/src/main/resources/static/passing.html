@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="testForm" id="testForm">
+		<input type="text" name="name" id="name" value="홍길동" /><br />
+		<input type="text" name="id" id="id" value="1234567" />
+	</form>
+	<button id="btn">클릭</button>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+	<script>
+		$('#btn').click(function() {
+			to_ajax();
+		});
+
+		function to_ajax() {
+
+			var queryString = $("form[name=testForm]").serialize();
+			console.log(queryString);
+			$.ajax({
+				type : 'post',
+				url : '/test',
+				data : queryString,
+				dataType : 'text',
+				error : function(xhr, status, error) {
+					alert(error);
+				},
+				success : function(json) {
+					alert(json)
+				}
+			});
+
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탭</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script> 
+    <!-- !!!!!!!!!!!!!!!제이쿼리 라이브러리 넣기!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+    <style>
+        body {
+            margin: 20px;
+            padding: 20px;
+            line-height: 1;
+            font-family: "Open Sans", sans-serif;
+            font-size: 1em;
+            background-color: #f1f1f1;
+            color: #555;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .title {
+            margin: 0;
+            margin-bottom: 35px;
+            padding: 0;
+            font-size: 1.5em;
+            font-weight: 300;
+            color: #555;
+        }
+        .container {
+            margin-top: 35px;
+            min-width: 440px;
+        }
+        .controller {
+            padding-top: 20px;
+        }
+        .controller li {
+            display: inline-block;
+            margin-left: 8px;
+        }
+        .controller li:first-child {
+            margin-left: 0;
+        }
+        .controller li a {
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        .controller li.on a {
+            width: 50px;
+            background-color: #8ac007;
+        }
+        .picture {
+            position: relative;
+            margin-top: 30px;
+            width: 400px;
+            height: 400px;
+            /* overflow: hidden; *//* 수정 */
+        }
+        .picture ul {
+            /* position: absolute; *//* 수정 */
+            /* left: 0; *//* 수정 */
+            /* top: 0; *//* 수정 */
+            margin: 0;
+            padding: 0;
+            width: 2400px;
+            list-style: none;
+            transition: opacity 0.4s; /* 수정 */
+        }
+        .picture li {
+            position: absolute; /* 수정 */
+            left: 0; /* 수정 */
+            top: 0; /* 수정 */
+            width: 400px;
+            height: 400px;
+            opacity: 0; /* 수정 */
+            transition: opacity 0.4s; /* 수정 */
+        }
+        .picture img {
+            max-width: 100%;
+            height: auto;
+        }
+        .picture li.active { /* 수정 */
+            opacity: 1;
+        }
+        </style>
+    
+</head>
+<body>
+    <ul class="controller">
+        <li><a href="http://www.apple.com"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+    </ul>
+    <div class="picture">
+    <ul>
+        <li><img src="images/pic_1.jpg" alt="아이유1"></li>
+        <li><img src="images/pic_2.jpg" alt="아이유2"></li>
+        <li><img src="images/pic_3.jpg" alt="아이유3"></li>
+        <li><img src="images/pic_4.jpg" alt="아이유4"></li>
+        <li><img src="images/pic_5.jpg" alt="아이유5"></li>
+        <li><img src="images/pic_6.jpg" alt="아이유6"></li>
+        
+    </ul>
+    </div>
+
+    <script>
+        $(function(){
+            
+            let n = 0;
+
+            $(".controller li").click(function(e){
+                e.preventDefault(); // url타고 애플홈페이지 들어가지 않게 막는것.
+                $(".controller li").removeClass("on");
+                $(this).addClass("on"); // this: 위에것. controller li의 내가 지금 클릭한 해당 요소
+                
+
+                n=$(this).index();
+                $(".picture li").removeClass("active");
+                $(".picture li").eq(n).addClass("active");
+                //eq: 시퀀스를 의미
+
+            });
+        });
+
+
+
+
+
+
+    </script>
+</body>
+</html>

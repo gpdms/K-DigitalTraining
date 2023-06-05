@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+		http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+
+<!-- NowServlet.java파일이랑 보기 -->
+	<servlet>
+		<servlet-name>now</servlet-name>
+		<servlet-class>test.NowServlet</servlet-class> <!--패키지명.클래스명-->
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>now</servlet-name>
+		<url-pattern>/now</url-pattern> <!-- 요청명 -->
+		<url-pattern>/now3</url-pattern>
+	</servlet-mapping>
+<!-- 여기까지 @WebServlet("/now")와 같은 기능 -->
+
+<!-- 여기서부터 DBCPInit2.java -->
+	<servlet>
+		<servlet-name>DBCPInit2</servlet-name>
+		<servlet-class>jdbc.DBCPInit2</servlet-class>
+		<init-param>
+			<param-name>jdbcdriver</param-name>
+			<param-value>com.mysql.jdbc.Driver</param-value>
+		</init-param>
+		<init-param>
+			<param-name>jdbcUrl</param-name>
+			<param-value>
+	            jdbc:mysql://localhost:3306/chap14?characterEncoding=utf8
+	        </param-value>
+		</init-param>
+		<init-param>
+			<param-name>dbUser</param-name>
+			<param-value>jspexam</param-value>
+		</init-param>
+		<init-param>
+			<param-name>dbPass</param-name>
+			<param-value>jsppw</param-value>
+		</init-param>
+		<init-param>
+			<param-name>poolName</param-name>
+			<param-value>chap14</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	
+	<!-- HelloServlet.java파일 -->
+	<servlet>
+		<servlet-name>aaa</servlet-name>
+		<servlet-class>test.HelloServlet</servlet-class> <!--패키지명.클래스명-->
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>aaa</servlet-name> 
+		<url-pattern>/foo/bar/*</url-pattern> <!-- 요청명 --> <!-- url에 /foo/bar/하고 아무거나 쳐도 나옴. -->
+		<url-pattern>*.bop</url-pattern>
+	</servlet-mapping>
+
+</web-app>

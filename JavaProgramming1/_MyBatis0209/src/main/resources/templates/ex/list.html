@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thtmeleaf/layout"
+layout:decorate="~{layout/basic.html}">
+<div layout:fragment="content">
+<table border="1">
+<tr>
+<th>사번</th>
+<th>이름</th>
+<th>직무</th>
+<th>급여</th>
+<th>삭제</th>
+</tr>
+<tr th:each="emp : ${list}">
+<td><a th:href="@{/ex/update(empno=${emp.empno})}" th:text="${emp.empno}"></a></td>
+<td th:text="${emp.ename}"></td>
+<td th:text="${emp.job}"></td>
+<td th:text="${emp.sal}"></td>
+<td><a th:href="@{/delete(empno=${emp.empno})}">X</a></td> <!-- 타임리프 -->
+</tr>
+</table>
+</div>
+<script layout:fragment="script" th:inline="javascript">
+console.log("script테스트.....")
+</script>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thtmeleaf/layout"
+layout:decorate="~{layout/basic.html}">
+
+<div layout:fragment="content">
+나온다2 <br/>
+<h1>[[${ss}]]</h1>
+<h1>[[${ss2}]]</h1>
+
+</div>
+
+<script layout:fragment="script" th:inline="javascript">
+console.log("script.....................");
+</script>

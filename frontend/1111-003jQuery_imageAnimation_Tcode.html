@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script> 
+    <!-- jquery라이브러리 달아주기 -->
+    <style>
+        body {
+            margin: 20px;
+            padding: 20px;
+            background:#f1f1f1;
+            color: #555;
+        }
+
+        button{
+            padding: 5px 15px;
+            background: #ccc;
+            color: #000;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.5s;
+        }
+
+        button:hover {
+            background: #888;
+        }
+
+        img {
+            display: block;
+            margin-top: 50px;
+            width: 240px;
+            height: 240px;
+            transition: 0.4s;
+        }
+
+        img.moving {
+            animation: moving 4s linear infinite;
+        }
+
+        @keyframes moving {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(800px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <button id="add">add</button>
+    <button id="remove">remove</button>
+    <img src="space.gif" alt="우주" class="space">
+    <script>
+        $(function(){
+            $("#add").click(function(){
+                $(".space").addClass("moving");
+            })
+            $("#remove").click(function(){
+                $(".space").removeClass("moving");
+            })
+        })
+    </script>
+</body>
+</html>

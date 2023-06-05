@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.springboot.jdbc.EmpDeptMapper">
+	<select id="findAllEmp" resultType="com.study.springboot.entity.Emp">
+		select * from emp
+		<where>
+		<if test="type == 'S'.toString()">
+		empno like CONCAT('%',#{search},'%')
+		</if>
+		<if test="type == 'N'.toString()">
+		ename like CONCAT('%',#{search},'%')
+		</if>
+		</where>
+	</select>
+	<select id="findAllDept" resultType="com.study.springboot.entity.Dept">
+		select * from dept
+	</select>
+</mapper>

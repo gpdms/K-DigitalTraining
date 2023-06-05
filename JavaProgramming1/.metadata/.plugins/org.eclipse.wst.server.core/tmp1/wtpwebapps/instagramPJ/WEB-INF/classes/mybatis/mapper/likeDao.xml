@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.springboot.like.LikeDao">
+<insert id="like">
+	insert into postlike(post_id, mem_id)
+	values(#{post_id}, #{mem_id})
+</insert>
+<!-- <select id="likeOne" resultType="com.study.springboot.like.LikeDto"> -->
+<!-- 	select like_id from postlike where like_id = #{like_id} -->
+<!-- </select> -->
+<delete id="unlike">
+	delete from postlike where post_id=#{post_id} and mem_id = #{mem_id}
+</delete>
+<select id="likeview" resultType="com.study.springboot.like.LikeDto">
+	select * from postlike where post_id = #{post_id} and mem_id = #{mem_id}  
+</select>
+<select id="mylike" resultType="Integer">
+		select 
+			post_id
+		from 
+			postlike
+		where 
+			mem_id = #{mem_id}
+		order by like_id desc
+</select>
+</mapper>

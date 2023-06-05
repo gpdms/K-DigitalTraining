@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data-bg</title>
+    <style>
+        body {
+            margin: 20px;
+            padding: 20px;
+            line-height: 1;
+            font-family: "Open Sans", sans-serif;
+            font-size: 1em;
+            background: #555;
+            color: #000;
+        }
+        .container .title {
+            margin: 0 0 35px;
+            padding: 0;
+            font-size: 1.5em;
+            font-weight: 300;
+            color: #000;
+        }
+        .container .navi {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .container .navi li {
+            float: left;
+            width: 120px;
+            margin-right: 5px;
+        }
+        .container .navi li a {
+            display: block;
+            padding: 15px 0;
+            width: 120px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 0.875em;
+            background: #666;
+            color: #000;
+        }
+        </style>
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+        <script>
+            
+            $(function(){
+                $("li a").hover(
+                    function(){
+                        let overColor=$(this).attr("data-bg");
+                        // 속성값을 끌고오겠다
+                        $(this).stop().animate({"background-color": overColor}, 300);
+                        // 단어 하나면 ""안붙여도됨. backgound color 두단어라 쌍따옴표.
+                    },
+                    function(){
+                        $(this).stop().animate({"background-color": "#666"}, 300);
+                    }
+                );
+            });
+
+            
+            
+           
+        </script>
+</head>
+<body>
+    <div class="container">
+        <ul class="navi">
+            <li><a href="#" data-bg="#a0c800">Home</a></li>
+            <li><a href="#" data-bg="#00c8c3">HTML</a></li>
+            <li><a href="#" data-bg="#a0c800">CSS</a></li>
+            <li><a href="#" data-bg="#00c8c3">Mobile</a></li>
+            <li><a href="#" data-bg="#a0c800">JQuery</a></li>
+            <li><a href="#" data-bg="#00c8c3">Portfolio</a></li>
+        </ul>
+    </div>
+</body>
+</html>

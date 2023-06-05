@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.springboot.jdbc.GenreDetailMapper">
+	
+	<select id="findAllGenre" resultType="com.study.springboot.entity.Genre">
+		select * from genre
+	</select>
+	
+	<select id="findAllActionDetail" resultType="com.study.springboot.entity.Detail">
+		select * from detail where genre_gid = #{genre_gid}
+	</select>
+	
+	
+	
+</mapper>

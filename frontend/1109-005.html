@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    
+    <style>
+        body, p {
+            margin: 0;
+            padding: 0;
+        }
+  /* 이걸 안쓰면 브라우저에서 8px먹고들어감 */
+        map {
+            cursor: pointer;
+        }
+      
+        
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>윈도우객체</title>
+    
+</head>
+<body>
+    <p>
+        <img src="iu.jpg" alt="" usemap="#intro" alt="아이유">
+        <!-- 하나의 이미지엔 하나의 링크만 넣는게 일반적이지만, 하나의 이미지에 여러개 링크 -->
+        <map name="intro" id="intro">
+            <!-- <area shape="rect" coords="0,0,100,100" href="#" alt="" onclick="window.close();"> -->
+    <!-- shape: rect, 사각형, circle, poly
+        coords좌표값
+        링크넣으면 이동함  -->
+            <area shape="circle" coords="100,100,50" href="" alt="" onclick="window.close();">
+                                 <!-- 중심값, 반지름 -->
+
+
+        </map>
+    </p>
+</body>
+</html>

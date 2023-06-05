@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 20px;
+        padding: 20px;
+        line-height: 1;
+        font-family: "Open Sans", sans-serif;
+        font-size: 1em;
+        background: #555;
+        color: #000;
+      }
+      .container {
+        position: relative;
+      }
+      .container .title {
+        margin: 0 0 35px;
+        padding: 0;
+        font-size: 1.5em;
+        font-weight: 300;
+        color: #000;
+      }
+      .container .round {
+        position: absolute;
+        left: 0;
+        top: 60px;
+        width: 40px;
+        height: 40px;
+        background: #666;
+        cursor: pointer;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+      }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script>
+        $(function(){
+            let distance = 0;
+
+            $(".round").click(function(){
+                switch(distance){
+                    case 0: distance=100;
+                    break;
+                    case 100: distance=200;
+                    break;
+                    case 200: distance=300;
+                    break;
+                    case 300: distance=200;
+                    break;
+
+                }
+                $(this).stop().animate({left: distance+"px"}, 300);
+            });
+        })
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="round"></div>
+    </div>
+  </body>
+</html>

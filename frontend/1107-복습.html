@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-style: "맑은 고딕", 돋움, 굴림;
+        }
+        /* 대표서체에 쌍따옴표
+        body나 wrapper나 같은것 같..지만  body에서 서체 설정해주기 차이는 모름 */
+
+        #wrapper {
+            width: 800px;
+            /* height: 100vh; */
+            margin: 0 auto;
+            overflow: hidden;
+            /* 넘치는 부분은 숨김 */
+        }
+
+        header {
+            width: 100%;
+            height: 150px;
+            background: palevioletred;
+
+        }
+        
+        #logo {
+            width: 150px;
+            height: 150px;
+            float: right;
+            margin-top: 0;
+            margin-right: 0;
+        }
+
+        #logo img {
+            width: 150px;
+            height: 150px;
+        }
+
+        nav {
+            display: inline;
+            width: 60%;
+            height: 30px;
+            float: left;
+            margin-top: 70px;
+            margin-left: 30px;
+         /* border: 1px solid black; */
+        }
+
+        /* ul 세가지 기억하기 */
+        nav ul {
+            list-style: none; 
+            /* 점 없애줌 */
+            margin: 0;
+            padding: 0;
+            /* border: 1px solid black; */
+        }
+
+        nav ul li {
+            display: inline-block;
+            float: left;
+            margin-left: 30px;
+            /* border: 1px solid black; */
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            /* border: 1px solid black; */
+        }
+
+
+        .left {
+            float: left;
+            width: 590px;
+            /* border: 1px solid black; */
+        }
+
+        article {
+            width: 290px;
+            height: 300px;
+            background: rgb(255, 224, 229);
+            border: 2px solid rgb(252, 197, 252);
+            float: left;
+            margin: 2px;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+        .box1:hover {
+            background: rgb(126, 197, 126);
+            border: 2px solid rgb(33, 107, 33)
+        }
+
+        .box2:hover {
+            background: rgb(104, 180, 224);
+            border: 2px solid rgb(22, 84, 155)
+        }
+
+        .box3:hover {
+            background: rgb(247, 201, 159);
+            border: 2px solid rgb(243, 118, 46)
+        }
+        .box4:hover {
+            background: rgb(194, 167, 230);
+            border: 2px solid rgb(64, 49, 133)
+        }
+
+
+        aside {
+            float: right;
+            width: 200px;
+            border: 1px solid black;
+        }
+
+        aside img {
+            width: 200px;
+            height: 150px;
+            float: right;
+        }
+
+
+        footer {
+            clear: both;
+            /* float 사용하고나서는 반드시 해제시켜줘야. */
+            width: 800px;
+            height: 100px;
+            line-height: 100px;
+            /* line-height는 글자박스의 높이. height랑 같게 설정하면 가운데로 옴 */
+            background: grey;
+            text-align: center;
+            margin-bottom: 0;
+            
+        }
+
+        address {
+            font-style: normal;
+            /* address 처음엔 이탤릭체 */
+        }
+
+        h1 {
+            font-size: 32px;
+        }
+        h2 {
+            text-align: center;
+            font-size: 24px;
+        }
+        p {
+            font-size: 12px;
+            line-height: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="">애완견종류</a></li>
+                    <li><a href="">입양하기</a></li>
+                    <li><a href="">건강돌보기</a></li>
+                    <li><a href="">더불어살기</a></li>
+                </ul>
+            </nav>
+            <div id="logo">
+                <img src="iu.jpg" alt="아이유사진">
+            </div> 
+        </header>
+        <section>
+            <h1>강아지 용품 준비하기</h1>
+            <div class="left">
+                <article class="box1">
+                    <h2>강아지 집</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia rerum, est sit, odio ullam cupiditate fugiat dicta nemo tempore reiciendis molestias. A dolores nesciunt facilis totam eius officia optio nostrum?</p>
+                </article>
+                <article class="box2">
+                    <h2>강아지 물건</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia rerum, est sit, odio ullam cupiditate fugiat dicta nemo tempore reiciendis molestias. A dolores nesciunt facilis totam eius officia optio nostrum?</p>
+                </article>
+                <article class="box3">
+                    <h2>강아지 음식</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia rerum, est sit, odio ullam cupiditate fugiat dicta nemo tempore reiciendis molestias. A dolores nesciunt facilis totam eius officia optio nostrum?</p>
+                </article>
+                <article class="box4">
+                    <h2>강아지 운동</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia rerum, est sit, odio ullam cupiditate fugiat dicta nemo tempore reiciendis molestias. A dolores nesciunt facilis totam eius officia optio nostrum?</p>
+                </article>
+            </div>
+        </section>
+        <aside>
+            <img src="iu.jpg" alt="아이유1">
+            <img src="iu.jpg" alt="아이유2">
+            <img src="iu.jpg" alt="아이유3">
+        </aside>
+        <footer>
+            <address>copyright@gpdms9737</address>
+        </footer>
+
+
+    </div>
+</body>
+</html>

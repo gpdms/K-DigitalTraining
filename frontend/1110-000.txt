@@ -1,0 +1,25 @@
+offset().top 절대 위치값: 브라우저 맨위에서
+position().top 상대 위치값: relative absolute 기준
+
+
+예약어 text: 
+예약어 password
+
+
+
+배열객체를 이용하여 메뉴 5개의 데이터를 변수 menu에 참조시키세요.
+짜장면 돈가스 된장국 김치찌개 회덮밥
+Math.random()과 배열 데이터 갯수(length)를 이용하여 배열 인덱스 값이 랜덤으로 추출
+
+
+문자열객체: String객체
+책에 없음.
+
+let Welcome to Korea!
+
+str.charAt(5) -> m
+
+indexOf("Korea") -> ??????엥 넘어감
+
+
+toggle class

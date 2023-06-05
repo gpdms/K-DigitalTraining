@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UL을 이용한 Toggle</title>
+    
+    <style>
+        body {
+            margin: 20px;
+            padding: 20px;
+            line-height: 1;
+            font-family: "Open Sans", sans-serif;
+            font-size: 1em;
+            background-color: #f1f1f1;
+            color: #555;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .title {
+            margin: 0;
+            margin-bottom: 35px;
+            padding: 0;
+            font-size: 1.5em;
+            font-weight: 300;
+            color: #555;
+        }
+        .container {
+            margin-top: 35px;
+            min-width: 440px;
+        }
+        .picture {
+            margin-top: 30px;
+            width: 1220px;
+            height: 200px;
+            overflow: hidden;
+        }
+        .picture ul {
+            float: left;
+            margin-left: -1200px;
+            /* 왼쪽에 숨겨져있음. 펼쳐지면 0값이되어야. */
+            width: 1200px;
+            -webkit-transition: margin-left 0.8s;
+            transition: margin-left 0.8s;
+            /* border: 2px solid red; */
+        }
+        .picture ul.on {
+            margin-left: 0;
+        }
+        .picture li {
+            float: left;
+            width: 200px;
+            height: 200px;
+        }
+        .picture img {
+            max-width: 100%;
+            height: auto;
+        }
+        .picture .handle {
+            float: left;
+            width: 20px;
+            height: 200px;
+            background: #333;
+            cursor: pointer;
+            border-radius: 0 10px 10px 0;
+        }
+        </style>
+</head>
+<body>
+    <div class="picture">
+        <ul class = "imagelist">
+            <li><img src="images/work1.jpg" alt="워크1"></li>
+            <li><img src="images/work2.jpg" alt="워크2"></li>
+            <li><img src="images/work3.jpg" alt="워크3"></li>
+            <li><img src="images/work4.jpg" alt="워크4"></li>
+            <li><img src="images/work5.jpg" alt="워크5"></li>
+            <li><img src="images/work6.jpg" alt="워크6"></li>
+        </ul>
+        <div class="handle" id="hd" onclick="myFunction(handle)" ></div>
+    </div>
+
+    <script>
+
+        function myFunction(){
+            let handle = document.getElementById("hd");
+            handle.classList.toggle("on");
+        }
+
+        
+        
+        
+       
+    </script>
+</body>
+</html>

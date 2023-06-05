@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자의 종류</title>
+    <style>
+        /* 형제 선택자: ~  같은레벨(2,3,4,5,6,7,8) */
+        /* .cls001 ~ li {
+            color: red;
+        } */
+
+        /* 하이 선택자 */
+        /* ul li {
+            color: red;
+        } */
+
+        /* 자손? 선택자 */
+        /* ul > li {
+            color: red;
+        } */
+
+        /* 인접형제 선택자: .cls001의 다음요소 */
+        .cls001 + li {
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li class="cls001">2</li>
+        <!-- css의 한계. 클래스가 여기있을 경우 1번을 잡지 못함. -->
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ul>
+</body>
+</html>

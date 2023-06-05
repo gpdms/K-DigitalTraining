@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 예제</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- jquery.com - 다운로드 - google cdn - 1.x스니펫 -->
+    <!-- 제이쿼리 라이브러리 달아주기 -->
+    
+    <!-- 제이쿼리 느려서 잘안씀(?) -->
+    <script>
+           // $는 jquery를 뜻함
+        $(function() {
+            $("span").click(function(){
+                $("#popup").slideUp(1000);
+            });
+
+        });
+     
+
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #popup {
+            width: 100%;
+            height: 60px;
+            position: relative;
+            background: yellow;
+        }
+
+        span {
+            font-size: 30px;
+            position: absolute;
+            font-weight: 600;
+            top: 10px;
+            right: 10px;
+            color: black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="popup">
+        <span>X</span>
+    </div>
+</body>
+</html>

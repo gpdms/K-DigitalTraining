@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LOADMORE</title>
+    <!-- 부트스트랩 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <style>
+      *,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+      .content {
+        height: 100px;
+        width: 45%;
+        color: #fff;
+        font-size: 24px;
+        line-height: 100px; /* centering text just for view */
+        text-align: center;
+        background-color: grey;
+        margin: 5px;
+        border: 1px solid lightgrey;
+        display: none;
+      }
+      #loadMore {
+        width: 200px;
+        color: #fff;
+        display: block;
+        text-align: center;
+        margin: 20px auto;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid transparent;
+        background-color: blue;
+        transition: 0.3s;
+      }
+      #loadMore:hover {
+        color: blue;
+        background-color: #fff;
+        border: 1px solid blue;
+        text-decoration: none;
+      }
+      .noContent {
+        color: #000 !important;
+        background-color: transparent !important;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="flex">
+        <div class="content">Box 1</div>
+        <div class="content">Box 2</div>
+        <div class="content">Box 3</div>
+        <div class="content">Box 4</div>
+        <div class="content">Box 5</div>
+        <div class="content">Box 6</div>
+        <div class="content">Box 7</div>
+        <div class="content">Box 8</div>
+        <div class="content">Box 9</div>
+        <div class="content">Box 10</div>
+        <div class="content">Box 11</div>
+        <div class="content">Box 12</div>
+        <div class="content">Box 13</div>
+        <div class="content">Box 14</div>
+        <div class="content">Box 15</div>
+        <div class="content">Box 16</div>
+      </div>
+      <a href="#" id="loadMore">Load More</a>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script>
+      $(".content").slice(0, 4).show();
+      $("#loadMore").click(function () {
+        $(".content:hidden").slice(0, 4).slideDown();
+      
+      if ($(".content:hidden").length == 0) {
+        $("#loadMore").text("No Content").addClass("noContent");
+      }
+});
+
+    </script>
+  </body>
+</html>

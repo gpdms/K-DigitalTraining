@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상요소</title>
+    <style>
+        body {
+            margin: 20px;
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            background: #555;
+        
+        }
+
+        .nav {
+            width: 700px;
+            position: relative;
+            margin: 50px 0;
+            overflow: hidden;
+            text-align: center;
+            border: 1px solid red;  
+        }
+
+        .nav a {
+            display: block;
+            /* ???왜??? block잡지 않으면 글씨 선에 닿아야 작동. 블럭으로 만들어서 */
+            position: relative;
+            /* relative가 두개. 헷갈림??? */
+            float: left;
+            width: 20%;
+            /* a가 다섯개니까 100%/5 */
+            padding: 16px 0 38px;
+            text-decoration: none;
+            color: white;
+            transition: 0.6s;
+
+        }
+
+        .nav a:hover {
+            color: #8ac007;
+
+        }
+
+        .nav .effect {
+            position: absolute;
+            /* nav를 기준으로 함 */
+            left: -15%;
+            /* overflow:hidden해서 안보임 */
+            transition: 0.6s;
+            bottom: 15px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #8ac007;
+            margin-left: -6px;
+
+        }
+
+        .nav:after {
+            content:"";
+            /* 가상요소에 content반드시 들어가야 */
+            display: block;
+            position: absolute;
+            /* nav를 기준으로. nav의 가상요소이기때문에 */
+            bottom: 20px;
+            width: 100%;
+            height: 1px;
+            background: #8ac007;
+            /* content는 빈공간을주고 모양을 만듦 */
+        }
+
+        .nav a:after {
+            
+            content: "";
+            display: block;
+            position: absolute;
+            left: 50%;
+            bottom: 18px;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: #8ac007;
+            margin-left: -2px;
+         }
+            /* a 다섯개. 다섯개의 원이 만들어짐 */
+            /* 첫번째a nav왼쪽에서 50%, 두번째a: 첫번째a 끝부터 50%
+            각a가 20%씩 가지면. 점은 10%, 30%, 50%위치 */
+        .nav a:nth-child(1):hover ~ .effect{
+            left: 10%;
+        }
+
+        .nav a:nth-child(2):hover ~ .effect {
+            left: 30%;
+        }
+
+        .nav a:nth-child(3):hover ~ .effect {
+            left: 50%;
+        }
+        .nav a:nth-child(4):hover ~ .effect {
+            left: 70%;
+        }
+        .nav a:nth-child(5):hover ~ .effect {
+            left: 90%;
+        }
+
+
+
+      
+
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="#">HTML</a>
+        <a href="#">CSS</a>
+        <a href="#">Javascript</a>
+        <a href="#">jQuery</a>
+        <a href="#">React</a>
+        <div class="effect"></div>
+        <!-- 형제 요소로 만듦. -->
+    </div>
+</body>
+</html>

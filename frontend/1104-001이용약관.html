@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>즐거운 금요일</title>
+    <script src="https://kit.fontawesome.com/ff48de7b75.js" crossorigin="anonymous"></script>
+    <!-- font awesome 사이트에서 kit code복사해와서붙여넣기 -->
+    <style>
+        body {
+            height: 10000px;
+        }
+
+        /* h1 {
+            width: 150px;
+            height: 150px;
+            border: 2px solid red;
+            border-radius: 75px;
+            /* radius를 width, height의 반으로 했을 때 정원이됨. 75px대신 50%써도 동일. */
+            /* border-radius: 35px 45px 40px 50px; */
+                /* topleft topright bottomright bottomleft 시계방향 */
+        } */
+        /* 실무에선 외부스타일로 쓰기 */
+        /* 현재까지 태그선택자 */
+
+        .cls001 {
+            width: 150px;
+            height: 150px;
+            border: 2px solid red;
+            border-radius: 75px;
+        }
+          /* 클래스선택자:똑같은부분을 여러군데 적용 */
+
+
+        .circle{
+            width: 45px;
+            height: 45px;
+            border: 2px solid dodgerblue;
+            border-radius: 50%;
+            /* position: fixed; */
+            position: fixed;
+            /* position: absolute는 고정되지 않음. */
+            right: 50px;
+            bottom: 50px;
+            /* right, bottom값: 브라우저를 기준으로 */
+            /* +는 안쪽으로 밀고들어옴. -는 브라우저 밖으로. */
+        }
+
+        i{
+            font-size: 36px;
+            color: red;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        /* 폰트이기때문에 width,geight가 아니라 폰트사이즈로 크기조절 */
+
+    </style>
+</head>
+<body>
+    <h1 class="cls001"><a href="#bbkjh001"> 반품정책</a></h1>
+    <h1 class="cls001"><a href="#bbkjh002">교환정책</a></h1>
+    <h1 class="cls001"><a href="#bbkjh003">환불정책</a></h1>
+    <h1 class="cls001"><a href="#bbkjh004">회원탈퇴</a></h1>
+
+    <p id="bbkjh001">반품정책Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime, nesciunt dolorum! Voluptatem quidem harum excepturi iusto quae, porro autem debitis et mollitia accusantium accusamus dolore facilis, itaque hic! Dolore, ut? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum, expedita accusamus? Rem at quaerat deleniti ab eum, quo nesciunt eaque, obcaecati perspiciatis veritatis, fugit placeat blanditiis totam assumenda error pariatur.</p>
+
+    <p id="bbkjh002">교환정책Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime, nesciunt dolorum! Voluptatem quidem harum excepturi iusto quae, porro autem debitis et mollitia accusantium accusamus dolore facilis, itaque hic! Dolore, ut? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum, expedita accusamus? Rem at quaerat deleniti ab eum, quo nesciunt eaque, obcaecati perspiciatis veritatis, fugit placeat blanditiis totam assumenda error pariatur.</p>
+
+    <p id="bbkjh003">환불정책Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime, nesciunt dolorum! Voluptatem quidem harum excepturi iusto quae, porro autem debitis et mollitia accusantium accusamus dolore facilis, itaque hic! Dolore, ut? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum, expedita accusamus? Rem at quaerat deleniti ab eum, quo nesciunt eaque, obcaecati perspiciatis veritatis, fugit placeat blanditiis totam assumenda error pariatur.</p>
+
+    <p id="bbkjh004">회원탈퇴Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime, nesciunt dolorum! Voluptatem quidem harum excepturi iusto quae, porro autem debitis et mollitia accusantium accusamus dolore facilis, itaque hic! Dolore, ut? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum, expedita accusamus? Rem at quaerat deleniti ab eum, quo nesciunt eaque, obcaecati perspiciatis veritatis, fugit placeat blanditiis totam assumenda error pariatur.</p>
+
+    <!-- div.circle 탭 -->
+    <div class="circle"><i class="fa-brands fa-apple"></i></div>
+    <!-- font awesome에서 애플 아이콘 복붙-->
+</body>
+</html>

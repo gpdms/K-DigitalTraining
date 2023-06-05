@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;_jsp0201/src/12-5(MoveTest, 간단한 포워드 테스트 버전).java&apos; to &apos;MoveTest.java&apos;" description="Rename resource &apos;12-5(MoveTest, 간단한 포워드 테스트 버전).java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/12-5(MoveTest, 간단한 포워드 테스트 버전).java" name="MoveTest.java" stamp="1675215067801" updateReferences="true"/>
+</session>

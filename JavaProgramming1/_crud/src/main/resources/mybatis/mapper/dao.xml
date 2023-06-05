@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.study.springboot.DeptDao">
+
+<select id="selectAll" resultType="com.study.springboot.Dept">
+	select deptno,dname,loc from dept
+</select>
+	
+<update id="update">
+	update dept set dname =#{dname}, loc =#{loc}
+	where deptno = #{deptno}</update>
+<select id="viewOne" resultType="com.study.springboot.Dept">
+	select * from dept where deptno = #{deptno}
+</select>
+</mapper>

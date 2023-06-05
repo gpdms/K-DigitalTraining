@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>a</title>
+    <style>
+        #wrapper {
+            width:800px;
+            height:100vh;
+            border:2px solid black;
+            margin: 0 auto;
+            /* margin: 0 auto 0 auto의 약자
+                top(0) right(auto) bottom(0) left(auto)
+                그래서 가운데 정렬
+               margin: 0 10px 0
+                    == 0 10px 0 10px */
+            -webkit-border-radius: 50px;
+            -moz-border-radius: 50px;
+            -o-border-radius: 50px
+            border-radius: 50px;
+            /* 이게 특정브라우저에서 안먹일경우
+                브라우저 접두사 써주면 모든브라우저에서도 먹음. */
+
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        /* lvha다 쓰는것보다 a:hover까지만 표시하는게 일반적 */
+
+        p {
+            width:100px;
+            height:80px;
+            padding:20px;
+            border:80px;
+            margin: 0 auto;
+            background: #ccc;
+            box-sizing: border-box;
+            /* 박스 안에 모든 패딩과 보더가 width안에 다 들어감. */
+        }
+
+        /* p:before {
+            content:"";
+            display: block;
+            background: orange;
+            width: 100px;
+            height: 30px;
+            border: 2px solid black;
+        }
+
+        p:after {
+            content:"뒷부분에 삽입";
+            display: block;
+            background: red;
+            color: white; */
+            /* content안넣으면 아예 안먹음. content 반드시 넣어야. 그리고나서 모양 형성. */
+        /* } 
+
+        /* li의 3번 부분을 잡음. */
+        ul li:nth-child(3) { 
+            color: red;
+            /* even짝수, odd홀수, 2n+1 홀수, 2n 짝수*/
+
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <a href="#">링크1</a>
+        <p>오늘</p>
+    </div>
+
+    <!-- ul>li*12 -->
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+        <li>11</li>
+        <li>12</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Base */
+      html {
+        font-family: "Ropa Sans", sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+      body {
+        background-color: rgb(240, 240, 240);
+        color: rgb(0, 0, 0);
+        min-width: 960px;
+        padding-top: 240px;
+        height: 10000px;
+      }
+      h1,
+      h2,
+      h3,
+      p,
+      ul {
+        margin: 0;
+      }
+      ul {
+        padding-left: 0;
+      }
+      ul li {
+        list-style-type: none;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        vertical-align: middle;
+      }
+      .clearfix:before,
+      .clearfix:after {
+        content: " ";
+        display: table;
+      }
+      .clearfix:after {
+        clear: both;
+      }
+      .dummy {
+        margin: 0 auto;
+        max-width: 32em;
+        padding: 2em 0;
+      }
+
+      /*
+ * Sticky header
+ */
+
+      .page-header {
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+      }
+      .no-boxshadow .page-header {
+        border-bottom: 1px solid rgb(204, 204, 204);
+      }
+      .page-header > .inner {
+        margin: auto;
+        width: 960px;
+      }
+
+      /* Logo */
+      .site-logo {
+        font-size: 100%;
+        float: left;
+        margin-left: -20px;
+      }
+
+      /* Primary nav */
+      .primary-nav {
+        float: right;
+        line-height: 65px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      .primary-nav li {
+        float: left;
+      }
+      .primary-nav a {
+        display: block;
+        padding: 0 1.36em;
+      }
+      .primary-nav a:hover {
+        background-color: rgb(240, 240, 240);
+      }
+
+      /* Sticky header (clone) */
+      .page-header-clone {
+        background-color: rgb(0, 0, 0);
+        opacity: 0.9;
+        position: fixed;
+        top: -35px;
+        width: 100%;
+        /*z-index: 30;*/
+        -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+        -webkit-transition: top 0.25s;
+        transition: top 0.25s;
+      }
+      .page-header-clone > .inner {
+        margin: auto;
+        width: 960px;
+      }
+      .page-header-clone.visible {
+        top: 0;
+      }
+      .page-header-clone:hover {
+        opacity: 1;
+      }
+
+      .page-header-clone .site-logo {
+        margin-left: 8px;
+      }
+      .page-header-clone .site-logo a {
+        display: block;
+        width: 143px;
+        height: 32px;
+        overflow: hidden;
+      }
+      .page-header-clone .site-logo a:before {
+        content: url(../img/logo-small.png);
+        display: inline-block;
+      }
+      .page-header-clone .primary-nav {
+        font-size: 14px;
+        line-height: 35px;
+      }
+      .page-header-clone .primary-nav a {
+        color: rgb(128, 128, 128);
+      }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="jquery.ba-throttle-debounce.min.js"></script>
+    <script>
+      $(function () {
+        $(".page-header").each(function () {
+          let $window = $(window),
+            $header = $(this),
+            $headerClone = $header.contents().clone(),
+            //헤더의 복제부분
+            $headerCloneContainer = $('<div class="page=header"></div>'),
+            //헤더 복제 컨테이너 부분
+
+            threshold = $header.offset().top + $header.outerHeight();
+          //outerheight: border와 padding을 포함한.
+          //HTML의 위쪽에서 헤더의 저변까지의 거리 = 헤더의 최고위치 + 헤더의 높이
+          $headerCloneContainer.append($headerClone);
+
+          $headerCloneContainer.appendTo("body");
+          //컨테이너를 바디의 마지막에 삽입
+
+          $window.on(
+            "scroll",
+            $.throttle(1000 / 15, function () {
+              //스크롤 시 작업을 수행하지만, 횟수를 1초당 15까지 제한.
+              if ($window.scrollTop() > threshold) {
+                $headerCloneContainer.addClass("visible");
+              } else {
+                $headerCloneContainer.removeClass("visible");
+              }
+            }));
+            $window.trigger("scroll");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="inner clearfix">
+        <nav class="primary-nav">
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Recruit</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="dummy">
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis et saepe
+        unde dolores, iure consequatur, maiores officiis tempore optio nulla
+        quaerat eveniet totam quae. Voluptas, aut. Earum sed id veniam. Lorem
+        ipsum dolor sit amet consectetur adipisicing elit. Eius nesciunt impedit
+        reprehenderit delectus architecto maiores quod. Pariatur, animi
+        necessitatibus accusantium deleniti ratione cumque laudantium autem quae
+        odit facere, sint neque? Lorem ipsum, dolor sit amet consectetur
+        adipisicing elit. Nobis architecto ut maiores molestiae, ab fugit maxime
+        aliquid nostrum repellat vero delectus amet? Voluptatum sequi provident,
+        quae iste eaque tempora accusamus. Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Rem cupiditate, quasi dolore facere
+        quisquam voluptates illo officiis consequuntur itaque recusandae
+        reprehenderit, minus aliquid magnam veritatis ipsum placeat, distinctio
+        molestias aspernatur? Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Fuga dolor omnis quam sed molestias harum, consequuntur expedita,
+        unde maxime eveniet illo impedit suscipit odio id voluptatum animi
+        laborum voluptates non!
+      </p>
+    </div>
+  </body>
+</html>

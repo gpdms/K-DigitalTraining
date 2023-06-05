@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Thymeleaf Example</title>
+</head>
+<body>
+<h1>Departments</h1>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Location</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="dept : ${list}">
+    <td th:text="${dept.deptno}"></td>
+    <td th:text="${dept.dname}"></td>
+    <td th:text="${dept.loc}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

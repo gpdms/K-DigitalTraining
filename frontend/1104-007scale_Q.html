@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scale</title>
+    <style>  
+
+        #box {
+            width: 200px;
+            height: 150px;
+            background: url(iu.jpg) no-repeat;
+            background-size: 100% 100%;
+            /* X축으로 100% Y축으로 100% */
+            background-position: center;
+            transition: 0.3s;
+           /* transition은 hover이전단계에서! hover에 넣으면 에러 */
+        }
+
+        #box:hover {
+            
+            background-size: 120% 120%;
+           
+        }
+
+    </style>
+</head>
+<body>
+    <!-- div#box -->
+    <div id="box">
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,242 @@
+jQuery
+https://www.codingfactory.net/13230 
+
+https://www.devkuma.com/docs/jquery/%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%84%A4%EC%A0%95-addclass--removeclass--hasclass-/ 
+
+!!!!!!!!!!jQuery라이브러리 꼭 붙이기!!!!!!!!!!!!!!!!!!
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+jquery.com에서 jquery UI 소스볼수ㅇ.
+UI CDN반드시 달아줘야 작동.
+
+<1111-007>
+$("div").click(function(){})
+
+setTimeout(function(),밀리초): 지정된 시간이 지난뒤 1회 실행
+setInterval(반복)도 동일.
+1000밀리초=1초
+
+.animate({속성1 : 속성값1, 속성2:속성값2..},시간,콜백함수(애니메이션이 끝나고 할 행동))
+ex)
+$("div").stop().animate({"background-color": "#666"}, 300, function(){});
+두단어 이상일때 ""붙이기. 한단어일때 안붙임.
+0 또는 "0px"
+
+
+클래스설정
+.addClass()	선택된 요소에 인수로 전달받은 클래스를 추가한다.
+.removeClass()	선택된 요소에서 인수로 전달받은 클래스를 제거한다.
+.toggleClass()	선택된 요소에 클래스가 없으면 인수로 전달받은 클래스를 추가하고, 전달받은 클래스가 이미 추가되어 있으면 제거한다.
+문법 동일
+$("selector").addClass("classname")
+                        ㄴ.점넣지않고 클래스명만 넣기
+
+$(".hz").hasClass("intro")
+선택요소 중 어느 하나라도 지정 클래스 갖는지 체크.
+(지정 클래스 갖으면 true 반환, 안 갖으면 false 반환)
+
+
+
+.scrollTop()은 선택한 요소의 스크롤바 수직 위치를 반환하거나 스크롤바 수직 위치를 정합니다.
+
+스크롤 이벤트생성
+.scroll(function(){스크롤이동시작동코드});
+웹페이지 자체에 스크롤 이벤트를 생성
+$(window).scroll(function(){스크롤이동시 작동코드});
+
+.offset()은 선택한 요소의 좌표를 가져오거나 특정 좌표로 이동시킵니다.
+$("선택자").offset().top;
+화면상에서 특정 요소의 y축 위치 알아내고자 할 때 사용한다.
+.offset() 메소드는 HTML 문서(document)를 기준으로 선택한 요소의 오프셋 좌표를 반환하거나 설정한다.
+.position() 메소드는 부모 요소(offset parent)를 기준으로 하는 상대 위치를 반환한다.
+
+
+<1111-006>
+
+.find()는 어떤 요소의 하위 요소 중 특정 요소를 찾을 때 사용
+$( 'h1' ).find( 'span' )
+.children()	선택한 요소의 자식요소를 모두 선택한다.
+
+.stop() : 현재 동작하고 있는 애니메이션은 즉시 동작이 중단 된다.
+마우스를 여러번 움직일때, 이전 애니메이션이 멈추기 전까지 애니메이션이 동작하지 않는 현상이 바로 애니메이션 큐로 인해 발생하는 문제이다.
+이러한 문제를 해결하기 위해 .stop() 함수를 사용한다.
+
+.slideDown()은 선택한 요소를 아래쪽으로 서서히 나타나게 합니다.
+.slideUp()는 선택한 요소를 위쪽으로 서서히 사라지게 합니다.
+문법동일
+.slideDown( [duration ] [, easing ] [, complete ] )
+duration: 밀리초, 기본값은 400입니다.
+easing:요소가 나타나는 방식을 정합니다.
+swing과 linear가 가능하며, 기본값은 swing입니다.
+complete:요소가 나타난 후 수행할 작업을 정합니다.
+
+<1111-005>
+.toggleClass()로 선택한 요소에 클래스 값을 넣었다 뺐다 할 수 있습니다.
+$( "선택자" ).toggleClass( "클래스명" );
+
+.toggle()은 선택한 요소가 보이면 보이지 않게, 보이지 않으면 보이게 합니다.
+.toggle( [duration ] [, complete ] )
+
+<1111-004>
+.preventDefault(); 취소가능한 이벤트를 취소한다. 이는 그 이벤트의 디폴트 액션이 발생하지 않음을 의미한다.
+예를 들어, form에서 submit button을 눌러도 event.preventDefault()와 함께라면 submit 액션은 일어나지 않는다.
+또다른 예로, 링크를 클릭해도 event.preventDefault()를 사용하면 URL로 이동하지 않는다.
+
+.eq()	선택한 요소 중에서 전달받은 인덱스에 해당하는 요소를 선택함.
+
+
+
+<1114-003>
+.show(); display 속성을 block 으로 바꾼다.
+.hide(); display 속성을 none 으로 바꾼다. 
+
+.slice()
+start부터 end 전까지의 복사본을 새로운 배열 객체로 반환한다. 즉, 원본 배열은 수정되지 않는다.
+.slice( start [, end ] )
+    start: 추출 시작점에 대한 인덱스.
+        undefined인 경우: 0부터 slice
+        음수를 지정한 경우: 배열의 끝에서부터의 길이를 나타낸다. slice(-2)를 하면 배열의 마지막 2개의 요소를 추출한다.
+        배열의 길이와 같거나 큰 수를 지정한 경우: 빈 배열을 반환한다.
+    end: 추출을 종료할 기준 인덱스. (end를 제외하고 그 전까지의 요소만 추출한다.)
+        지정하지 않을 경우: 배열의 끝까지 slice
+        음수를 지정한 경우: 배열의 끝에서부터의 길이를 나타낸다. slice(2, -1)를 하면 세번째부터 끝에서 두번째 요소까지 추출
+        배열의 길이와 같거나 큰 수를 지정한 경우: 배열의 끝까지 추출.
+    반환값: 추출한 요소를 포함한 새로운 배열.
+
+.splice()
+배열의 기존 요소를 삭제 또는 교체하거나 새 요소를 추가하여 배열의 내용을 변경한다. 이 메소드는 원본 배열 자체를 수정한다.
+
+splice(start[, deleteCount[, item1[, item2[, ...]]]])
+    start: 배열의 변경을 시작할 인덱스.
+        음수를 지정한 경우: 배열의 끝에서부터 요소를 센다.
+        배열의 길이보다 큰 수를 지정한 경우: 실제 시작 인덱스는 배열의 길이로 설정
+        절대값이 배열의 길이보다 큰 경우: 0으로 세팅
+    deleteCount: 배열에서 제거할 요소의 수.
+        생략 / 값이 array.length - start보다 큰 경우: start부터의 모든 요소를 제거.
+        0 이하의 수를 지정: 어떤 요소도 제거되지 않는다.
+    item1, item2, ... : 배열에 추가할 요소.
+        지정하지 않는 경우: splice()는 요소 제거만 수행한다.
+    반환값: 제거한 요소를 담은 배열.
+    아무 값도 제거하지 않았으면 빈 배열을 반환한다.
+
+
+
+
+
+$(": hidden")
+숨겨진 모든 요소를 ​​선택합니다.
+
+.text() 선택한 요소 안의 내용을 가져옵니다.
+let color = $(this).text();
+.text( textString ) 이전 내용을 지우고 새로운 내용을 넣습니다
+
+
+.attr() 속성값
+let overColor=$(this).attr("data-bg");
+// 속성값을 끌고와 변수overColor에 저장
+.attr("src", "img/btn_open.png");
+//src속성의 속성값을 "img/btn_open.png"로 변경
+
+
+.on()
+선택한 요소에 어떤 타입의 이벤트라도 연결할 수 있다. 여러 개의 이벤트를 동시에 연결할 수 있다.
+$(".btn1").on("click, focus", function (){}).on("mouseover", function(){});
+
+.off() 메소드는 더 이상 사용하지 않는 이벤트와의 바인딩(binding)을 제거한다
+
+입력양식 이벤트 관련 메소드
+.focus()
+input태그를 마우스로 클릭하여 입력상태로 만든것을 포커스를 얻었다고 한다.그리고 입력상태를 떠난것을 포커스가 벗어났다고 한다
+
+마우스 이벤트 관련 메소드
+1. click 
+사용자해 해당 element를 클릭했을 때(버튼을 눌렀다가 떼었을 때) 발생
+2. mousedown 
+사용자가 해당 element에서 마우스 버튼을 눌렀을 때 
+3. mouseup 
+사용자가 해당 element에서 눌렀던 마우스 버튼을 떼었을 때
+4. dblclick 
+사용자가 해당 element에서 마우스 버튼을 더블 클릭했을 때
+5. mousemove 
+사용자가 해당 element에서 마우스를 움직였을 때
+6. mouseover 
+사용자가 마우스를 해당 element 바깥에서 안으로 옮겼을 때
+7. mouseout 
+사용자가 마우스를 해당 element 안에서 바깥으로 옮겼을 때
+8. mouseenter 
+사용자가 마우스를 해당 element 바깥에서 안으로 옮겼을 때
+버블링이 발생하지 않습니다.
+9. mouseleave 
+사용자가 마우스를 해당 element 안에서 바깥으로 옮겼을 때
+버블링이 발생하지 않습니다.
+10. contextmenu 
+마우스 오른쪽 버튼을 눌렀을 때
+*mouseenter vs. mouseover
+mouseenter는 해당 영역에만 적용되고 자식영역에는 적용이 안됨.
+mouseover는 영역을 넘어서 자식에 해당되는 영역에 접근해도 이벤트 적용.
+
+
+.hover()	자바스크립트의 “mouseenter"와 “mouseleave” 이벤트를 하나의 이벤트 핸들러와 연결
+.hover(function마우스올릴때, function마우스떠날때)
+
+.css({속성:속성값});
+스타일을 변경함.
+$("div").css({"background-color":"#7d5947"});
+
+.each()는 선택한 요소가 여러 개일 때 각각에 대하여 반복하여 함수를 실행시킵니다.
+.each( function )
+
+.delay(delay time, queuename)
+.delay(500*i)
+일정시간이 경과한 뒤에 함수 뒤의 코드를 실행하도록 강제적인 지연시간을 생성
+
+:nth-child()는 형제 요소 중 an+b번째 요소들을 선택하는 선택자
+$( ':nth-child(an+b)' )
+n에는 음이 아닌 정수(0, 1, 2, 3, ···)가 차례대로 대입됩니다.
+an+b 대신에 even, odd를 사용할 수 있습니다.
+:nth-child(-n+3)
+앞에서 세 개의 요소를 나타냅니다.
+p:nth-child(n+8):nth-child(-n+15)
+형제 그룹 내에서 8번째부터 15번째 까지의 <p> 요소를 나타냅니다.
+
+제이쿼리 변수
+$변수명
+let $aside = $(".page-main > aside");
+일반변수가 문자열이나 숫자를 담는다면, $변수는 제이쿼리 객체를 담는 변수.
+
+
+.clone()
+.clone()은 선택한 요소를 복제합니다.
+
+.append()
+선택한 요소의 내용의 끝에 콘텐트를 추가합니다.
+.append( content [, content ] )
+$( 'p' ).append( ' 123' );
+
+.appendTo()
+선택한 요소를 다른 요소 안에 넣습니다.
+.appendTo( target )
+$( 'p' ).appendTo( 'blockquote' );
+
+차이점
+.append() : $(A).append(B) // A 사이의 마지막에 B 가 추가 된다.
+.appendTo() : $(A).appendTo(B) // A 가 B 사이의 마지막에 추가 된다.
+
+
+.fadeIn()
+선택한 요소를 서서히 나타나게 합니다.
+.fadeOut()
+선택한 요소를 서서히 사라지게 합니다.
+.fadeIn( [duration ] [, easing ] [, complete ] )
+duration
+duration에는 완전히 나타날 때까지의 시간이 들어갑니다. fast, slow로 정하거나 400 같은 숫자로 정할 수 있습니다. 숫자일 경우 단위는 1000분의 1초이며, fast는 200, slow는 600에 해당합니다. 아무것도 입력하지 않으면 기본값 400으로 설정됩니다.
+문자로 시간을 정할 때는 따옴표 안에 문자를 넣습니다.
+easing
+easing에는 사라지는 모양이 들어갑니다. swing과 linear가 가능하며 기본값은 swing입니다. 따옴표 안에 값을 넣습니다.
+.fadeIn( 'linear' )
+complete에는 지정한 요소가 나타난 다음 불러올 함수가 들어갑니다.
+
+
+event.target은 이벤트가 발생한 요소를 반환
+console.log(event.target.id);
+이벤트가 발생한 대상의 id를 콘솔창에 출력

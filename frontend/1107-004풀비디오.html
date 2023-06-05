@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>풀비디오</title>
+    <style>
+        video {
+            position: fixed;
+            top: 0;
+            left:0;
+            /* 왼쪽 위 */
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        p {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgb(54, 140, 221);
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            padding:0;
+            /* 태어날때 끝에서 살짝 띄어져서 태어나기때문에 마진패딩넣어주기 */
+            
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <video src="Beach.mp4" autoplay muted loop> </video>
+    <p>ENTER</p>
+    
+   
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caps Lock 인지</title>
+    <style>
+        #text {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input id="myInput" value = "캡스락인지">
+    <p id="text">경고 Caps Lock이 켜져있습니다.</p>
+
+    <script>
+        let input = document.getElementById("myInput");
+        let text = document.getElementById("text");
+        input.addEventListener("keyup", function(e) {
+            //keypress, keydown도 상관없음
+            if(e.getModifierState("CapsLock")) {
+                text.style.display = "block";
+            } else {
+                text.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,528 @@
+preference-jspfiles-utf8로바꿔주기
+server-runtime environment-add-apache10.0으로-create a new local server 체크
+
+
+properties-
+java compiler- 17
+
+
+
+<1227>
+
+var newP = document.createElement("li")
+var txNode = document.createTextNode("테스트");
+newP.appendChild(txNode);
+document.getElementById("itemList").appendChild(newP);
+
+EmpDao.java 스트림
+ArrEx.java 배열로부터 스트림얻기
+hello.jsp 자바스크립트
+hello2.jsp 자스 DOM
+
+
+<1228>
+조인: 가로연결
+집합 연산자:세로연결
+
+StreamEx.java 스트림
+func.jsp  HTML함수
+func2.jsp 함수:입력한값 리스트에
+
+
+<1229>
+오라클 p.242-261. 내일 10장 할 예정
+자바2권 p.808~
+루핑 peek(), forEach()
+Optional
+
+StreamEx.java 스트림
+test.jsp 제이쿼리
+
+제이쿼리사이트- 다운로드- google CDN- 3.x 스니펫 복붙 <body>에
+
+testA.jsp 자바스크립트
+testA2.jsp 위 파일을 제이쿼리로
+
+
+<1230>
+새로운 dynamic project
+java Resources-패키지 jdbc-Emp,EmpDao
+
+Emp(테이블명, 테이블마다 클래스가 있어야함.)-필드(컬럼명과 이름같게), 생성자, getter setter. 
+
+jdbc패키지에 new-file-db.properties생성(DB바꿀때 여기서만 바꾸면 되므로 편리)
+lib에 오라클 집어넣기
+
+EmpDao: 싱글톤
+properties 먼저.
+preparedstataement
+
+java resources
+자바개발은 java resources에서만. 서블릿 여기 생김.
+source-main
+jsp는 webapp에. 여기 main-java는 돌아가는 쪽. 여기서 편집X.
+자바개발에서 private하면 여기 서비스가 안된다는 뜻.
+
+
+
+<0102>
+collect p.819
+
+jsp04_0102 collect, map
+
+jsp03_1230 - EmpDaoEx.java collect, map
+
+오라클 p.266
+transaction
+sql plus에 안나옴. transaction이 다른것.
+insert를 해도 commit이 안된 상태에서 다른 사람이 참조하면 그자료는 나오지 않음. 
+insert, update, delete는 취소가 가능. 
+commit 명령어 입력후 실행시키면 커밋완료. 실제데이터베이스에 적용.
+commit전에는 rollback할 수 있음.
+
+<0103>
+오라클 
+트랜잭션: 더이상 분할할 수 없는 최소수행단위. 한개 이상의 DML. All or Nothing(커밋하거나 롤백)
+TCL(Transaction Control Language): 트랜잭션 제어하기 위해 사용하는 명령어
+p.294 
+
+오라클은 사용자 자체가 스키마
+
+한 세션에서 어떤 행을 수정중일때 lock. 다른 트랜잭션이 해당 행 수정하려면 대기.
+데이터 변경중인 테이블도 lock
+
+
+오라클 to_char(hiredate, 'YYYY/MM/DD')
+
+
+<0104>
+
+
+create table emp_ddl (
+    empno number(4),
+    ename varchar2(10),
+    job varchar2(9),
+    mgr number(4),
+    hiredate date,
+    sal number(7,2),
+    comm number(7,2),
+    deptno number(2)
+    );
+
+제이슨형식
+select json_object( 'empno' value empno,
+                    'ename' value ename,
+                    'job' value job,
+                    'mgr' value mgr,
+                    'hiredate' value to_char(hiredate, 'YYYY/MM/DD'),
+                    'sal' value sal,
+                    'comm' value comm,
+                    'deptno' value deptno)
+from emp
+
+
+
+<0106>
+Dao맨끝 selectEmpJson
+json쓰면 emp, dept같은Dto 안써도됨
+
+
+UNIQUE 닉네임
+
+클래스를 객체화 한게 인스턴스
+메인메모리 힙 영역에 생성되는걸 인스턴스. 
+
+리터럴은 무엇
+기본데이터타입과 참조형 데이터 타입의 근본적인 차이점
+
+데이터 타입 변환이 필요한 이유
+범위가 더 큰방으로 집어넣음.(cast)연산자. 
+참조형변수는 object에만 들어감.
+-값을 저장할때 필요한 메모리 공간의 크기를 알기위해
+
+getter setter는 왜 사용
+필드를 직접접근 못하게하고 메소드를 통해 접근. 
+
+정적메소드와 메소드의 차이점:
+static메소드
+class이름.method이름으로 그냥 불러쓸수있음.
+그냥 메소드는 객체생성해야.
+
+생성자와 메소드의 차이점.
+생성자: 클래스이름과 같음. 리턴타입이 없음. 객체 생성할때만 한번만 사용.
+메소드:  주기적으로 기능사용가능.
+
+instanceof 
+
+
+<0109>
+
+primary key 는 UNIQUE, NOT NULL
+
+오라클
+CREATE TABLE TABLE_PK (
+    LOGIN_ID VARCHAR2(20) PRIMARY KEY,
+    LOGIN_PWD VARCHAR2(20) NOT NULL,
+    TEL VARCHAR2(20)
+);
+
+
+DESC TABLE_PK
+열보는거랑 같음.
+
+SELECT OWNER, CONSTRAINT_NAME, CONSTRAINT_TYPE, TABLE_NAME
+FROM USER_CONSTRAINTS
+WHERE TABLE_NAME LIKE 'TABLE_PK%';
+제약조건 보는거랑 같음.
+
+PK는 인덱스 자동으로 잡힘. 검색속도가 빠르다.
+SELECT INDEX_NAME, TABLE_OWNER, TABLE_NAME
+FROM USER_INDEXES
+WHERE TABLE_NAME LIKE 'TABLE_PK%';
+
+CREATE TABLE TABLE_PK2 (
+    LOGIN_ID VARCHAR2(20) 
+    CONSTRAINT TBLPK2_LOGNID_PK(제약조건의 이름지정함) PRIMARY KEY,
+    LOGIN_PWD VARCHAR2(20)
+    CONSTRAINT TBLPK2_LOGNPW_NN NOT NULL,
+    TEL VARCHAR2(20)
+);
+
+
+CREATE TABLE DEPT_FK (
+    DEPTNO NUMBER(2)
+        CONSTRAINT DEPTFK_DEPTNO_PK PRIMARY KEY,
+    DNAME VARCHAR2(14),
+    LOC VARCHAR2(13)
+);
+
+CREATE TABLE EMP_FK(
+    EMPNO NUMBER(4)
+          CONSTRAINT EMPFK_EMPNO_PK PRIMARY KEY,
+    ENAME VARCHAR2(10),
+    JOB VARCHAR2(10),
+    MGR NUMBER(4),
+    HIREDATE DATE,
+    SAL NUMBER(7,2),
+    COMM NUMBER(7,2),
+    DEPTNO NUMBER(2)
+           CONSTRAINT EMPFK_DEPTNO_FK 얘는 외래키
+                REFERENCES DEPT_FK (DEPTNO) 다른 테이블의 (속성)을 참조함.
+);
+
+
+INSERT INTO EMP_FK
+VALUES (9999, 'TEST_NAME', 'TEST_JOB', NULL, TO_DATE('2001/01/01', 'YYYY/MM/DD'), 3000, NULL, 10);
+무결성 제약조건(SCOTT.EMPFK_DEPTNO_FK)이 위배되었습니다- 부모 키가 없습니다
+부서번호 10번이 없으니까.
+INSERT INTO DEPT_FK
+VALUES(10, 'TEST_DNAME', 'TEST_LOC');
+부서번호 10번 넣고 넣으면 됨.
+
+INSERT INTO EMP_FK
+VALUES (9999, 'TEST_NAME', 'TEST_JOB', NULL, TO_DATE('2001/01/01', 'YYYY/MM/DD'), 3000, NULL, 10);
+
+DELETE FROM DEPT_FK
+WHERE DEPTNO=10;
+무결성 제약조건(SCOTT.EMPFK_DEPTNO_FK)이 위배되었습니다- 자식 레코드가 발견되었습니다
+이 데이터를 EMP_FK에서 참조하고 있기 때문에 삭제 안됨.
+
+CREATE TABLE EMP_FK(
+    EMPNO NUMBER(4)
+          CONSTRAINT EMPFK_EMPNO_PK PRIMARY KEY,
+    ENAME VARCHAR2(10),
+    JOB VARCHAR2(10),
+    MGR NUMBER(4),
+    HIREDATE DATE,
+    SAL NUMBER(7,2),
+    COMM NUMBER(7,2),
+    DEPTNO NUMBER(2)
+           CONSTRAINT EMPFK_DEPTNO_FK
+                REFERENCES DEPT_FK (DEPTNO)
+                ON DELETE CASCADE 이 데이터를 참조하고 있는 데이터도 함께 삭제
+); 
+ON DELETE SET NULL 이데이터를 참조하는 데이터를 NULL로 수정.
+
+
+
+오라클 백업
+도구-데이터베이스 익스포트-접속:SCOTT-파일:저장할위치설정-다음-다음-조회-다음-완료
+
+jsp
+명령프롬프트-ipconfig
+기본게이트웨이:라우터
+
+
+한빛미디어 다운로드
+로컬디스크C에 압축풀기
+
+이클립스
+window-preference-web browser-chrome
+workspace-other:UTF-8
+web-jspfiles-UTF-8
+html-UTF-8
+
+톰캣사이트
+tomcat 8-Core:zip다운로드-JavaProgramming에 압축풀기
+이클립스 window-preference-server-runtime environment
+-add-apache tomcat v8.5-create a new local server체크
+-next-browse-톰캣폴더선택
+
+프로젝트명 오른쪽마우스-team-share project-use뭐시기 체크-create repository누르고체크다-finish
+synchronize workspace인가-yes-
+
+
+
+
+<0110>
+오라클 p.390 Check
+
+CREATE TABLE TABLE_CHECK (
+    LOGIN_ID VARCHAR2(20) CONSTRAINT TBLCK_LOGINID_PK PRIMARY KEY,
+    LOGIN_PWD VARCHAR2(20) CONSTRAINT TBLCK_LOGINPW_CK
+                            CHECK (LENGTH(LOGIN_PWD) > 3), 
+    TEL VARCHAR2 (20)
+);
+//LOGIN_PWD 길이가 3이하이면 INSERT안됨.
+INSERT INTO TABLE_CHECK
+VALUES ('TEST_ID', '123', '010-1234-5678');
+체크 제약조건(SCOTT.TBLCK_LOGINPW_CK)이 위배되었습니다
+
+CONSTRAINT명명규칙
+테이블명줄여서_컬럼명_키
+
+SELECT OWNER, CONSTRAINT_NAME, CONSTRAINT_TYPE, TABLE_NAME
+FROM USER_CONSTRAINTS
+WHERE TABLE_NAME LIKE 'TABLE_CHECK';
+
+
+디폴트: 특정 열에 저장할 값이 지정되지 않았을 경우에 기본값을 지정
+CREATE TABLE TABLE_DEFAULT (
+    LOGIN_ID VARCHAR2(20) CONSTRAINT TBLCK2_LOGINID_PK PRIMARY KEY,
+    LOGIN_PWD VARCHAR2(20) DEFAULT '1234',
+    TEL VARCHAR2 (20)
+);
+
+
+INSERT INTO TABLE_DEFAULT (LOGIN_ID, TEL)
+VALUES ('TEST_ID2', '010-1234-5678');
+
+널 넣는것도 가능
+INSERT INTO TABLE_DEFAULT
+VALUES ('TEST_ID2', NULL, '010-1234-5678');
+
+p.394 2번답
+CREATE TABLE EMP_CONST (
+    EMPNO NUMBER(4) CONSTRAINT EMPCONST_EMPNO_PK PRIMARY KEY,
+    ENAME VARCHAR2(10) CONSTRAINT EMPCONST_ENAME_NN NOT NULL,
+    JOB VARCHAR2(9),
+    TEL VARCHAR(20) CONSTRAINT EMPCONST_TEL_UNQ UNIQUE,
+    HIREDATE DATE,
+    SAL NUMBER(7,2) CONSTRAINT EMPCONST_SAL_CHK CHECK (SAL BETWEEN 1000 AND 9999),
+    COMM NUMBER (7, 2),
+    DEPTNO NUMBER(2) CONSTRAINT EMPCONST_DEPTNO_FK REFERENCES DEPT_CONST (DEPTNO)
+);
+
+3번답
+SELECT TABLE_NAME, CONSTRAINT_NAME, CONSTRAINT_TYPE
+FROM USER_CONSTRAINTS
+WHERE TABLE_NAME IN ('EMP_CONST', 'DEPT_CONST')
+ORDER BY CONSTRAINT_NAME;
+
+
+서블릿 
+time.jsp
+NowServlet.java
+
+
+Vue.js
+vuejs cdn 복붙
+
+<0111>
+오라클
+스키마가 사용자.
+
+권한부여,취소
+
+SCOTT사용자
+create table temp(
+col1 varchar2(20),
+col2 varchar2(20));
+
+grant select , insert on temp to ORCLSTUDY;
+
+ORCLSTUDY사용자
+insert into SCOTT.temp
+values ('text', 'from orclstudy');
+
+권한취소
+REVOKE SELECT, INSERT ON TEMP
+FROM ORCLSTUDY
+
+
+롤:권한을 묶어놓은 그룹
+
+
+PL/SQL
+
+SET SERVEROUTPUT ON;
+BEGIN
+DBMS_OUTPUT.PUT_LINE('Hello, PL/SQL!');
+END;
+/
+
+
+DECLARE
+--이것은 주석
+	V_EMPNO NUMBER(4) NOT NULL := 7788;
+	V_ENAME VARCHAR2(10);
+	V_TAX CONSTANT NUMBER(1) := 3; 
+--CONSTANT는 상수임.
+	V_DEPTNO NUMBER(2) DEFAULT 10;
+BEGIN
+	V_ENAME := 'SCOTT';
+--V_TAX := 4; 상수이기 때문에 안됨
+
+	DBMS_OUTPUT.PUT_LINE(V_ENAME || V_EMPNO);
+	DBMS_OUTPUT.PUT_LINE(V_DEPTNO || V_DEPTNO);
+END;
+/
+
+
+DECLARE
+    V_DEPTNO DEPT.DEPTNO%TYPE := 50;
+BEGIN
+    SELECT DEPTNO INTO V_DEPTNO
+        FROM DEPT
+        WHERE DNAME = 'SALES';
+    DBMS_OUTPUT.PUT_LINE('V_DEPTNO: ' || V_DEPTNO);
+END;
+/
+
+
+참조형: 데이터베이스에 존재하는 테이블 열의 자료형이나 행 구조를 참조.
+열을 참조할때 %TYPE, 행을 참조할때 %ROWTYPE.
+변수명 테이블이름.열이름%TYPE
+
+DECLARE
+    V_DEPTNO DEPT.DEPTNO%TYPE;
+    V_DNAME DEPT.DNAME%TYPE;
+    V_LOC DEPT.LOC%TYPE;
+BEGIN
+    SELECT DEPTNO, DNAME, LOC INTO V_DEPTNO, V_DNAME, V_LOC
+        FROM DEPT
+        WHERE DNAME = 'SALES';
+    DBMS_OUTPUT.PUT_LINE('V_DEPTNO: ' || V_DEPTNO);
+    DBMS_OUTPUT.PUT_LINE('V_DNAME: ' || V_DNAME);
+    DBMS_OUTPUT.PUT_LINE('V_LOC: ' || V_LOC);
+END;
+/
+
+한 행을 참조
+DECLARE
+    V_DEPTNO DEPT.DEPTNO%TYPE;
+    V_DNAME DEPT.DNAME%TYPE;
+    V_LOC DEPT.LOC%TYPE;
+    V_DEPT_ROW DEPT%ROWTYPE;
+BEGIN
+    SELECT DEPTNO, DNAME, LOC INTO V_DEPT_ROW
+        FROM DEPT
+        WHERE DNAME = 'SALES';
+    DBMS_OUTPUT.PUT_LINE('V_DEPTNO: ' || V_DEPT_ROW.DEPTNO);
+    DBMS_OUTPUT.PUT_LINE('V_DNAME: ' || V_DEPT_ROW.DNAME);
+    DBMS_OUTPUT.PUT_LINE('V_LOC: ' || V_DEPT_ROW.LOC);
+END;
+/
+
+
+JSP
+디렉티브 p.53 page, taglib, include
+스크립트요소:스크립틀릿, 표현식, 선언부
+기본객체 request, response, session 등
+표현언어
+표준 액션태그와 태그 라이브러리
+
+웬만하면 절대경로로 하기! /로시작. /없으면 상대경로
+루트 파일명(/viewParameter.jsp)
+
+프로젝트 오른쪽마우스- properties-
+web project settings - /로 바꾸기
+
+
+
+<0113>
+jsp p.99 jsp 처리과정
+p.134,177,520
+p.357 war파일만들기
+프로젝트-export-warfile-
+다운로드에 저장-복사-javaProgramming-apache-tomcat-webapps에붙여넣기
+
+<0120>
+usebean
+_jsp0118
+chap08
+쿠키
+
+mvc모델 p.522~528
+chap18
+_mvc0118 
+
+form태그 action=서블릿요청명 scott
+
+vue0118
+vue.js기본. vue인스턴스 만들기 New Vue
+데이터를 있는 그대로 표시할 때
+{{데이터}}
+v-text
+v-html
+배열
+객체
+
+
+톰캣10에서 서블릿문제 해결
+javax를 jakarta로 바꿔야함. 
+import를 지우고 다시하면 자동으로 바뀜.
+
+http://javacan.somehost.com:8080/chap09/makeCookieWithDomain.jsp
+http://javacan.somehost.com:8080/chap09/viewCookies.jsp
+
+
+CREATE DATABASE jspdb;
+CREATE USER jsp@localhost IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON jspdb.*
+			TO jsp@localhost WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON jspdb.*
+			TO jsp@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+
+
+<0125>
+p.250 표현언어
+
+<0126>
+표현언어
+request,pageContext, application, session 
+forwarding
+mvc
+
+HashMap
+Ther.java
+해시테이블:데이터->해시함수->키,값 형태로 테이블
+
+chap11-util-FormatUtil.java
+p.270 TLD
+el-function.tld, web.xml
+test01.jsp ~p.274
+
+
+<0127>
+p.277
+_jsp0127 표현언어 스트림
+list.stream().filter() 필터는 걸러냄
+
+
+
+
+
+

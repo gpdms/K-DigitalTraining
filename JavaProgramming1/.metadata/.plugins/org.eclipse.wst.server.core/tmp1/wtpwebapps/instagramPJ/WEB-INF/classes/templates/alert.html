@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<script th:inline="javascript">
+
+var msg = /*[[${msg}]]*/'기본값';
+alert(msg);
+location.href = /*[[${url}]]*/'/';
+
+</script>
+</body>
+</html>

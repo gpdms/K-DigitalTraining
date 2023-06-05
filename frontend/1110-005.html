@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toggle Visible</title>
+</head>
+<body>
+    
+    <form action="">
+        <p>Click the radio button to toggle between password visibility:</p>
+        패스워드: <input type="password" id="pwd"><br><br>
+        <input type="checkbox" onclick="myFunction()">Show Password
+    </form>
+
+    <script>
+            function myFunction(){
+                let p = document.getElementById("pwd");
+
+                if(p.type == "password"){
+                    p.type = "text";
+                } else {
+                p.type = "password";
+            }
+        }
+      
+
+        
+            
+    </script>
+
+</body>
+</html>

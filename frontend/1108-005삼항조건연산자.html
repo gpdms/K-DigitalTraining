@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼항조건연산자</title>
+    <script>
+        // var a = 5;
+        // var b = 10;
+        // var result = a > b ? "오늘가야될까?" : "그냥 집으로 가자";
+        // document.write(result);
+
+        // 프롬프트창 열기
+        // var name = prompt("이름이 뭐예요?");
+        // var height = prompt("키가 몇이에요?");
+        // var weight = prompt("몸무게가 몇이에요?");
+
+        // var normal_w = (height - 100) * 0.9;
+        // // 평균체중
+
+        // var result = weight >= normal_w - 5 && weight <= normal_w + 5;
+        // // +-5 오차범위
+
+        // result = result ? "적정 체중 오케이" : "적정 체중 노우";
+        // document.write(name + "님은" + result);
+
+        // var walk = prompt("하루에 걷는 양은 몇 걸음인가요?");
+            
+        // // 조건문은 소괄호, 실행문은 중괄호
+        // if(walk >= 10000) {
+        //     document.write("와우 브라보~ 건강하시겠네요?")
+        // }
+        // }
+
+        var id = "gpdms";
+        var pw = "1234";
+
+        var user_id = prompt("아이디가 뭔가요?");
+        var user_pw = prompt("비번이 뭔가요?");
+
+        if (id == user_id) {
+            if (pw == user_pw) {
+                document.write(user_id + "님 반갑습니다.");
+            } else {
+                alert("비밀번호가 일치하지 않습니다. 다시 시도하세요.");
+                location.reload();
+            }
+
+        } else {
+            alert("아이디가 일치 하지 않습니다. 다시 시도하세요.")
+            location.reload(); // 메소드쓰는법 .method()
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

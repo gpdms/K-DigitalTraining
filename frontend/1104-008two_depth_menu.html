@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2DEPTH MENU</title>
+    <style>
+        .cls001{
+            list-style: none;
+            /* 불릿 없앰 앞에 동그라미없앰 */
+            margin: 0;
+            padding: 0;
+            /* 앞에 딱 달라붙게 */
+        }
+        /* >는 자식요소를 뜻함 */
+        .cls001 > li {
+            width: 120px;
+            height: 30px;
+            
+            line-height: 30px;
+            /* 행간line-height과 height값을 똑같이 주면 침범하지 않음 */
+            border: 1px solid black;
+            text-align: center;
+            float: left;
+            /* float 위치값을 어디에다 붙일거냐. */
+
+        }
+
+        /* 똑같이써줘야.
+        >표시 안하는 이유: 내바로밑 태그들만 선택하는게 아니라 내 및 모든 태그들 선택하기 위해  */
+        .cls001 li ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .cls001 li ul li {
+            width: 120px;
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid black;
+            text-align: center;
+            display: none;
+            /* 처음에 안보여야하기때문에 display사용 */
+        }
+
+        .cls001 li:hover ul li {
+            display: block;
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- ul>li*5 -->
+    <!-- 손주 ul과 구분하기 위해 클래스부여 -->
+    <ul class="cls001">
+        <li>HTML
+            <!-- ul>li*3 -->
+            <ul>
+                <li>HTML1</li>
+                <li>HTML2</li>
+                <li>HTML3</li>
+            </ul>
+        </li>
+
+        <li>CSS</li>
+        <li>Javascript</li>
+        <li>jQuery</li>
+        <li>Portfolio</li>
+    </ul>
+</body>
+</html>

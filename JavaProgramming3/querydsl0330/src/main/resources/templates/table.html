@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+[[${list}]]
+
+<ul th:each="tables : ${list}">
+    <li>[[${tables}]] <a th:href="@{/sel(tid=${tables.tid})}">[[${tables.tid}]]</a> </li>
+</ul>
+</body>
+</html>

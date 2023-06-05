@@ -1,0 +1,41 @@
+p {
+    font-size: 60px; 
+    color: #ff0000;
+    font-family: Arial, Helvetica, sans-serif;
+    /* 맑은고딕,돋움,굴림; 세가지인 이유. 사용자가 시스템에 맑은고딕이 없을경우 대체. */
+    text-decoration: overline;
+    /* overline, underline, line-through */
+    background: skyblue;
+/* background-color나  background-image쓰면 에러가 자주나서 
+    실무에선 background만쓰기
+    배경색 한줄 잡아먹는걸로 보아 h1은 블락
+    16진수
+    0 1 2 3 4 5 6 7 8 9 a b c d e f
+    가장낮은수0 가장높은수f
+    rgb
+    #ff0000 ->red
+    #00ff00 ->green
+    #0000ff -> blue
+    #ffffff -> white
+    #000000 -> black */
+    font-weight: 600;
+    /* 글자굵기. 400이 일반. 볼드체는 600. 고가의 서체일수록 굵기가 다양 */
+    
+    /* 1104 */
+    border-width: 10px;
+    border-style: solid;
+    border-color: black;
+    border: 10px solid grey;
+    /* 결과는 동일. 코드 줄이는게 필요 */
+    /* border: 10px dashed black; */
+    /* border: 20px dotted black; */
+    /* border: 20px inset grey; */
+    /* border: 20px outset grey; */
+    /* border: 20px ridge grey; */
+    /* border: 20px groove grey; */
+    text-shadow: 4px 4px 5px orange;
+    /* x축이동거리 y축이동거리 블러량 컬러값.
+        0은 단위값을 주지 않음. */
+    box-shadow: 4px 4px 5px red;
+
+}

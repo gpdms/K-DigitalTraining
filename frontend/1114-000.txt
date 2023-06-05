@@ -1,0 +1,37 @@
+마진값을 주지 않으면 브라우저에 8px의 마진이 생김.
+
+이미지url, no-repeat
+background-size에서 cover와 contain의 차이점.
+contain: 세로가 다 차면 가로를 더이상 늘리지 않음.
+cover: 세로를 더 밀고 들어가 가로를 다 채움. 세로가 잘릴 수 있음.
+그래서 대부분 background-size에서 cover을 쓰게됨
+
+부트스트랩에서 링크 copy
+내css보다 위에 있어야.
+안그러면 덮어씌어버림.
+자바스크립트도 마찬가지로 위에.
+
+div 부트스트랩의 container임. 내 container아님.
+부트스트랩에 css가 어떻게 되어있는지 확인하기 위해 container background white넣어봄.
+반응형웹b
+min-height 100vh넣어주면 꽉차게됨. 여기다가 to do list만들거임
+
+box shadow 대부분 여기서 93 beautiful CSS box-shadow
+https://getcssscan.com/css-box-shadow-examples
+
+div글자들이 세로로정렬되어 있으니까 가로로. id만들어주고 flex넣어주기
+
+1em = 16px
+pxtoem.com에서 단위변환 가능
+
+prettier code formatter 다운.
+정렬 예쁘게맞춰줌
+
+-------------------------------
+slice(0,4).show();
+버튼을 클릭했을 때 특정요소의:hidden).slide(0,4).slideDown()
+if(특정요소의 length == 0 {
+
+})
+
+

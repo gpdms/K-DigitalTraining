@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>instagram</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/new_post.css">
+    <link rel="shortcut icon" href="/imgs/instagram.png">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/update.css">
+	
+	<!-- 폰트어썸 -->
+	<script src="https://kit.fontawesome.com/b5ffac9792.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://kit.fontawesome.com/b5ffac9792.css" crossorigin="anonymous">
+</head>
+<body>
+
+
+<section id="container">
+  	<!-- 헤더 -->
+   	<div th:replace="~{/fragments/header.html :: fragment-header}"></div>
+    
+    <!-- 사이드메뉴바 nav-->
+    <div th:replace="~{/fragments/nav.html :: fragment-nav}"></div>
+
+	<!-- 메인 -->
+    <div id="main_container">
+
+        <div class="post_form_container">
+            <form id="update_form" class="post_form">
+<!--            <input type="hidden" name="post_id" value="0">  -->
+                <div class="title">
+                    포스트 수정
+                </div>
+
+				<!-- 이미지 --> 
+				<div id="img_preview" class="slide">
+			      <ul class="imgSlide" th:style="|width:${(#lists.size(imgs)) * 600}px;|">
+			        <li id="img_container" th:each="img : ${imgs}">
+			        	<button  id="del_btn" th:onclick="|delImg(${img.imgId})|"
+			        	th:if="${#lists.size(imgs)>1}"> <i class="fa-solid fa-trash-can"></i></button>
+			        	<img id="up_img" th:src="|/imgs/post/${img.imgId}|" alt="포스트이미지">
+			        </li>
+			      </ul>
+			      <div class="moveBtn" th:if="${#lists.size(imgs)>1}">
+			       <a class="pre" th:onclick="preImg()">
+          			< </a>
+           			 <a class="next" th:onclick="|nextImg(${imgCount})|"> > </a>
+			      </div>
+			    </div>
+                
+				<div style="height:20px"></div>
+                <textarea name="content" id="text_field" cols="70" rows="10" th:text="${post.content}"
+                style="text-align:left; padding:10px;"></textarea> 
+                <p>
+            		<input type="hidden" name="post_id" th:value="${post.post_id}" >
+                </p>
+               
+                <input class="submit_btn" type="button" value="수정" th:onclick="updatePostCont()">
+            </form>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+<script src="/js/update.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script th:inline="javascript">
+//게시글 내용 수정
+function updatePostCont(){
+	var updateFormData = $("#update_form").serialize();
+	$.ajax({
+	    type: 'post',
+	    url: '/updatePost',
+	    data: updateFormData,
+		success: function (data) {
+		        alert("포스트를 수정했습니다."); 
+		        if(data > 0) {
+		        	location.href = "/view/" + data;
+		        }
+		    },
+		    error: function (err) {
+		    	alert("포스트를 수정할 수 없습니다.");
+		    	console.log(err);
+		    }
+		}) 
+}
+//사진 삭제
+var i = 0; // 사진 인덱스를 저장할 변수
+function delImg(imgId){
+	let ok = confirm(" 사진을 삭제하시겠어요? \n 이 사진을 삭제한 경우 Instagram 앱에서 내 활동 > 최근 삭제한 컨텐츠의 메뉴로 이동하여 30일 이내에 복원할 수 있습니다. \n 30일이 지나면 영구적으로 삭제됩니다.");
+	if (ok) {
+		var json = {img_id : imgId,
+					post_id : /*[[${post.post_id}]]*/
+					};
+		  $.ajax({
+			    type: 'post',
+			    url: '/deleteImg', 
+			    data: JSON.stringify(json),
+				contentType: "application/json",
+			    success: function (data) {
+			    	dara
+			        alert("이미지가 삭제되었습니다.");
+			   		 $("#img_preview").replaceWith(data);
+			   		 i = 0;
+			    },
+			    error: function (err) {
+			        console.log(err);
+			        alert("이미지를 삭제할 수 없습니다.");
+			    } 
+		  }) 
+    }
+}
+
+//사진 슬라이드 
+function preImg() {
+	 if (i > 0) {
+	 i = i - 1;
+	 $(".imgSlide").stop().animate({
+	   "left": -600 * i + "px"
+	 }, "slow");
+	}
+}
+
+function nextImg(imgCount) {
+	console.log("i:"+i);
+	console.log("imgCount" + (imgCount-1));
+	if (i < (imgCount-1)) {
+	    i = i + 1;
+	    $(".imgSlide").stop().animate({
+	      "left": -600 * i + "px"
+	    }, "slow");
+	  }
+}
+
+
+</script>
+</body>
+</html>

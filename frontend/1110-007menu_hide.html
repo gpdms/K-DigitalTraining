@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENU HIDE</title>
+    <style>
+        body {
+          margin: 0;
+          background-color: #f1f1f1;
+          font-family: Arial, Helvetica, sans-serif;
+          height: 10000px;
+        }
+        
+        #navbar {
+          background-color: #333;
+          position: fixed;
+          top: 0;
+          width: 100%;
+          display: block;
+          transition: top 0.3s;
+        }
+        
+        #navbar a {
+          float: left;
+          display: block;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 15px;
+          text-decoration: none;
+          font-size: 17px;
+        }
+        
+        #navbar a:hover {
+          background-color: #ddd;
+          color: black;
+        }
+        </style>
+</head>
+<body>
+    <div id="navbar">
+        <a href="#">HTML</a>
+        <a href="#">CSS</a>
+        <a href="#">jquery</a>
+    </div>
+    
+    <script>
+        let prevScrollpos = window.pageYOffset;
+        window.onscroll = function(){
+            let currentScrollPos = window.pageYOffset;
+            if(prevScrollpos > currentScrollPos){
+              document.getElementById("navbar").style.top = "0";  
+            } else {
+            document.getElementById("navbar").style.top = "-50px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, mollitia? Dolor, molestias neque! Unde earum, dolores esse mollitia iusto asperiores ipsam aspernatur consequuntur omnis eos vero enim sapiente suscipit fuga?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, eaque. At recusandae architecto sed velit nesciunt earum, sequi rerum aliquid repellat ipsam iure mollitia in exercitationem dolore a eaque unde?</p>
+    </div>
+</body>
+</html>

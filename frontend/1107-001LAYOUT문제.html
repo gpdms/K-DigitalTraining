@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAYOUT</title>
+    <style>
+        #wrapper {
+            width: 1000px;
+            /* height: 100vh; 대신 overflow:hidden;
+            넘치는 영역에 대해 보이지 않게하겠다. 영역에 맞게 늘어나기도.*/
+            overflow: hidden;
+            margin: 0 auto;
+            border: 1px solid #333;
+        }
+        header {
+            width: 100%;
+            height: 150px;
+            background: orange;
+        }
+
+        #logo {
+            width: 120px;
+            height: 60px;
+            float: left;
+            border: 1px solid black;
+            margin-top: 50px;
+            margin-left: 50px;
+        }
+
+        img {
+            width: 120px;
+            height: 60px;
+        }
+
+        nav {
+            width: 350px;
+            height: 40px;
+            float: right;
+            /* border: 1px solid black; */
+            margin-top: 80px;
+
+            
+        }
+
+        /* ul에 세가지 기억하기 */
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            display: inline-block;
+            margin-right: 15px;
+            background: red;
+            color: #fff;
+            padding: 3px;
+        }
+
+        #left {
+            float: left;
+            border: 1px solid black;
+            width: 20%;
+            height: 400px;
+            margin-right: 5%;
+        }
+
+        #center {
+            float: left;
+            border: 1px solid black;
+            width: 50%;
+            height: 400px;
+            /* margin-left: 50px; */
+        }
+
+        #right {
+            float: right;
+            border: 1px solid black;
+            width: 20%;
+            height: 400px;
+        }
+
+        article {
+            width: 100px;
+            height: 80px;
+            background: red;
+            float: left;
+            margin: 10px;
+        }
+
+        footer {
+            clear: both; 
+            /*float을 사용하고나서는 다음턴으로 넘길때는 반드시 해제시켜줘야. clear: left는 left 해제. right은 right해제. both 양쪽다 해제. 실무에선 편하게 both.*/
+            height: 100px;
+            background: yellowgreen;
+            text-align: center;
+            padding-top: 40px;
+            box-sizing: border-box;
+            /* box-sizing: border-box; padding을 width, height에 포함시키는 속성 */
+        }
+
+        /* 맨처음address생성하면 이탤릭체 */
+        address {
+            font-style: normal;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <div id="logo">
+                <img src="iu.jpg" alt="">
+            </div>
+            <nav>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JAVASCRIPT</li>
+                    <li>TODOLIST</li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <div id="left">
+                <aside>
+
+                </aside>
+            </div>
+            <div id="center">
+                <article></article>
+                <article></article>
+                <article></article>
+                <article></article>
+                <article></article>
+                <article></article>
+                <article></article>
+                <article></article>
+                <article></article>
+                <article></article>
+                <article></article>
+                <article></article>
+
+            </div>
+            
+            <!-- div로 영역을 나눠야 위치따로조정할수 -->
+            <div id="right">
+                <aside>
+
+                </aside>
+
+            </div>
+        </section>
+        <footer>
+            <address>오늘은 안즐거운 월요일</address>
+        </footer>
+
+    </div>
+</body>
+</html>

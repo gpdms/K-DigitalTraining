@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/basic.html}">
+
+<div layout:fragment="content">
+<div> [[${T(java.lang.Math).floor(3.14)}]]</div> <!-- T:자바의메소드 갖다붙임. -->
+	<div th:each=" i : ${#numbers.sequence(1,5)}">
+	숫자:[[${i}]]
+	</div>
+	
+</div>
+
+<script layout:fragment="script" th:inline="javascript">
+	console.log("script.....................");
+</script>

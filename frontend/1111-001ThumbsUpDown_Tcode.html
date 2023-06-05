@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .fa {
+            font-size: 50px;
+            cursor: pointer;
+        }
+
+        .fa:hover {
+            color: darkblue;
+        }
+
+        .active {
+            transform: rotateX(180deg);
+        }
+
+    </style>
+</head>
+<body>
+    <i class="fa fa-thumbs-up" id="icon"> </i>
+<!-- 링크안에 보면 fa클래스의 fa-thumbs-up클래스 있음 -->
+    <script>
+        let icon = document.getElementById("icon");
+        icon.addEventListener("click", function() {
+            icon.classList.toggle("active");
+        });
+    </script>
+</body>
+</html>

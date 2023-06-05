@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>instagram</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/new_post.css">
+    <link rel="shortcut icon" href="/imgs/instagram.png">
+</head>
+<body>
+
+
+<section id="container">
+  	<!-- 헤더 -->
+   	<div th:replace="~{/fragments/header.html :: fragment-header}"></div>
+    
+    <!-- 사이드메뉴바 nav-->
+    <div th:replace="~{/fragments/nav.html :: fragment-nav}"></div>
+
+	<!-- 메인 -->
+    <div id="main_container">
+
+        <div class="post_form_container">
+            <form class="post_form" id="upload_form">
+<!--              <input type="hidden" name="post_id" value="0">  -->
+                <div class="title">
+                    NEW POST
+                </div>
+                <div class="preview">
+                    <div class="upload">
+                        <div class="post_btn">
+                            <p>포스트 이미지 추가</p>
+                            <canvas id="imageCanvas"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+          			 <input type="file" multiple="multiple" name="imgs" id="id_photo" required="required">
+                <p>
+                    <textarea name="content" id="text_field" cols="50" rows="5" placeholder="500자까지 등록 가능합니다."></textarea> 
+                </p>
+                <p>
+            		<input type="hidden" name="mem_id" th:value="${session.user.mem_id}" >
+                </p>
+               
+                <input class="submit_btn" type="button" value="저장" th:onclick="insertPost()">
+            </form>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+<script src="js/insta.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script th:inline="javascript">
+//게시글 업로드
+function insertPost(){
+	var uploadForm = $('#upload_form')[0];
+	var formData = new FormData(uploadForm );
+	$.ajax({
+	    type: 'post',
+	    url: '/upload',
+	    data: formData,
+	    contentType : false,
+        processData : false,
+        enctype:'multipart/form-data',
+        cache:false,
+		success: function (data) {
+				console.log(data);
+		        alert("포스트를 등록했습니다."); 
+		        location.href = "/myHome/" + data;
+		    },
+		    error: function (err) {
+		    	alert("포스트를 등록할 수 없습니다.");
+		    	console.log(err);
+		    }
+		}) 
+}
+
+       var fileInput  = document.querySelector( "#id_photo" ),
+           button     = document.querySelector( ".input-file-trigger" ),
+           the_return = document.querySelector(".file-return");
+
+       // Show image
+       fileInput.addEventListener('change', handleImage, false);
+       var canvas = document.getElementById('imageCanvas');
+       var ctx = canvas.getContext('2d');
+
+
+        function handleImage(e){
+           var reader = new FileReader();
+           reader.onload = function(event){
+               var img = new Image();
+               // var imgWidth =
+               img.onload = function(){
+                   canvas.width = 300;
+                   canvas.height = 300;
+                   ctx.drawImage(img,0,0,300,300);
+               };
+               img.src = event.target.result;
+               // img.width = img.width*0.5
+               // canvas.height = img.height;
+           };
+           reader.readAsDataURL(e.target.files[0]);
+       }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+1109일
+-----------------
+
+5행 5열 표를 만들고, 데이터가 1부터 25까지 출력되도록 작성해 주세요....
+
+객체의 종류
+
+1.내장객체: Math(수학객체), String(문자객체), Date(날짜객체), 배열객체(Array) 
+2.브라우저 객체 모델(BOM) : window, screen, history, navigator
+3.문서객체 모델 (DOM) : HTML의 문서구조 html 
+
+Math.abs( -3 or 3 ) 3
+Math.min( )
+Math.max( )
+Math.pow( ) 제곱값
+Math.random( ) 0과 1사이 * 10
+Math.round(숫자) 소숫점 첫째자리에서 반올림하여 정수를 반환
+Math.ceil(  ): 소숫점 첫째자리에서 무조건 올림
+Math.floor( ): 소숫점 첫째자리에서 무조건 내림
+Math.PI : 원주율 상수
+
+날짜 객체
+
+https://cafe.naver.com/backja1969
+
+offset( ).top 절대 위치값
+
+position( ).top 상대 위치값
+
+
+
+

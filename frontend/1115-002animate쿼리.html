@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>animate메서드 사용방법</title>
+    <style>
+        .txt1 {
+            background: rebeccapurple;
+        }
+
+        .txt2 {
+            background: darkcyan;
+        }
+    </style>
+</head>
+
+<body>
+    <p><button class="btn1">버튼1</button></p>
+    <span class="txt1">"500px" 이동</span>
+
+    <p><button class="btn2">버튼2</button></p>
+    <span class="txt2">"50px"씩 이동</span>
+     <!-- 대입연산자 사용-->    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $(".btn1").on("click, focus", function (){
+                // on메서드는 다른 이벤트 종류를 계속 추가 가능
+                $(".txt1").animate({
+                    marginLeft: "500px",
+                    fontSize: "30px"
+                },
+                    2000, function () {
+                        alert("모션완료");
+                    });
+            });
+
+
+            $(".btn2").on("click", function (){
+                $(".txt2").animate({
+                    marginLeft: "+=50px"
+                }, 500);
+            });
+        });
+    </script>
+</body>
+
+</html>

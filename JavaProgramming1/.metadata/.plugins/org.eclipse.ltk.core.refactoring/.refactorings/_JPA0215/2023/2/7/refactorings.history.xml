@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;MyData.java&apos; to &apos;_JPA0215/src/main/java/com.study.springboot.entity&apos;&#x0D;&#x0A;- Original project: &apos;_JPA0215&apos;&#x0D;&#x0A;- Destination element: &apos;_JPA0215/src/main/java/com.study.springboot.entity&apos;&#x0D;&#x0A;- Original element: &apos;com.study.springboot.MyData.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;com.study.springboot.entity" element1="/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;com.study.springboot{MyData.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1676421434299" units="1" version="1.0"/>
+</session>

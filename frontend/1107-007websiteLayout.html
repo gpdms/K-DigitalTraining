@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrapper {
+            width: 1000px;
+            height: 100vh;
+            margin: 0 auto;
+            
+        }
+
+        header {
+            width: 100%;
+            height: 150px;
+            background: pink;
+        }
+
+        .nav {
+            display: inline-block; /*inline*/
+            width: 800px;
+            height: 150px;
+           
+        }
+
+        .nav a {
+            /* display: inline-block; */
+            float: left;
+            margin: 15px;
+            text-decoration: none;
+            color: white;
+            margin-top: 80px;
+            
+        }
+
+        #logo {
+            width: 200px;
+            height: 150px;
+            float: right;
+            margin-top: 0;
+        }
+
+        #left {
+            float: left;
+            width: 75%;
+            height: 650px;
+            border: 1px solid black;
+            position: relative;
+        }
+
+        #right {
+            float: right;
+            width: 20%;
+            height: 650px;
+            border: 1px solid black;
+
+        }
+
+        article {
+            width: 370px;
+            height: 320px;
+            border: 1px solid grey;
+        }
+        .box1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .box2 {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .box3 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .box4 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+    
+
+
+        footer {
+            clear: both;
+            width: 1000px;
+            height: 150px;
+            border: 1px solid black;
+            bottom: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <div class="nav">
+                <a href="">애완견 종류</a>
+                <a href="">입양하기</a>
+                <a href="">건강돌보기</a>
+                <a href="">더불어살기</a>
+            </div>
+            <img id="logo" src="iu.jpg" alt="">
+
+        </header>
+        <section>
+            <h1>강아지 용품 준비하기</h1>
+            <div id="left"> 
+                
+                <article class="box1">
+                    <h2>강아지 집</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam qui laborum saepe, adipisci eos, error quisquam quas accusantium, sed illum atque! Ullam reiciendis deleniti sit accusantium repudiandae laboriosam aliquid voluptatum.</p>
+                </article>
+                <article class="box2">
+                    <h2>강아지 먹이</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam qui laborum saepe, adipisci eos, error quisquam quas accusantium, sed illum atque! Ullam reiciendis deleniti sit accusantium repudiandae laboriosam aliquid voluptatum.</p>
+                </article>
+                <article class="box3">
+                    <h2>밥그릇, 물병</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam qui laborum saepe, adipisci eos, error quisquam quas accusantium, sed illum atque! Ullam reiciendis deleniti sit accusantium repudiandae laboriosam aliquid voluptatum.</p>
+                </article>
+                <article class="box4">
+                    <h2>이름표, 목줄</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam qui laborum saepe, adipisci eos, error quisquam quas accusantium, sed illum atque! Ullam reiciendis deleniti sit accusantium repudiandae laboriosam aliquid voluptatum.</p>
+                </article>
+            </div>
+            <div id="right">
+                <aside>
+
+                </aside>
+            </div>
+        </section>
+        <footer>
+            
+        </footer>
+
+    </div>
+</body>
+</html>

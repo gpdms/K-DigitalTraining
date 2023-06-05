@@ -1,0 +1,39 @@
+객체=모든사물.
+객체<-기능(메소드)&속성
+
+자바스크립트 객체의 종류
+1. 내장객체: Math(수학객체), String(문자객체), Date(날짜객체), Array(배열객체)
+2. 브라우저 객체 모델(BOM): window-최상위객체, screen, history, navigator
+3. 문서 객체 모델(DOM): HTML의 문서구조. 최상위객체-html
+
+Math.abs(-3 or 3) == 3
+절대값
+Math.min()
+Math.max()
+Math.pow() 제곱값
+Math.random() 0과 1사이 무작위 수 반환
+Math.round(숫자) 소수점 첫째자리에서 반올림하여 정수를 반환
+Math.ceil() 소수점 첫째자리에서 무조건 올림
+Math.floor() 소수점 첫째자리에서 무조건 내림
+Math.PI 원주율 상수
+
+p.568
+날짜객체
+외우기
+
+p.559
+Array객체의 메서드
+
+https://cafe.naver.com/backja1969
+
+
+자바스크립트에서는 카멜표기법을따름.
+css에서는 margin-left
+자바스크립트에서는 marginLeft
+
+
+modal 화면 다 덮어버리는것
+
+
+offset().top 절대 위치값: 브라우저 맨위에서
+position().top 상대 위치값: relative absolute 기준

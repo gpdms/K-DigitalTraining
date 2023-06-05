@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  background: url(images/back.jfif) no-repeat;
+  background-size: cover;
+}
+
+.container {
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.task-area {
+  border: 1px solid #ccc;
+}
+
+#task-tabs {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+}
+
+#task-tabs div {
+  padding: 1em;
+}
+
+#under-line {
+  height: 4px;
+  background: dodgerblue;
+  position: absolute;
+  width: 90px;
+  left: 0;
+  top: 50px;
+  padding: 0 !important;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.task-done {
+  text-decoration: line-through;
+}

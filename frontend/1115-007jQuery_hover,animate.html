@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CSS3 tooltip design | 툴팁 디자인</title>
+    <style>
+      body {
+        padding: 100px;
+        background: #ccc url(../images/bg_tile.jpg);
+      }
+      h1 {
+        margin-bottom: 40px;
+        font-family: "Lato", sans-serif;
+        font-size: 70px;
+        color: #fff;
+      }
+
+      /* .gallery-nav */
+      .gallery-nav li {
+        float: left;
+        margin-right: 100px;
+      }
+
+      a.tooltip {
+        display: block;
+        position: relative;
+        width: 100px;
+        height: 100px;
+        border: 5px solid #4b4b4b;
+        background: #fff no-repeat center;
+        background-size: cover;
+
+        /* CSS3 Border-radius */
+        -webkit-border-radius: 55px;
+        border-radius: 55px;
+
+        /* CSS3 Transition */
+        -webkit-transition: all 0.4s ease-in 0.3s;
+        transition: all 0.4s ease-in 0.3s;
+        box-sizing: border-box;
+      }
+      a.tooltip:hover,
+      a.tooltip:focus {
+        border-color: #fff;
+      }
+      a.tooltip .tooltip-box {
+        position: absolute;
+        left: 50%;
+        bottom: -110px;
+        margin-left: -10.4em;
+        padding: 0.8em;
+        width: 20em;
+        background: #111;
+        opacity: 0;
+
+        /* CSS3 Border-radius */
+        -webkit-border-radius: 15px 0;
+        border-radius: 15px 0;
+
+        /* CSS3 Transition */
+        -webkit-transition: all 0.4s ease-in 0.3s;
+        transition: all 0.4s ease-in 0.3s;
+      }
+      a.tooltip:hover .tooltip-box,
+      a.tooltip:focus .tooltip-box {
+        bottom: -120px;
+        opacity: 1;
+      }
+      a.tooltip .tooltip-box:before {
+        /* V 모양 */
+        content: "";
+        position: absolute;
+        left: 120px;
+        bottom: -10px;
+        border: 10px solid #111;
+        /* 삼각형만들기 한것. 뭔지는모르겠네 */
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        /* 위아래 같은뜻 */
+        border-bottom: none;
+      }
+      a.tooltip .tooltip-title {
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        font-weight: bold;
+        color: #fff;
+      }
+      a.tooltip .tooltip-desc {
+        margin-top: 10px;
+        margin-bottom: 0;
+        font-size: 11px;
+        color: #7a7a7a;
+      }
+
+      /* 사진 */
+      a.tooltip.photo1 {
+        background-image: url(images/pic_1.jpg);
+      }
+      a.tooltip.photo2 {
+        background-image: url(images/pic_2.jpg);
+      }
+      a.tooltip.photo3 {
+        background-image: url(images/pic_3.jpg);
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script src="js/modernizr.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.UI.min.js"></script>
+    <!-- 하위 브라우저 맞추기 위한 스크립트 -->
+    <script src="js/tooltip.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script>
+        $(function(){
+            $("a.tooltip").hover(
+                function(){
+                    $(this).stop().animate({"border-color": "#fff"}, 400)
+                    .find(".tooltip-box").stop().animate({"opacity":1, "bottom":"90px"}, 400);
+                },
+                //mouse enter
+
+                function(){
+                    $(this).stop().animate({"border-color": "#4b4b4b"}, 400)
+                    .find(".tooltip-box").stop().animate({"opacity":0, "bottom":"100px"}, 400);
+                }
+                //mouse leave
+            );
+        })
+    </script>
+  </head>
+
+  <body>
+    <h1>Featured free trial downloads</h1>
+    <ul class="gallery-nav clearfix">
+      <li>
+        <a class="tooltip photo1" href="#none">
+          <div class="tooltip-box">
+            <h4 class="tooltip-title">Flash ProfessionalCC</h4>
+            <p class="tooltip-desc">
+              Flash Professional은 애니메이션과 멀티미디어 콘텐츠를 제작할 수
+              있는 제작 환경을 제공합니다. 시각 디자이너를 사용하여 대화형
+              환경을 만들어 데스크톱 및 모바일 장치에서 일관되게 표시할 수
+              있습니다.
+            </p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="tooltip photo2" href="#none">
+          <div class="tooltip-box">
+            <h4 class="tooltip-title">DreamweaverCC</h4>
+            <p class="tooltip-desc">
+              코드 작성에 시간을 소모하지 않고 웹 및 모바일 플랫폼에 대한 설계,
+              개발 및 게시 작업을 수행합니다. Dreamweaver에서는 웹 사이트 생성
+              및 편집을 위한 직관적인 시각적 인터페이스를 제공하고 HTML5/CSS3 및
+              jQuery에 대한 최상의 지원은 물론 웹 표준과의 최신 호환성을
+              제공합니다.
+            </p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="tooltip photo3" href="#none">
+          <div class="tooltip-box">
+            <h4 class="tooltip-title">IllustratorCC</h4>
+            <p class="tooltip-desc">
+              Illustrator는 전체 미디어에서의 설계를 위한 업계 표준 벡터 드로잉
+              환경입니다. 모양, 색상, 효과 및 타이포그라피로 창의적인 비전을
+              표현합니다. 복잡한 대형 파일을 신속하고 안정적으로 작업하고
+              디자인을 Adobe의 창의적인 응용 프로그램 간에 효율적으로
+              이동합니다.
+            </p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </body>
+</html>

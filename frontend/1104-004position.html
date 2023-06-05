@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포지션</title>
+    <style>
+        #wrapper {
+            width: 600px;
+            height: 600px;
+            border: 2px solid black;
+            position: relative;
+            /* 부모요소인 wrapper가 기준값을 가짐. 
+            absolute면 브라우저가 기준이됨.(?)*/
+            margin: 50px auto;
+        }
+
+        .box1 {
+            /* width: 50px;
+            height: 50px;
+            background: red; */
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .box2 {
+            /* width: 50px;
+            height: 50px;
+            background: red; */
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .box3 {
+            /* width: 50px;
+            height: 50px;
+            background: red; */
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        .box4 {
+            /* width: 50px;
+            height: 50px;
+            background: red; */
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        .box5 {
+            /* width: 50px;
+            height: 50px;
+            background: red; */
+            position: absolute;
+            /* top: 275px;
+            left: 275px; */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            
+        }
+        /* 반복되는 부분 클래스로 따로 */
+        .cls002 {
+            width: 50px;
+            height: 50px;
+            background: red;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- div#wrapper -->
+    <div id="wrapper">
+        <!-- div.box*5 -->
+        <div class="box1 cls002"></div>
+        <div class="box2 cls002"></div>
+        <div class="box3 cls002"></div>
+        <div class="box4 cls002"></div>
+        <div class="box5 cls002"></div>
+        <!-- 클래스 동시에 설정하는 방법 클래스 두개 한칸띄고 이어붙이기 -->
+    </div>
+</body>
+</html>

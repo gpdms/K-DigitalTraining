@@ -1,0 +1,63 @@
+
+
+console.log(변수) 값을 확인하는 디버깅
+F12눌러서 console창 확인하기
+
+document.getElementById("id명") id선택자사용해DOM요소에 접근
+document.getElementsByClassname("") 클래스명이 같은 DOM요소들이 저장
+
+.querySelector()
+특정 name,id,class를 제한하지 않고 CSS 선택자로 요소를 선택하게 해줍니다. 주의할 점은 선택자에 해당하는 첫번째 요소만 선택한다는 것입니다.
+document.querySelector( 'selector' )
+예를 들어
+document.querySelector( '.xyz' )
+는 클래스 값이 xyz인 첫번째 요소에 접근합니다.
+
+.querySelectorAll()
+특정 CSS 선택자를 가진 모든 요소를 배열로 가져오는 메서드입니다.
+document.querySelectorAll( 'selector' )
+예를 들어
+document.querySelectorAll( '.abc' )
+는 클래스 값이 abc인 모든 요소를 가져옵니다.
+document.querySelectorAll( '.abc, .def' );
+클래스 값이 abc 또는 def인 모든 요소를 가져옵니다.
+
+
+
+이벤트
+btn.addEventListener("click", function);
+<태그 안에 on이벤트명 = "함수">
+onclick = myFunction()
+
+스타일 변경
+arr[i].style.display = "block";
+
+
+템플릿 리터럴
+`${value}`
+백틱(`)으로 템플릿 리터럴을 사용하면, \n없이 줄바꿈 등을 쉽게 표현할 수 있다.
+var str_01 = `hello world`;
+백틱 안에 달러기호 ${}를 사용하면 변수나 표현식을 표현할 수 있다.
+
+리스트
+let taskList = [];
+taskList.push(taskContent); 추가
+
+let resultHTML = ""; 문자열
+
+.includes() 메서드는 하나의 문자열이 다른 문자열에 포함되어 있는지를 판별하고, 결과를 true 또는 false 로 반환
+skills.includes("Javascript") && skills.includes("React")
+
+객체
+기본
+https://developer.mozilla.org/ko/docs/Learn/JavaScript/Objects/Basics
+객체생성
+let objectName = {
+  member1Name: member1Value,
+  member2Name: member2Value,
+  member3Name: member3Value
+};
+
+
+.value
+value값을 가져온다.

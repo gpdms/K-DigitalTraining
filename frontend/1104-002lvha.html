@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이디 선택자 사용법</title>
+    <style>
+        /* id선택자 */
+        #wrapper {
+            width: 900px;
+            height: 100vh;
+            margin: 0 auto;
+            border: 1px solid black;
+            /* background: url(iu.jpg) no-repeat; */
+            /* background만 쓰고 그 다음에 이미지일지 컬러일지 */
+            /* background-size: cover; */
+            /* 사진을 꽉채움 */
+            /* background-repeat: no-repeat; */
+
+        }
+
+        /* 태그선택자 */
+        a:link {
+            width: 50px;
+            height: 50px;
+            border: 2px solid red;
+            /* 중요. a태그는 인라인. 인라인은 width, height먹지 않는다. */
+            padding: 10px;
+            /* display inline에서 padding은 받아들인다. */
+            /* 바깥쪽으로 여백 margin, 안쪽으로 여백padding */
+            display: inline-block;
+            /* a태그의 display를 block으로 바꾸면 width, height먹음. */
+            /* inline-block으로 바꾸면 한 라인에 표현이 됨. */
+            margin: 20px;
+            text-decoration: none;
+            color: black;
+
+        }
+        a:visited {
+            /* color: orange; */
+            /* 일단 한번 이상 방문했던 링크부분 */
+        }
+
+        a:hover {
+            text-decoration: underline;
+            /* 마우스를 오버했을 때 반응 */
+        }
+
+        a:active {
+            color: red;
+            /* 링크를 클릭하는 순간 */
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 젠코딩 div#wrapper -->
+    <div id="wrapper">
+        <a href="#">링크1</a>
+        
+    </div>
+    <!-- 어떤 영역을 표시하기위해. 모든 레이아웃은 div -->
+</body>
+</html>

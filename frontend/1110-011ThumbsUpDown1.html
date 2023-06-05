@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+   <style>
+   .flip {
+    transform: rotateX(180deg);
+   }
+   </style>
+    
+</head>
+<body>
+    <p>Click on the icon to toggle between thumbs-up and thumbs-down (like/dislike):</p>
+    
+    
+    <i class="fa fa-thumbs-up" style="font-size: 54px;" id="thumbs"></i>
+    </div>
+    
+
+    <script>
+
+        let element = document.getElementById("thumbs");
+        element.addEventListener("click", function(){
+            element.classList.toggle("flip");
+        })
+       
+    </script>
+
+
+</body>
+</html>
