@@ -1,0 +1,27 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>오늘은 좋은 날</h1>
+	<form action="">
+	구구단 <input/>단 <br/>
+	<input type="button" value="실행"/>
+	</form>
+<%
+	int sum = 0;
+	for (int i = 0; i <= 100; i++) {
+		//out.println(i); //System.빼면 콘솔에 뜨던 것이 웹브라우저에 뜸. 이거 안씀.
+
+		sum += i;
+	}
+	//System.out.println(sum);
+%>
+<h1>1~100까지 합: <%=sum %></h1>
+
+</body>
+</html>

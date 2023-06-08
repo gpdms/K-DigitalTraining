@@ -1,0 +1,32 @@
+package chap14_1222;
+
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Supplier;
+
+public class FuncApiEx {
+
+	public static void main(String[] args) {
+		
+		//Consumer제공된것.: 매기값은 있고, 리턴값은 없음.(void)
+		Consumer<String> co = (t) -> { 
+			System.out.println(t);
+			
+		};
+		co.accept("test"); //accept 제공된것
+		
+		
+		//Supplier: 매개값은 없고, 리턴값은 있음.
+		Supplier<String> sp = () -> { 
+			System.out.println("test");
+			return "test";
+		};
+		sp.get();
+		
+		//Function: 매개값도 있고, 리턴값도 있음. 지정한 타입으로 리턴.
+		Function<String, String> f = (String x) -> {
+			return x;
+		};
+	}
+
+}

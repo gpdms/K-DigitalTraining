@@ -1,0 +1,224 @@
+<1122>=================================
+jdk.java.net
+java SE 11 다운로드
+C: Program Files에다가
+OpenJDK폴더생성
+jdk-11파일 넣기
+
+
+모든제어판항목 - 시스템 - 고급시스템설정 - 환경변수
+-시스템변수 새로만들기-변수이름에 JAVA-HOME 입력, 
+변수값에 C:\Program Files\OpenJDK\jdk-11 복붙
+
+path 편집 - 새로만들기 - %JAVA_HOME%\bin
+명령프롬프트창에 java 쳐보기
+
+이클립스 다운로드
+ Eclipse IDE for Enterprise Java and Web Developers선택
+
+로컬디스크 C:에 새폴더(_dev)생성
+
+workspace:에다가 경로 복붙 C:\_dev
+
+---------------------------------------------------
+클래스 이름은 대문자로 시작.
+변수명은 소문자로 시작.
+
+-------------------------------------------
+이클립스 우측 상단 perspective - java클릭
+file-new-java project-이름, JavaSE-11깔았으니까 이걸로.
+new-class
+
+글꼴
+Window-preference-general-appearnace-colors and fonts-basic-textfont
+
+_dev의 src 소스코드
+_dev의 bin 가상머신이 실행할 수 있는 환경으로바뀐것
+
+-------------------------------------------------
+int a;
+String s; ->클래스
+
+a = 10;
+String ss = "가나다";
+쌍따옴표 문자열
+홑따옴표 문자하나
+
+리터럴: 소스 코드 내에서 직접 입력된 값. //p.33
+상수와 같은 의미지만 상수는 '변하지 않는 변수'기때문에 이와 구분하기 위해 리터럴이란 용어 사용.
+10, "가나다"는 리터럴
+
+
+Math.random() //p.113
+클래스임.
+0.0부터 1.0사이에 속하는  double타입의 랜덤값 하나를 리턴.
+0.0은 포함, 1.0은 포함되지 않음.
+
+(int)(Math.random()*10)
+0부터 9까지 중 임의의 수 나옴.
+
+(int)정수값으로 나오게
+
+Scanner클래스임
+
+
+
+<1123>===========================================
+6장 클래스
+
+클래스 생성자
+new 클래스(); 
+
+new연산자로 생성된 객체는 메모리 힙(heap) 영역에 생성, 객체 주소를 리턴.
+이 주소를 참조 타입인 클래스 변수에 저장해두면, 변수를 통해 객체 사용 가능.
+
+
+변수를 필드, 멤버필드라고 부름.
+
+
+
+static 정적인. 고정된.
+메모리가 할당되어 계속 자리를 차지하고 있음.
+객체생성과 상관없이 무조건 실행.
+반드시 클래스 안에 들어있어야 하지만 클래스와 상관없이 따로 노는.
+
+자바 자체가 클래스를 설계하기 위한 것이라
+한 클래스 안에 다 넣어도 돌아가긴 하지만, 클래스를 다 쪼개놓는게 굿.
+
+static int age = 10;
+원래 변수 선언하고 그다음에 프린트 할 수 있음. 이름생기기전에 프린트하면 오류.
+하지만 static붙이면 가능. 메모리가 할당되어 계속 자리를 차지하고 있음.
+System.out.print도 static기능인것.
+
+
+while은 조건이 안맞으면 한번도 실행안될수 있지만
+do while은 적어도 한번은 실행함.
+
+
+금요일 발표가능하도록
+
+
+<1124>
+public static avoid main
+웹개발에 사용하지 않음.
+콘솔창이나 웹개발 외에 사용함.
+
+'\t' 수평탭 생기게
+
+접근제한자
+private: 다른클래스에서 접근못함. 메소드를 사용해서 접근 가능.
+
+
+Car car; //int같이 데이터타입이라 생각하면됨. 뭐든 넣을 수 있음.
+String str; //문자열만 저장. String 참조타입임. 방이무한하지만 문자열만.
+int num; //4바이트 정수값만 저장. 방이 4개.
+
+
+
+<1125>
+생성자를 만들지 않으면 컴파일러가 기본생성자를 만듦
+
+Student.파일
+기본생성자만들필요가X. 나중에 필요할 때 만들기
+
+클래스와 이름이 같으면 생성자.
+
+
+import java.util.Scanner;
+JRE System Library에서 가져옴.
+
+
+bin에 있는 파일들. 실행하는 파일아님. object file이라고 함.
+
+
+API가 라이브러리.
+
+
+
+<1128>
+
+생성자는 클래스 블록 안에 다 들어가 있어야함.
+클래스밖에 존재할 수 없음.
+
+
+<1129>
+
+프로그램언어는 라이브러리(API)
+프레임워크 정해진것만써.정형화.
+spring 자바로 만든 프레임워크
+
+
+
+<1130>
+해당프로젝트 - build path- configure build path - libraries-modulepath - Add External Jars
+
+
+
+Class.forName("com.mysql.cj.jdbc.Driver");
+
+
+<1219>
+oracale
+SCOTT
+tiger
+
+
+tomcat 10-core:zip
+폴더 bin-startup.bat클릭
+localhost:8080
+
+
+이클립스
+perspective JAVA EE
+preference-server-runtime environment-add-apache Tomcat 10.0-browse-apache폴더선택
+
+
+
+
+
+dynamic web project-testweb생성
+new - package생성
+package 에서 new- servlet-Class name: Test
+doGet 아래 지우고 
+response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.println("<html>");
+		out.println("<body>");
+		out.println("<h1>연습</h1>");
+		out.println("</body>");
+		out.println("</html>");
+
+
+jsp파일이 servlet파일로 내부적으로 바뀜. tomcat이 담고있다가 요청이들어오면 servlet
+
+
+WEB-INF밑 lib에다가 mysql--.jar 붙여넣기
+
+
+
+<1221>
+제네릭타입<?>: Unbounded Wildcards(제한없음)
+타입 파라미터를 대치하는 구체적인 타입으로 모든 클래스나 인터페이스 타입이 올 수 있다.
+
+제네릭타입<? extends 상위타입> Upper Bounded Wildcards (상위 클래스 제한)
+타입 파라미터를 대치하는 구체적인 타입으로 상위 타입이나 하위 타입만 올 수 있다.
+
+제네릭타입<?super 하위타입> Lower Bounded Wildcards (하위 클래스 제한)
+타입 파라미터를 대치하는 구체적인 타입으로 하위 타입이나 상위타입이 올 수 있다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

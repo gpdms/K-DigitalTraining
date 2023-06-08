@@ -1,0 +1,18 @@
+<%@page import="jdbc.*"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+EmpDao ed = EmpDao.getInstance();//싱글톤. new안함.
+for(Emp emp : ed.selDeptAvg()) {
+	System.out.println(emp);
+}
+%>
+</body>
+</html>

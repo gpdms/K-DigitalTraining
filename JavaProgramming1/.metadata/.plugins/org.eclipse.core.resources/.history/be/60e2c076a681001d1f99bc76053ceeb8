@@ -1,0 +1,18 @@
+package jdbc;
+
+import java.sql.DriverManager;
+
+public class Connect {
+	private static Connect conn = new Connect();
+	private Connect() {}
+	private Connection con;
+	public static Connect getConnect() {
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+			con = DriverManager.getConnection(url, user, pw);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		return conn;
+	}
+}

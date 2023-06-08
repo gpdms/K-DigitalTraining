@@ -1,0 +1,15 @@
+import java.util.function.Consumer;
+
+public class FuncApiEx {
+
+	public static void main(String[] args) {
+		Consumer<Integer> co = t ->System.out.println(t);
+		co.accept(234);
+		
+		//메소드 참조. ::다음에 메소드이름
+		Consumer<Integer> co2 = System.out::println;
+		co2.accept(567);
+	}
+	
+
+}

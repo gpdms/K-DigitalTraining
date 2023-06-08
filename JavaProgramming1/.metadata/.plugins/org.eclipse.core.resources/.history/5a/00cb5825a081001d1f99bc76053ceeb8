@@ -1,0 +1,23 @@
+package chap14_1222;
+
+import java.util.function.Consumer;
+import java.util.function.Supplier;
+
+public class FuncApiEx {
+
+	public static void main(String[] args) {
+		Consumer<String> co = (t) -> { //Consumer제공된것.: 매기값은 있고, 리턴값은 없음.(void)
+			System.out.println(t);
+			
+		};
+		co.accept("test"); //accept 제공된것
+		
+		
+		Supplier<String> sp = () -> { //Supplier: 매개값은 없고, 리턴값은 있음.
+			System.out.println("test");
+//			return "test";
+		};
+		sp.get();
+	}
+
+}

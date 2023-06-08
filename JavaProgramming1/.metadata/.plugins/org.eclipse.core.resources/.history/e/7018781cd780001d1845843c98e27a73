@@ -1,0 +1,10 @@
+package chap13_2;
+
+public class WildCardEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

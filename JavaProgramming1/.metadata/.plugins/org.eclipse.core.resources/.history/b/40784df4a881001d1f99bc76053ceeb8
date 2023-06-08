@@ -1,0 +1,18 @@
+package jdbc;
+
+import java.util.List;
+
+public class EmpDao {
+	private static EmpDao empDao = new EmpDao();
+	public static EmpDao getInstance() {
+		return empDao;
+	}
+	private EmpDao() {}
+		
+		
+		List<Emp> selectAll() {
+			return null;
+			
+		}
+	}
+

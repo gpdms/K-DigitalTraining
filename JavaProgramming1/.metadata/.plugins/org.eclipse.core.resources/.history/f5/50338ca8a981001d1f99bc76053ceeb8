@@ -1,0 +1,48 @@
+package jdbc;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
+public class EmpDao {
+	private static EmpDao empDao = new EmpDao();
+
+	public static EmpDao getInstance() {
+		return empDao;
+	}
+
+	private EmpDao() {
+	}
+
+	List<Emp> selectAll() {
+		Connection conn = Connect.getConnect();
+		String sql = "select * from emp";
+	
+			try {
+				
+				PreparedStatement pstm = conn.prepareStatement(sql);
+				ResultSet rs = pstm.executeQuery();
+				while (rs.next()) {
+					
+				
+				int empno = rs.getInt("empno");
+				String ename = rs.getString("ename");
+				String job = rs.getString("job");
+				int deptno = rs.getInt("deptno");
+				int sal = rs.getInt("sal");
+				}
+
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		
+
+		return null;
+
+	}
+
+}

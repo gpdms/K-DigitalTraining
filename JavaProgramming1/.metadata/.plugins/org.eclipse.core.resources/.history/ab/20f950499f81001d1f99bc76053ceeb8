@@ -1,0 +1,14 @@
+package chap14_1222;
+
+import java.util.function.Consumer;
+
+public class FuncApiEx {
+
+	public static void main(String[] args) {
+		Consumer<String> co = (t) -> {
+			System.out.println();
+		};
+
+	}
+
+}

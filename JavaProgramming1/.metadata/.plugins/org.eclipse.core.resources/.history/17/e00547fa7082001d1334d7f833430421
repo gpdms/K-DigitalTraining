@@ -1,0 +1,40 @@
+<%@page import="jdbc.*"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<table border="1">
+<tr>
+<td>사번</td>
+<td>이름</td>
+<td>
+<select>
+<option>오름차순</option>
+<option>내림차순</option>
+</select>
+</td>
+</tr>
+<%
+EmpDao ed = EmpDao.getInstance(); //ctrl+space
+for (Emp emp : ed.selectAll()) {%>
+	<!-- out.println(emp); -->
+	<tr><td><%=emp.getEmpno() %></td>
+	<td><%=emp.getEname() %></td>
+	<td><%=emp.getDeptno() %></td>
+	
+	
+<%
+}
+%>
+
+
+
+
+</table>
+</body>
+</html>

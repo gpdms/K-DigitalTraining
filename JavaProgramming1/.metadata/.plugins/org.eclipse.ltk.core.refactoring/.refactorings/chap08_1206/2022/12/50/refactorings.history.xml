@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;chap08_1207/src&apos;&#x0D;&#x0A;- Original project: &apos;chap08_1206&apos;&#x0D;&#x0A;- Destination element: &apos;chap08_1207/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     chap08_1206.RemoteControl.java&#x0D;&#x0A;     chap08_1206.Television.java&#x0D;&#x0A;     chap08_1206.Audio.java" description="Copy compilation units" destination="=chap08_1207/src" element1="/src&lt;chap08_1206{RemoteControl.java" element2="/src&lt;chap08_1206{Television.java" element3="/src&lt;chap08_1206{Audio.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1670372515158" units="3" version="1.0"/>
+</session>

@@ -1,0 +1,8 @@
+package chap13_2;
+
+public class Course<T> {
+	private String name;
+	private T[] students;
+	
+	public Course
+}

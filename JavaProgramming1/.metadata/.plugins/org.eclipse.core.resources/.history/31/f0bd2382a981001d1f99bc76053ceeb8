@@ -1,0 +1,22 @@
+package jdbc;
+
+import java.sql.Connection;
+import java.util.List;
+
+public class EmpDao {
+	private static EmpDao empDao = new EmpDao();
+	public static EmpDao getInstance() {
+		return empDao;
+	}
+	private EmpDao() {}
+		
+		
+		List<Emp> selectAll() {
+			Connection conn = Connect.getConnect();
+			return null;
+			
+		}
+		
+		
+}
+

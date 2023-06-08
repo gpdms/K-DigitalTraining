@@ -1,0 +1,57 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.DriverManager"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<%
+	Class.forName("oracle.jdbc.OracleDriver");
+	out.println("드라이브 로딩");
+	String url = "jdbc:oracle:thin:@localhost:1521:xe";
+	String user = "SCOTT";
+	String password = "tiger";
+	Connection conn = DriverManager.getConnection(url, user, password); //ctrl+space 로 import
+	out.println("DB 연결");
+	
+	String sql = "select * from emp where deptno = 10";
+	PreparedStatement pstm = conn.prepareStatement(sql);
+	ResultSet rs = pstm.executeQuery();%>
+	
+<table border="1">
+<tr>
+<td>empno</td>
+<td>ename</td>
+<td>job</td>
+<td>deptno</td>
+<td>sal</td>
+</tr>
+
+<% 
+	while (rs.next()) { %>
+<tr>	
+<td><%= rs.getInt("empno")%></td>
+<td><%= rs.getString("ename")%></td>
+<td><%= rs.getString("job")%></td>
+<td><%= rs.getInt("deptno")%></td>
+<td><%= rs.getInt("sal")%></td>	
+</tr>		
+
+<% 
+	}
+%>
+
+
+</table>
+</body>
+</html>
+
+
+

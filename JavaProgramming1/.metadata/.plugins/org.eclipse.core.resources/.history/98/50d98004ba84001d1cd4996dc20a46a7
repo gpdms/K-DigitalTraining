@@ -1,0 +1,12 @@
+package jdbc;
+
+import java.util.Properties;
+
+public class PropEx {
+
+	public static void main(String[] args) {
+		Properties prop = new Properties();
+		String path = PropEx.class.getResource("db.properties").getPath();
+	}
+
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\admin\Desktop\JSPproject\jspTeamProject"/>
+		<item value="C:\Users\admin\Desktop\JSPproject"/>
+		<item value="C:\Users\admin\Desktop\JSPteamproject"/>
+	</list>
+	<section name="CleanDialogSettings">
+		<item value="500" key="DIALOG_WIDTH"/>
+		<item value="true" key="TOGGLE_SELECTED"/>
+		<item value="402" key="DIALOG_HEIGHT"/>
+		<item value="221" key="DIALOG_X_ORIGIN"/>
+		<item value="174" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\JavaProgramming\source\_mvcTemplate"/>
+			<item value="C:\JavaProgramming\source\chap17"/>
+			<item value="C:\JavaProgramming\source\Shelter302"/>
+			<item value="C:\JavaProgramming\source\chap12"/>
+			<item value="C:\JavaProgramming\source\chap11"/>
+			<item value="C:\JavaProgramming\source\chap15"/>
+			<item value="C:\JavaProgramming\source\chap10"/>
+			<item value="C:\JavaProgramming\source\chap09"/>
+			<item value="C:\JavaProgramming\source\chap08"/>
+			<item value="C:\JavaProgramming\source\chap18"/>
+			<item value="C:\JavaProgramming\source\chap07"/>
+			<item value="C:\JavaProgramming\source"/>
+			<item value="C:\JavaProgramming"/>
+			<item value="C:\Users\admin\Desktop\새 폴더\JSPteamproject"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="439" key="DIALOG_X_ORIGIN"/>
+		<item value="332" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

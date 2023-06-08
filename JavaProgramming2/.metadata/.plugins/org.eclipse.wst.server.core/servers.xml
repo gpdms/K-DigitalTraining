@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <servers>
-  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v8.5 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v8.5 Server at localhost" name="Tomcat v8.5 Server at localhost" runtime-id="Apache Tomcat v8.5" server-type="org.eclipse.jst.server.tomcat.85" server-type-id="org.eclipse.jst.server.tomcat.85" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="10">
-    <list key="modules" value0="chap18::org.eclipse.jst.jee.server:chap18::jst.web::3.1" value1="_jsp0201::org.eclipse.jst.jee.server:_jsp0201::jst.web::3.1" value2="_jsp0201_2::org.eclipse.jst.jee.server:_jsp0201_2::jst.web::3.1" value3="_mvcTemplate::org.eclipse.jst.jee.server:_mvcTemplate::jst.web::3.1"/>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v8.5 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v8.5 Server at localhost" name="Tomcat v8.5 Server at localhost" runtime-id="Apache Tomcat v8.5" server-type="org.eclipse.jst.server.tomcat.85" server-type-id="org.eclipse.jst.server.tomcat.85" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="1">
+    <list key="modules" value0="instagramPJ::org.eclipse.jst.j2ee.server:instagramPJ::jst.web::2.4"/>
+  </server>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/apache-tomcat-10.0.27 at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="apache-tomcat-10.0.27 at localhost" name="apache-tomcat-10.0.27 at localhost" runtime-id="apache-tomcat-10.0.27" server-type="org.eclipse.jst.server.tomcat.100" server-type-id="org.eclipse.jst.server.tomcat.100" start-timeout="60" stop-timeout="15" testEnvironment="true" timestamp="2">
+    <list key="modules" value0="chap15::org.eclipse.jst.jee.server:chap15::jst.web::5.0" value1="instagramPJ::org.eclipse.jst.j2ee.server:instagramPJ::jst.web::2.4"/>
   </server>
 </servers>

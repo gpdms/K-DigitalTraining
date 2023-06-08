@@ -1,0 +1,33 @@
+package chap13_3;
+
+public class Course<T> {
+	private String name;
+	private T[] students;
+	
+	public Course(String name, int capacity) {
+		this.name = name;
+		students = (T[]) (new Object[capacity]); 
+		//객체 생성해야하는데 T가 뭔지 모르니까 new T라고 쓸 수 없어서, 부모 클래스 중 가장 높은 Object. 
+		//배열이기 때문에 []
+		//부모가 자식 안에 들어가서 강제형변환.(T[])
+		
+	}
+	
+	public String getName() {
+		return name;
+	}
+	public T[] getStudents() { 
+		return students;
+	}
+	
+	
+	public void add(T t) {
+		for(int i = 0; i<students.length; i++) {
+			if(students[i] == null) {
+				students[i] = t;
+				break;
+				// 빈자리 채워넣기 코드임. ArrayList쓰면 이거 필요없음.
+			}
+		}
+	}
+}

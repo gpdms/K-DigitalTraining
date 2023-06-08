@@ -1,0 +1,41 @@
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Supplier;
+
+public class FuncApiEx {
+
+	public static void main(String[] args) {
+		
+	//Consumer
+		Consumer<Integer> co = t ->System.out.println(t);
+		co.accept(234);
+		//메소드 참조. 클래스::메소드. 매개변수t 한개인거 아니까 생략.
+		Consumer<Integer> co2 = System.out::println;
+		co2.accept(567);
+		
+		BiConsumer<Integer, String> co3 = (t,y)->System.out.println(t+y);
+		co3.accept(234, "test");
+//		BiConsumer<Integer,String> co4 = System.out::println;
+//		co4.accept(567,"teset");
+		
+	//Supplier
+		Supplier<String> sp = () -> {return "test".toUpperCase();};
+		System.out.println(sp.get());
+		//메소드 참조
+//		Supplier<String> sp2 = () -> String::toUpperCase;
+		Supplier<Double> sp2 = Math::random;
+		System.out.println(sp2.get());
+		
+	//Function
+		Function<String, Integer> f = (x) -> {
+			return Integer.parseInt(x);
+		};
+		System.out.println(f.apply("300"));
+		//메소드 참조
+		Function<String, Integer> f2 = Integer::parseInt;
+		System.out.println(f2.apply("400"));
+	}
+	
+
+}

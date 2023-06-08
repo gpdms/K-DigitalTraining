@@ -1,0 +1,11 @@
+package jdbc;
+
+public class EmpDao {
+	private static EmpDao empDao = new EmpDao();
+	public static EmpDao getInstance() {
+		return empDao;
+	}
+	private EmpDao() {
+		
+	}
+}

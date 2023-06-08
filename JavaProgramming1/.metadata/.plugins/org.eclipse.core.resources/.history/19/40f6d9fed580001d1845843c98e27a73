@@ -1,0 +1,9 @@
+package chap13_1221;
+
+public class UtilEx {
+
+	public static void main(String[] args) {
+		System.out.println(Util.compare(4.5, 4));
+	}
+
+}

@@ -1,0 +1,10 @@
+package chap12_1220;
+
+public class ThreadEx {
+
+	public static void main(String[] args) {
+		Thread mt = Thread.currentThread();
+		System.out.println(mt.getName());
+	}
+
+}

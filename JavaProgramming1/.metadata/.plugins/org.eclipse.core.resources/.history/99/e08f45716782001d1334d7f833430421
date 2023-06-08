@@ -1,0 +1,10 @@
+import java.util.function.Consumer;
+
+public class FuncApiEx {
+
+	public static void main(String[] args) {
+		Consumer<Integer> co = t ->System.out.println(t);
+		co.accept(234);
+	}
+
+}

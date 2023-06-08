@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <modules>
-  <module moduleId="org.eclipse.jst.jee.server:jsp02_1229" serverId="Tomcat v10.0 Server at localhost (2)"/>
-  <module moduleId="org.eclipse.jst.jee.server:project3" serverId="Tomcat v10.0 Server at localhost (2)"/>
-  <module moduleId="org.eclipse.jst.jee.server:sharedTeamProject" serverId="Tomcat v10.0 Server at localhost (2)"/>
-  <module moduleId="org.eclipse.jst.jee.server:jsp05_0103" serverId="Tomcat v10.0 Server at localhost (2)"/>
-  <module moduleId="org.eclipse.jst.jee.server:project_ano" serverId="Tomcat v10.0 Server at localhost (2)"/>
-  <module moduleId="org.eclipse.jst.jee.server:jsp04_0102" serverId="Tomcat v10.0 Server at localhost (2)"/>
-  <module moduleId="org.eclipse.jst.jee.server:board" serverId="Tomcat v10.0 Server at localhost (2)"/>
-  <module moduleId="org.eclipse.jst.jee.server:chap15" serverId="apache-tomcat-10.0.27 at localhost"/>
-  <module moduleId="org.eclipse.jst.jee.server:jsp06_1226" serverId="Tomcat v10.0 Server at localhost (2)"/>
-  <module moduleId="org.eclipse.jst.jee.server:jsp01_1227" serverId="Tomcat v10.0 Server at localhost (2)"/>
-  <module moduleId="org.eclipse.jst.jee.server:jsp06_0105" serverId="Tomcat v10.0 Server at localhost (2)"/>
-  <module moduleId="org.eclipse.jst.jee.server:project" serverId="Tomcat v10.0 Server at localhost (2)"/>
-  <module moduleId="org.eclipse.jst.jee.server:jsp01_1226" serverId="Tomcat v10.0 Server at localhost (2)"/>
-  <module moduleId="org.eclipse.jst.jee.server:jsp03_1230" serverId="Tomcat v10.0 Server at localhost (2)"/>
+  <module moduleId="org.eclipse.jst.jee.server:jsp4_1222" serverId="Tomcat v10.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:jsp3_1221" serverId="Tomcat v10.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:jsp6_1226" serverId="Tomcat v10.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:jsp5_1223" serverId="Tomcat v10.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:jsp2_1220" serverId="Tomcat v10.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:testweb" serverId="Tomcat v10.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:jsp1220" serverId="Tomcat v10.0 Server at localhost"/>
 </modules>

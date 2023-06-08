@@ -1,0 +1,35 @@
+package chap05ReferenceType_1129;
+
+public class _4_Array2 {
+
+	public static void main(String[] args) {
+		//배열을 메소드 매개변수로 넘겨보자
+		
+		int[] scores;
+		scores = new int[] {70,80,90};
+		int sum1 = 0;
+		for (int i =0; i < 3; i++) {
+			sum1 += scores[i];
+		}
+		
+		
+		public static void sums (int arr[]) {
+			int sum = 0;
+			for (int i=0; i<arr.length; i++) {
+				sum += arr[i];
+			}
+		}
+		
+		
+		
+		public static int add (int[] scores) {
+			int sum = 0;
+			for (int i=0; i<3; i++) {
+				sum += scores[i];
+			}
+			return sum;
+		}
+
+	}
+
+}

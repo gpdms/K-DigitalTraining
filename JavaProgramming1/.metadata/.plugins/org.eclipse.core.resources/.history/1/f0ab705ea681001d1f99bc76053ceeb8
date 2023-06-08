@@ -1,0 +1,9 @@
+package jdbc;
+
+public class Connect {
+	private static Connect conn = new Connect();
+	private Connect() {}
+	public static Connect getConnect() {
+		return conn;
+	}
+}

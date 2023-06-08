@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>오늘은 좋은 날</h1>
+<%
+	for (int i = 0; i < 10; i++) {
+		//out.println(i); //System.빼면 콘솔에 뜨던 것이 웹브라우저에 뜸.
+%>
+<%=i%>
+<%
+	}
+%>
+</body>
+</html>

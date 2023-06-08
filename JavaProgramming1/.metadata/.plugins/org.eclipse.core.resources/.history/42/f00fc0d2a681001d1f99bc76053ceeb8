@@ -1,0 +1,19 @@
+package jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class Connect {
+	private static Connect conn = new Connect();
+	private Connect() {}
+	private static Connection con;
+	public static Connect getConnect() {
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+			con = DriverManager.getConnection(url, user, pw);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return conn;
+	}
+}

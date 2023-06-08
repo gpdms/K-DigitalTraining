@@ -11,7 +11,7 @@
 	}
 
 	GetMessageListService messageListService = 
-			GetMessageListService.getInstance(); //Service클래스를 싱글톤으로
+			GetMessageListService.getInstance();
 	MessageListView viewData = 
 			messageListService.getMessageList(pageNumber);
 %>
