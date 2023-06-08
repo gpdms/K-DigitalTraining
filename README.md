@@ -6,8 +6,9 @@
 
 ## :computer: 웹표준 (프론트엔드)
 + [11/03 ~ 11/17](https://github.com/gpdms/K-DigitalTraining/tree/main/frontend)
-HTML5, CSS3, Javascript, JQuery
-  <details> :seedling:
+HTML5, CSS3, Javascript, JQuery   
+  :seedling:
+  <details>
   <summary>1차 팀프로젝트 : 웹프로젝트</summary>
   <div markdown="2">
   </div>
