@@ -19,8 +19,8 @@ HTML5, CSS3, Javascript, JQuery
     <img width="90%" alt="홈화면" src="https://github.com/gpdms/K-DigitalTraining/assets/118142992/6b7aa239-db6c-4b49-a595-50a8f7117218"><br/>
     <img width="90%" alt="모달" src="https://github.com/gpdms/K-DigitalTraining/assets/118142992/3803e828-916d-4753-a417-4860d3115777"><br/>
      <img width="90%" alt="모달" src="https://github.com/gpdms/K-DigitalTraining/assets/118142992/3ff79f03-d846-44c8-a03c-f21fad099e3d"><br/>
-     **헤더 HTML**
-     ```
+     **헤더 HTML** <br/>
+     ```html
     <header id="top">
       <span id="menu-button"></span>
       <div id="profile">
@@ -36,8 +36,8 @@ HTML5, CSS3, Javascript, JQuery
       <p class="arrow" id="arrow-upload">업로드</p>
     </header>
      ```
-     **헤더 JavaScript**
-     ```
+     **헤더 JavaScript** <br/>
+     ```javascript
      //스크롤 시 헤더 줄어듦
       window.onscroll = function () { scrollFunction() };
       function scrollFunction() {
@@ -148,8 +148,8 @@ HTML5, CSS3, Javascript, JQuery
         arrowUpload.style.display = "none";
       });
      ```
-     **헤더 CSS**
-     ```
+     **헤더 CSS** <br/>
+     ```css
        #top {
       width: 1250px;
       height: 260px;
@@ -248,19 +248,14 @@ HTML5, CSS3, Javascript, JQuery
       position: fixed;
       top: 50%;
       left: 50%;
-
       width: 250px;
       height: 300px;
-
       padding: 40px;
-
       text-align: center;
       color: black;
-
       background-color: rgb(255, 255, 255);
       border-radius: 10px;
       box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
-
       transform: translateX(-50%) translateY(-50%);
       z-index: 6;
       overflow: hidden;
@@ -328,14 +323,12 @@ HTML5, CSS3, Javascript, JQuery
       display: none;
       top: 195px;
       left: 410px;
-
     }
 
     #arrow-upload {
       display: none;
       right: 190px;
       bottom: 15px;
-
     }
      ```
      
