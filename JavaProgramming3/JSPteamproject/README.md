@@ -4,12 +4,20 @@
 + 개발환경 : Java, Swing, MySQL
 + 담당부분 : 좌석
 ## 화면
-:point_down: 진행절차 <br/>
+:point_down: 진행절차 
+
+<br/>
 <img width="80%" alt="절차" src="https://github.com/gpdms/K-DigitalTraining/assets/118142992/5d09f764-767b-4bfd-a860-c76ba1306c64">
 <br/>
+
+
 :point_down: 초기화면<br/>
+
+
 <img width="80%" alt="초기화면" src="https://github.com/gpdms/K-DigitalTraining/assets/118142992/7a524651-99f5-4d12-8716-924f5a231b35">
 <br/>
+
+
 :point_down: 로그인<br/>
 <img width="80%" alt="로그인" src="https://github.com/gpdms/K-DigitalTraining/assets/118142992/81be62a7-b1b0-4c6d-946e-f3189c8702a8">
 <br/>
