@@ -16,6 +16,6 @@ HTML5, CSS3, Javascript, JQuery
 ## :computer: 자바 & 백엔드
 
 + **2차 미니 팀프로젝트 : [은행시스템](https://github.com/gpdms/K-DigitalTraining/tree/main/JavaProgramming1/bankingApp/src/bankingApp)**
-+ **3차 미니 팀프로젝트 : [스터디카페POS]()**
++ **3차 미니 팀프로젝트 : [스터디카페 키오스크](https://github.com/gpdms/K-DigitalTraining/tree/main/JavaProgramming2/JSPteamproject)**
 + **4차 미니 팀프로젝트 : [익명게시판]()**
 + **5차 미니 팀프로젝트 : [인스타그램]()**
