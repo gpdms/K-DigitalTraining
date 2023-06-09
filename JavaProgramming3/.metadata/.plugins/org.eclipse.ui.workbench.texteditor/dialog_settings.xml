@@ -1,37 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="360"/>
+		<item key="DIALOG_Y_ORIGIN" value="387"/>
+	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item value="false" key="isRegEx"/>
-		<item value="like" key="selection"/>
-		<item value="false" key="casesensitive"/>
-		<item value="true" key="incremental"/>
-		<item value="true" key="wrap"/>
-		<item value="false" key="wholeword"/>
+		<item key="selection" value="2시간"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="2시간"/>
+			<item value="empty"/>
 			<item value="like"/>
-			<item value="인기글"/>
-			<item value="footer"/>
-			<item value="studentNum"/>
-			<item value="selectLike"/>
-			<item value="getpost"/>
-			<item value="searched"/>
-			<item value="signform"/>
-			<item value="id=&quot;img"/>
-			<item value="img"/>
-			<item value="profile"/>
-			<item value="content"/>
-			<item value="userinfo"/>
-			<item value="ubSel"/>
-			<item value="artil"/>
+			<item value=".detail"/>
+			<item value=".time"/>
+			<item value="jquery"/>
+			<item value="flw"/>
+			<item value="detail"/>
+			<item value="id"/>
+			<item value="side_box"/>
+			<item value="article"/>
+			<item value="search"/>
+			<item value="follow_empty"/>
+			<item value=".id"/>
+			<item value="time"/>
 		</list>
 		<list key="replacehistory">
+			<item value="list"/>
+			<item value=""/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="288" key="DIALOG_WIDTH"/>
-		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
-		<item value="391" key="DIALOG_HEIGHT"/>
-		<item value="67" key="DIALOG_X_ORIGIN"/>
-		<item value="392" key="DIALOG_Y_ORIGIN"/>
+		<item key="DIALOG_X_ORIGIN" value="483"/>
+		<item key="DIALOG_Y_ORIGIN" value="724"/>
+		<item key="DIALOG_WIDTH" value="322"/>
+		<item key="DIALOG_HEIGHT" value="299"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 	</section>
 </section>

@@ -8,6 +8,6 @@ public class ConnectionProvider {
 
 	public static Connection getConnection() throws SQLException {
 		return DriverManager.getConnection(
-				"jdbc:apache:commons:dbcp:thisisjava");
+				"jdbc:apache:commons:dbcp:thisisjava"); //dbcp가 알아서(?)
 	}
 }

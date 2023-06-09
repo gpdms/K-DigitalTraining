@@ -1,17 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <modules>
-  <module moduleId="org.eclipse.jst.jee.server:jsp02_1229" serverId="Tomcat v10.0 Server at localhost (2)"/>
-  <module moduleId="org.eclipse.jst.jee.server:project3" serverId="Tomcat v10.0 Server at localhost (2)"/>
-  <module moduleId="org.eclipse.jst.jee.server:sharedTeamProject" serverId="Tomcat v10.0 Server at localhost (2)"/>
-  <module moduleId="org.eclipse.jst.jee.server:jsp05_0103" serverId="Tomcat v10.0 Server at localhost (2)"/>
-  <module moduleId="org.eclipse.jst.jee.server:project_ano" serverId="Tomcat v10.0 Server at localhost (2)"/>
-  <module moduleId="org.eclipse.jst.jee.server:jsp04_0102" serverId="Tomcat v10.0 Server at localhost (2)"/>
-  <module moduleId="org.eclipse.jst.jee.server:board" serverId="Tomcat v10.0 Server at localhost (2)"/>
-  <module moduleId="org.eclipse.jst.jee.server:chap15" serverId="apache-tomcat-10.0.27 at localhost"/>
-  <module moduleId="org.eclipse.jst.jee.server:jsp06_1226" serverId="Tomcat v10.0 Server at localhost (2)"/>
-  <module moduleId="org.eclipse.jst.jee.server:jsp01_1227" serverId="Tomcat v10.0 Server at localhost (2)"/>
-  <module moduleId="org.eclipse.jst.jee.server:jsp06_0105" serverId="Tomcat v10.0 Server at localhost (2)"/>
-  <module moduleId="org.eclipse.jst.jee.server:project" serverId="Tomcat v10.0 Server at localhost (2)"/>
-  <module moduleId="org.eclipse.jst.jee.server:jsp01_1226" serverId="Tomcat v10.0 Server at localhost (2)"/>
-  <module moduleId="org.eclipse.jst.jee.server:jsp03_1230" serverId="Tomcat v10.0 Server at localhost (2)"/>
+  <module moduleId="org.eclipse.jst.jee.server:_jsp0111" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:_mvc0118" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:_jsp0116" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:_jsp0117" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:_jsp0118" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:_jsp0130" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:_jsp0131" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:_vue03" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:chap11" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:_vue02" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:chap10" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:chap12" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:chap15" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:appB" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:chap17" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:teamBackup" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:chap18" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:_vue01" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:_jsp0201" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:_jsp0125" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:team01" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:_jsp0126" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:_jsp0201_2" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:_jsp0127" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:team02" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:_mvcTemplate" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:test001" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:exSource10" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:_jsp0120" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:_vue0118" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:chap02" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:chap04" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:sharedProject" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:chap03" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:chap06" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:jspTeamProject" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:chap05" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:chap08" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:chap07" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:team0110" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:chap09" serverId="Tomcat v8.5 Server at localhost"/>
 </modules>
