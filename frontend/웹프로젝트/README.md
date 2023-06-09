@@ -9,8 +9,11 @@
     <summary>화면 및 담당부분 펼치기</summary>
     <div markdown="1">       
     <img width="100%" alt="홈화면" src="https://github.com/gpdms/K-DigitalTraining/assets/118142992/6b7aa239-db6c-4b49-a595-50a8f7117218"><br/><br/>
+     :arrow_down:   스크롤시
     <img width="100%" alt="스크롤시" src="https://github.com/gpdms/K-DigitalTraining/assets/118142992/0f806c2f-43cd-4b6f-ad54-eb6a729d3257"><br/><br/>
+     :arrow_down: 아이디, 설정아이콘 클릭시 모달창
     <img width="100%" alt="모달" src="https://github.com/gpdms/K-DigitalTraining/assets/118142992/3803e828-916d-4753-a417-4860d3115777"><br/><br/>
+        :arrow_down: 맡은 부분
     <img width="100%" alt="모달" src="https://github.com/gpdms/K-DigitalTraining/assets/118142992/3ff79f03-d846-44c8-a03c-f21fad099e3d"><br/>
     </div>
     </details>
