@@ -9,7 +9,7 @@
 HTML5, CSS3, Javascript, JQuery   
 
 
-+ **1차 팀프로젝트 : 웹프로젝트**
+> **1차 팀프로젝트 : 웹프로젝트**
   - 기간: 22/11/18 ~ 22/11/22 (3일)
   - 팀원: 총 3명
   - [소스코드 바로가기](https://github.com/gpdms/K-DigitalTraining/blob/main/frontend/%EC%9B%B9%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/%EC%B5%9C%EC%A2%85.html)
