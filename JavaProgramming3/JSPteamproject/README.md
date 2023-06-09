@@ -4,15 +4,16 @@
 + 개발환경 : Java, Swing, MySQL
 + 담당부분 : 좌석
 ## 화면
-#### :point_down: 진행절차  
-<img width="80%" alt="절차" src="https://github.com/gpdms/K-DigitalTraining/assets/118142992/5d09f764-767b-4bfd-a860-c76ba1306c64">
-<br/>
-<br/>
 
 #### :point_down: 초기화면  
 <img width="80%" alt="초기화면" src="https://github.com/gpdms/K-DigitalTraining/assets/118142992/7a524651-99f5-4d12-8716-924f5a231b35">
 <br>
 <br>
+
+#### :point_down: 진행절차  
+<img width="80%" alt="절차" src="https://github.com/gpdms/K-DigitalTraining/assets/118142992/5d09f764-767b-4bfd-a860-c76ba1306c64">
+<br/>
+<br/>
 
 #### :point_down: 로그인  
 <img width="80%" alt="로그인" src="https://github.com/gpdms/K-DigitalTraining/assets/118142992/81be62a7-b1b0-4c6d-946e-f3189c8702a8">
@@ -47,3 +48,7 @@
 #### :v: 담당부분  
 <img width="80%" alt="" src="https://github.com/gpdms/K-DigitalTraining/assets/118142992/3487c90d-9c1e-4ed2-a853-e842b89dd193">
 
+<br/>
+<br/>
+
+#### 소스코드 바로가기
