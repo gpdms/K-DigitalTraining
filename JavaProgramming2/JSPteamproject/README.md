@@ -1,8 +1,15 @@
-# :seedling: 스터디카페 키오스크
-+ 기간 : 22/11/29 ~ 22/12/22
+# :herb: 익명게시판
++ 기간 : 23/1/2 ~ 23/1/27
++ 기술
+  -Java 
+  -JSP
+  -MySQL
+  -jQuery, AJAX
+  -Bootstrap, CSS
+
 + 팀원 : 총 5명
-+ 개발환경 : Java, Swing, MySQL
-+ 담당부분 : 좌석
++ 담당부분 : 검색, 마이페이지, 회원정보 수정, 프로필 이미지 관련 백엔드&프론트엔드, 게시판 프론트엔드
+
 ## 화면
 
 #### :point_down: 초기화면  
@@ -10,46 +17,123 @@
 <br>
 <br>
 
-#### :point_down: 진행절차  
-<img width="80%" alt="절차" src="https://github.com/gpdms/K-DigitalTraining/assets/118142992/5d09f764-767b-4bfd-a860-c76ba1306c64">
-<br/>
-<br/>
 
-#### :point_down: 로그인  
-<img width="80%" alt="로그인" src="https://github.com/gpdms/K-DigitalTraining/assets/118142992/81be62a7-b1b0-4c6d-946e-f3189c8702a8">
-<br/>
-<br/>
+## 담당부분 소스코드
 
-#### :point_down: 좌석 선택  
-<img width="80%" alt="좌석선택" src="https://github.com/gpdms/K-DigitalTraining/assets/118142992/28c2a60d-89b1-4e0f-a906-8fc79d42eb59">
-<br/>
-<br/>
+### Dao.java [바로가기](https://github.com/gpdms/K-DigitalTraining/blob/main/JavaProgramming2/JSPteamproject/src/user/Dao.java)
+#### :point_down: 검색
+```java
+		//검색한 단어 포함한 게시물 목록 불러오기
+		public List<Post> selectSearchedList(String searchWord, int index_no){
+			List<Post> searchedList = new ArrayList<>();
+			
+			String sql = "select * from post where (title like '%"+searchWord+"%' "
+							+ "or content like '%"+searchWord+"%') order by postNum desc limit "+index_no+", 10";
+			Post post = null;
+			try {
+				PreparedStatement pstm = conn.prepareStatement(sql);
+				ResultSet rs = pstm.executeQuery();
+				while(rs.next()) {
+					int postNum = rs.getInt("postNum");
+					int studentNum = rs.getInt("studentNum");
+					String title = rs.getString("title");
+					String content = rs.getString("content");
+					String date =  rs.getString("date");
+					String board =  rs.getString("board");
+					int onoff =  rs.getInt("onoff");
+					post = new Post(postNum, studentNum, title, content, date, board, onoff); 
+					searchedList.add(post);
+				}
+				rs.close();
+				pstm.close();
+				System.out.println("검색한 게시글 목록 리턴");
+				return searchedList;
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+				System.out.println("selectSearchedList() 에러");
+			}
+			return null;
+		}
+		
+		//검색한 단어 포함한 게시물 개수
+		public int countSearchedPostAll(String searchWord){
+			String sql = "select count(*) total from post where onoff=1 "
+					+ "and (title like '%"+searchWord+"%' "
+					+ "or content like '%"+searchWord+"%')"
+			;
+			try {
+				PreparedStatement pstm = conn.prepareStatement(sql);
+				ResultSet rsTot = pstm.executeQuery();
+				rsTot.next();
+				int total = rsTot.getInt("total");
+				System.out.println("총 게시물 개수 : "+total+"리턴완료");
+				return total;
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				System.out.println("countPostAll() 에러");
+			}
+			return  0;
+		}
+```
 
-#### :point_down: 시간권 선택  
-<img width="80%" alt="시간권 선택" src="https://github.com/gpdms/K-DigitalTraining/assets/118142992/41fc9027-4ff2-4b2b-a91e-820b5424864e">
-<br/>
-<br/>
 
-#### :point_down: 결제  
-<img width="80%" alt="결제" src="https://github.com/gpdms/K-DigitalTraining/assets/118142992/0e30db56-0dcf-40de-b9eb-eaebd814e9f6">
-<br/>
-<br/>
+#### :point_down: 회원정보 수정
+```java
+	// 학번으로 유저 한명 정보 불러오기
+	public User selectUserOne(int num){
+		String sql = "select studentNum, userID, nickName, pw, email from user "
+				+ "where studentNum = ?";
+		User user = null;
+		try {
+			PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setInt(1, num); //물음표 안에 int num값.
+			ResultSet rs = pstm.executeQuery();
+			while(rs.next()) {
+				int studentNum = rs.getInt("studentNum");
+				String userID =  rs.getString("userID");
+				String nickName =  rs.getString("nickName");
+				String pw =  rs.getString("pw");
+				String email =  rs.getString("email");
+				user = new User(studentNum,userID,nickName,pw,email);
+			}
+			rs.close();
+			pstm.close();
+			System.out.println("학번으로 유저 정보 불러오기");
+			return user;
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("selectUserOne() 에러");
+		}
+		return null;
+	}
+	
+	//유저 정보 수정
+	public int updateUser(User user) {
+		String sql = "update user set nickname=?, pw=?, email=?"
+				+ " where studentNum=?";
+		
+		try {
+			PreparedStatement pstm = conn.prepareStatement(sql);
+			
+			pstm.setString(1, user.getNickName());
+			pstm.setString(2, user.getPw());
+			pstm.setString(3, user.getEmail());
+			pstm.setInt(4, user.getStudentNum());
+			int res = pstm.executeUpdate();
+			System.out.println("처리된 행의 개수:"+res);
+			pstm.close();
+			return res;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("updateUser() 에러");
+		}
+		return 0;
+	}
+```
 
-#### :point_down: 정보확인  
-<img width="80%" alt="정보확인" src="https://github.com/gpdms/K-DigitalTraining/assets/118142992/99358976-8b50-478c-ad75-0d68830211d6">
-<br/>
-<br/>
 
-#### :point_down: 좌석현황  
-<img width="80%" alt="좌석현황" src="https://github.com/gpdms/K-DigitalTraining/assets/118142992/ff242abf-efe5-4bdf-b93c-e5ea8310d7c4">
-<br/>
-<br/>
-
-#### :v: 담당부분  
-<img width="80%" alt="" src="https://github.com/gpdms/K-DigitalTraining/assets/118142992/3487c90d-9c1e-4ed2-a853-e842b89dd193">
-
-<br/>
-<br/>
-
-#### 소스코드 바로가기
-
+### .java [바로가기]()
+#### :point_down: 
