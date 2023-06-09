@@ -19,15 +19,14 @@ HTML5, CSS3, Javascript, JQuery
     <img width="90%" alt="홈화면" src="https://github.com/gpdms/K-DigitalTraining/assets/118142992/6b7aa239-db6c-4b49-a595-50a8f7117218"><br/>
     <img width="90%" alt="모달" src="https://github.com/gpdms/K-DigitalTraining/assets/118142992/3803e828-916d-4753-a417-4860d3115777"><br/>
      <img width="90%" alt="모달" src="https://github.com/gpdms/K-DigitalTraining/assets/118142992/3ff79f03-d846-44c8-a03c-f21fad099e3d"><br/>
-     **헤더 HTML**
-     <code>
+    **헤더 HTML**
+    <code>
         <header id="top">
         <span id="menu-button"></span>
         <div id="profile">
             <span id="profile-img"></span>
             <a href="#" id="profile-name">IUtheBEST</a>
             <span id="settings"></span>
-            <!-- 아이콘링크명시하기<a target="_blank" href="https://icons8.com/icon/54151/%EA%B8%B0%EC%96%B4">기어</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
             <p id="user-name">이지은 님</p>
         </div>
         <span id="upload-button"></span>
@@ -39,7 +38,7 @@ HTML5, CSS3, Javascript, JQuery
 
 
      **헤더 JavaScript**
-     <code>
+    <code>
      //스크롤 시 헤더 줄어듦
       window.onscroll = function () { scrollFunction() };
       function scrollFunction() {
