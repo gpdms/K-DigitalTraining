@@ -14,16 +14,16 @@ HTML5, CSS3, JavaScript, JQuery
 
 
 ## :computer: 자바 & 백엔드
-+ 수업
-- Java
-- JSP
-- Oracle, MySQL, MariaDB, H2
-- JDBC
-- MyBatis
-- Thymeleaf
-- MVC
-- Spring, SpringBoot
-- Spring Data JPA, QueryDSL
++ **수업**
+    - Java
+    - JSP
+    - Oracle, MySQL, MariaDB, H2
+    - JDBC
+    - MyBatis
+    - Thymeleaf
+    - MVC
+    - Spring, SpringBoot
+    - Spring Data JPA, QueryDSL
 
 + **2차 미니 팀프로젝트 : [은행시스템](https://github.com/gpdms/K-DigitalTraining/tree/main/JavaProgramming1/bankingApp/src/bankingApp)**
 + **3차 미니 팀프로젝트 : [스터디카페 키오스크](https://github.com/gpdms/K-DigitalTraining/tree/main/JavaProgramming1/studypro)**
@@ -33,6 +33,6 @@ HTML5, CSS3, JavaScript, JQuery
 
 
 ## 최종프로젝트
-#### [중고거래플랫폼 망고마켓](https://github.com/gpdms/carrotPJ)
+### [중고거래플랫폼 망고마켓](https://github.com/gpdms/carrotPJ)
 
 
