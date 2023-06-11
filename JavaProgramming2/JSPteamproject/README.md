@@ -1,26 +1,18 @@
 # :herb: 익명게시판
 + 기간 : 23/1/2 ~ 23/1/27
 + 기술
-  -Java 
-  -JSP
-  -MySQL
-  -jQuery, AJAX
-  -Bootstrap, CSS
+  - Java 
+  - JSP
+  - MySQL
+  - jQuery, AJAX
+  - Bootstrap, CSS
 
 + 팀원 : 총 5명
-+ 담당부분 : 검색, 마이페이지, 회원정보 수정, 프로필 이미지 관련 백엔드&프론트엔드, 게시판 프론트엔드
-
-## 화면
-
-#### :point_down: 초기화면  
-<img width="80%" alt="초기화면" src="https://github.com/gpdms/K-DigitalTraining/assets/118142992/7a524651-99f5-4d12-8716-924f5a231b35">
-<br>
-<br>
-
++ 담당부분 : [검색, 마이페이지, 회원정보 수정, 프로필 이미지] 관련 백엔드&프론트엔드, 게시판 프론트엔드
 
 ## 담당부분 소스코드
 
-### Dao.java [바로가기](https://github.com/gpdms/K-DigitalTraining/blob/main/JavaProgramming2/JSPteamproject/src/user/Dao.java)
+### [Dao](https://github.com/gpdms/K-DigitalTraining/blob/main/JavaProgramming2/JSPteamproject/src/user/Dao.java)
 #### :point_down: 검색
 ```java
 		//검색한 단어 포함한 게시물 목록 불러오기
@@ -135,5 +127,15 @@
 ```
 
 
-### .java [바로가기]()
-#### :point_down: 
+### jsp
+#### :point_down: 마이페이지
+#### [myPage.jsp](https://github.com/gpdms/K-DigitalTraining/blob/main/JavaProgramming2/JSPteamproject/WebContent/myPage.jsp)
+<br/>
+
+#### :point_down: 회원정보 수정
+#### [myinfoUpdate.jsp](https://github.com/gpdms/K-DigitalTraining/blob/main/JavaProgramming2/JSPteamproject/WebContent/myinfoUpdate.jsp)
+#### [myinfoUpdateAction.jsp](https://github.com/gpdms/K-DigitalTraining/blob/main/JavaProgramming2/JSPteamproject/WebContent/myinfoUpdateAction.jsp)
+<br/>
+
+#### :point_down: 검색
+#### [searchedList.jsp](https://github.com/gpdms/K-DigitalTraining/blob/main/JavaProgramming2/JSPteamproject/WebContent/searchedList.jsp)
