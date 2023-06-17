@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAS</title>
+    <script>
+        // for(let i = 1; i <= 10; i++) {
+        //     if(i == 6) break;
+        //     document.write(i, "<br>");
+        // }
+
+        // for(let i = 1; i <=10; i++) {
+        //     if( i % 2 == 0) continue;
+        //     document.write(i, "<br>");
+        // }
+
+        // for(let i = 1; i <=3; i++) {
+        //     for(let k = 1; k <=2; k++) {
+        //         document.write(i + "행" + k + "열", "<br>");
+        //     }
+        //     document.write("<br>");
+
+        // }
+
+        // let i = 1;
+        // while( i <= 10) {
+        //     document.write("오늘은 수요일 의미없다" + i, "<br>");
+        //     i++;
+        // }
+
+        // let i = 10;
+        // do {
+        //     document.write("오늘은 수요일");
+        // } while( i < 3)
+
+
+        let num = 1;
+        let t ="<table border='1'>";
+        for(let i = 1; i <=5; i++ ) {
+            t +="<tr>";
+            for(let k = 1; k <=5; k++){
+                t +="<td>" + num + "</td>";
+                num++;
+            }    
+            t += "</tr>";
+        }    
+
+        t += "</table>";
+
+        document.write(t);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+    <style>
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 20px;
+          height: 3000px;
+        }
+        
+        #myBtn {
+          display: none;
+          position: fixed;
+          bottom: 20px;
+          right: 30px;
+          z-index: 99;
+          font-size: 18px;
+          border: none;
+          outline: none;
+          background-color: red;
+          color: white;
+          cursor: pointer;
+          padding: 15px;
+          border-radius: 4px;
+        }
+        
+        #myBtn:hover {
+          background-color: #555;
+        }
+        * {
+        margin: 0;
+        padding: 0;
+        }
+    </style>
+    
+</head>
+<body>
+    <button onclick="topFunction()" id="myBtn">TOP</button>
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum molestias quibusdam repudiandae hic quo perferendis. Hic nisi, a ratione perferendis molestias delectus veniam qui quisquam totam deserunt iusto dolore ipsam.</p>
+    </div>
+    <script>
+        let mybutton = document.getElementById("myBtn");
+
+        window.onscroll = function(){scrollFunction()};
+
+        function scrollFunction(){
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        
+        // function greeting() {
+        //     document.write("체력은 국력", "<br>");
+        // };
+
+        // greeting();
+        // greeting();
+
+        // function bbkjh(name, area){
+        //     document.write("안녕하세요 " + name + " 입니다" , "<br>");
+        //     document.write("제가 사는곳은 " + area + " 입니다.", "<br><br>");
+        // }
+
+        // bbkjh("고길동", "서울");
+
+        // bbkjh("달려라하늬", "부산");
+    </script>
+</body>
+</html>
