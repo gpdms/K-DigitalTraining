@@ -6,7 +6,7 @@
 
 ## :computer: 웹표준 (프론트엔드)
 + [수업 11/03 ~ 11/17](https://github.com/gpdms/K-DigitalTraining/tree/main/frontend)
-HTML5, CSS3, JavaScript, JQuery   
+HTML5, CSS3, Javascript, JQuery   
 
 
 + **1차 미니 팀프로젝트 : [정적웹페이지](https://github.com/gpdms/K-DigitalTraining/tree/main/frontend/%EC%9B%B9%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8)**
@@ -24,13 +24,14 @@ HTML5, CSS3, JavaScript, JQuery
     - MVC
     - Spring, SpringBoot
     - Spring Data JPA, QueryDSL
+    - Eclipse, IntelliJ
 
 
-    -[11/22~12/25](https://github.com/gpdms/K-DigitalTraining/tree/main/JavaProgramming1)
-    -[12/26~1/10](https://github.com/gpdms/K-DigitalTraining/tree/main/JavaProgramming3)
-    -[1/11~2/1](https://github.com/gpdms/K-DigitalTraining/tree/main/JavaProgramming2)
-    -[2/2~2/24](https://github.com/gpdms/K-DigitalTraining/tree/main/JavaProgramming3)
-    -[2/27~3/30](https://github.com/gpdms/K-DigitalTraining/tree/main/JavaProgramming4)
+    - [11/22~12/25](https://github.com/gpdms/K-DigitalTraining/tree/main/JavaProgramming1)
+    - [12/26~1/10](https://github.com/gpdms/K-DigitalTraining/tree/main/JavaProgramming3)
+    - [1/11~2/1](https://github.com/gpdms/K-DigitalTraining/tree/main/JavaProgramming2)
+    - [2/2~2/24](https://github.com/gpdms/K-DigitalTraining/tree/main/JavaProgramming3)
+    - [2/27~3/30](https://github.com/gpdms/K-DigitalTraining/tree/main/JavaProgramming4)
 
 + **2차 미니 팀프로젝트 : [은행시스템](https://github.com/gpdms/K-DigitalTraining/tree/main/JavaProgramming1/bankingApp/src/bankingApp)** 
 (순수 자바 코드, 콘솔에 입력 출력)
