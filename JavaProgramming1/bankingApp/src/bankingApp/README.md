@@ -2,7 +2,7 @@
 + 기간 : 22/11/23 ~ 25 (3일)
 + 팀원 : 총 5명
 + 순수 자바 코드, 콘솔에 입력 출력
-+ 담당부분 : 입금, 출금, 잔액확인
++ 나의 역할 : 입금, 출금, 잔액확인
 + [전체소스코드 바로가기](https://github.com/gpdms/K-DigitalTraining/blob/main/JavaProgramming1/bankingApp/src/bankingApp/BankingApp.java)
 <br/>
 <img width="95%" alt="담당부분" src="https://github.com/gpdms/K-DigitalTraining/assets/118142992/f711ade3-3744-4757-9977-5c3bf168e3fb">
